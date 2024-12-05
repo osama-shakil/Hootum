@@ -1,3 +1,4 @@
+import Discover from '@/components/profile/Discover'
 import ExploreArt from '@/components/profile/ExploreArt'
 import PopularCategories from '@/components/profile/PopularCategories'
 import ProfileHeader from '@/components/profile/ProfileHeader'
@@ -13,6 +14,7 @@ const page = () => {
         <Spotlight />
         <PopularCategories />
         <WorksBy />
+        <Discover />
 
     </>
   )

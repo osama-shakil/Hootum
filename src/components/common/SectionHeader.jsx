@@ -14,7 +14,7 @@ const SectionHeader = ({ title, btnText, handleClick }) => {
         <CustomButton
           text={btnText}
           handleClick={handleClick}
-          className="w-[12vw] md:flex hidden"
+          className="w-[12.5vw] md:flex hidden"
         />
       )}
     </div>

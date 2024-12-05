@@ -1,5 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import ExploreArtCard from "../common/cards/ExploreArtCard";
 
 const QuestionsSection = () => {
   return (
@@ -14,11 +15,29 @@ const QuestionsSection = () => {
           priority
         />
       </div>
-      
+
       {/* Content Container */}
-      <div className="relative z-10 w-full h-full">
-        {/* Your content goes here */}
-      </div>
+        <div className="absolute top-36 left-1/2 ">
+          <ExploreArtCard
+            title="FAQ"
+            description="Shizuka vision is to elevate the fine arts community"
+            text="Discover more"
+          />
+        </div>
+        <div className="absolute top-36 left-44 ">
+          <ExploreArtCard
+            title="FAQ"
+            description="Shizuka vision is to elevate the fine arts community"
+            text="Discover more"
+          />
+        </div>
+        <div className="absolute bottom-36 left-1/2 ">
+          <ExploreArtCard
+            title="FAQ"
+            description="Shizuka vision is to elevate the fine arts community"
+            text="Discover more"
+          />
+        </div>
     </div>
   );
 };
