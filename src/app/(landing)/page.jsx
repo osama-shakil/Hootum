@@ -4,7 +4,7 @@ import CuratedItems from "@/components/landing/CuratedItems";
 import CuratorsTestimonial from "@/components/landing/CuratorsTestimonial";
 import DiscoverMarketplace from "@/components/landing/DiscoverMarketplace";
 import FeaturedSection from "@/components/landing/FeaturedSection";
-import HeadLine from "@/components/landing/HeadLIne";
+import HeadLine from "@/components/landing/HeadLine";
 import HeroSection from "@/components/landing/HeroSection";
 import QuestionsSection from "@/components/landing/QuesitonsSecrtion";
 import TestimonialSection from "@/components/landing/TestimonialSection";
