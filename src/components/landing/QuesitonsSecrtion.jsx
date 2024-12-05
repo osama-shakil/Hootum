@@ -17,7 +17,7 @@ const QuestionsSection = () => {
       </div>
 
       {/* Content Container */}
-        <div className="absolute top-36 left-1/2 ">
+        {/* <div className="absolute top-36 left-1/2 ">
           <ExploreArtCard
             title="FAQ"
             description="Shizuka vision is to elevate the fine arts community"
@@ -37,7 +37,7 @@ const QuestionsSection = () => {
             description="Shizuka vision is to elevate the fine arts community"
             text="Discover more"
           />
-        </div>
+        </div> */}
     </div>
   );
 };
