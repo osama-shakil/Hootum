@@ -23,9 +23,9 @@ const CarouselSlide = ({
   };
   
   return (
-    <div className="grid grid-cols-12 items-center min-h-[80vh]">
+    <div className="grid grid-cols-12 items-center  ">
       {/* Content Section */}
-      <div className="col-span-12 lg:col-span-7 space-y-8 h-full pt-24">
+      <div className="col-span-12 lg:col-span-7 space-y-8 h-full py-24 ">
         <h1 className="text-4xl lg:text-7xl font-semibold tracking-tight">
           {slide.title}
         </h1>
@@ -39,12 +39,12 @@ const CarouselSlide = ({
           className="w-[10vw] h-16" 
         />
 
-        <div className="pt-28 relative">
+        <div className="pt-12 lg:pt-28 relative">
           {/* Dynamic Statistics */}
           <StatisticsDisplay stats={slide.stats} />
 
           {/* Carousel Indicators */}
-          <div className="absolute bottom-0 left-3/4 transform -translate-x-1/2">
+          <div className="absolute bottom-0 left-3/4 transform -translate-x-1/2 hidden lg:block">
             <div className="flex justify-center gap-2 mt-8">
               {Array.from({ length: totalSlides }).map((_, i) => (
                 <button
@@ -62,13 +62,13 @@ const CarouselSlide = ({
       </div>
 
       {/* Image Section */}
-      <div className="col-span-12 lg:col-span-5 ml-4 relative h-full">
+      <div className="col-span-12 lg:col-span-5 lg:ml-4 relative min-h-52 lg:h-full">
         <div className="absolute inset-0">
           <Image
             src={slide.image}
             alt={`Slide ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-fill"
             priority={index === 0}
           />
         </div>

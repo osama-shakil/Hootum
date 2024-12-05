@@ -4,7 +4,7 @@ import ExploreArtCard from "../common/cards/ExploreArtCard";
 
 const QuestionsSection = () => {
   return (
-    <div className="relative min-h-[90vh]">
+    <div className="relative  h-screen  md:min-h-[90vh]">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -17,27 +17,80 @@ const QuestionsSection = () => {
       </div>
 
       {/* Content Container */}
-        {/* <div className="absolute top-36 left-1/2 ">
+      <div className="hidden md:block absolute top-[22%] left-1/2 -translate-x-1/2">
+        <ExploreArtCard
+          title="Secure on blockchain"
+          description="Browse, create, sell, buy, auction or secure
+your valuable and collectible items on our
+Blockchain."
+          text="Know more"
+          className="max-w-sm"
+        />
+      </div>
+      <div className="hidden md:block absolute top-[45%] left-[4%] xl:left-[25%] ">
+        <ExploreArtCard
+          title="What is Hootum?"
+          description="Bangladesh's first Blockchain
+enabled physical+digital art &
+collectibles marketplace."
+          text="Know more"
+          className="max-w-xs"
+        />
+      </div>
+      <div className="hidden md:block absolute top-[45%] right-[1%] xl:right-[18%] ">
+        <ExploreArtCard
+          title="Explore Hootum Wallet"
+          description="A pioneering Smart Wallet in the country,
+securely storing art assets as NFTs on the
+private blockchain. Conduct transactions
+in Bangladeshi taka, compliant with all
+policies and regulations."
+          text="Know more"
+          className="max-w-md"
+        />
+      </div>
+{/* Mobile Cards */}
+      <div className="md:hidden grid grid-cols-1 gap-4 mt-3 ">
+        <div className="">
           <ExploreArtCard
-            title="FAQ"
-            description="Shizuka vision is to elevate the fine arts community"
-            text="Discover more"
+            title="Secure on blockchain"
+            description="Browse, create, sell, buy, auction or secure
+your valuable and collectible items on our
+Blockchain."
+            text="Know more"
+            className="max-w-sm"
           />
         </div>
-        <div className="absolute top-36 left-44 ">
+        <div className="">
           <ExploreArtCard
-            title="FAQ"
-            description="Shizuka vision is to elevate the fine arts community"
-            text="Discover more"
+            title="What is Hootum?"
+            description="Bangladesh's first Blockchain
+enabled physical+digital art &
+collectibles marketplace."
+            text="Know more"
+            className="max-w-xs"
           />
         </div>
-        <div className="absolute bottom-36 left-1/2 ">
+        <div className=" ">
           <ExploreArtCard
-            title="FAQ"
-            description="Shizuka vision is to elevate the fine arts community"
-            text="Discover more"
+            title="Explore Hootum Wallet"
+            description="A pioneering Smart Wallet in the country,
+securely storing art assets as NFTs on the
+private blockchain. Conduct transactions
+in Bangladeshi taka, compliant with all
+policies and regulations."
+            text="Know more"
+            className="max-w-md"
           />
-        </div> */}
+        </div>
+      </div>
+      {/* Navigation Dots */}
+      <div className="md:flex hidden  absolute bottom-8 left-1/2 transform -translate-x-1/2  gap-2">
+        <div className="w-3 h-3 rounded-full bg-black"></div>
+        <div className="w-3 h-3 rounded-full bg-white "></div>
+        <div className="w-3 h-3 rounded-full bg-white "></div>
+        <div className="w-3 h-3 rounded-full bg-white "></div>
+      </div>
     </div>
   );
 };

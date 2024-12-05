@@ -17,7 +17,7 @@ const CreatorCard = ({ id, name, role, image, badgeColor, icon }) => {
   };
 
   return (
-    <Card key={id}>
+    <Card key={id} className="w-60 md:w-auto">
       <div className="pt-3 pb-2 px-3">
         <div className="flex justify-center my-4">
           <Badge

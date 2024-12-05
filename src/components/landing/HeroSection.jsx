@@ -1,13 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import CarouselSlide from "./herosection/CarouselSlide";
-import { useCarousel } from "@/components/ui/carousel";
 import { heroSlides } from "@/utils/SiteData";
+import { useEffect, useState } from "react";
+import CarouselSlide from "./herosection/CarouselSlide";
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -33,7 +32,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="pl-28">
+    <div className="px-4 lg:mx-0 lg:pl-28">
       <Carousel
         className="w-full h-full"
         setApi={setApi}
@@ -62,83 +61,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-// "use client";
-// import { useEffect, useState } from "react";
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-// } from "@/components/ui/carousel";
-// import CarouselSlide from "./herosection/CarouselSlide";
-// import Autoplay from "embla-carousel-autoplay";
-// import { heroSlides } from "@/utils/SiteData";
-
-// const HeroSection = () => {
-//   const [activeSlide, setActiveSlide] = useState(0);
-//   const [api, setApi] = useState();
-
-//   // Create autoplay plugin instance
-//   const plugin = Autoplay({
-//     delay: 8000,
-//     stopOnInteraction: false,
-//     stopOnMouseEnter: true,
-//     rootNode: (emblaRoot) => emblaRoot.parentElement,
-//   });
-
-//   // Handle slide change
-//   const handleSlideChange = (index) => {
-//     if (api) {
-//       api.scrollTo(index, true);
-//       setActiveSlide(index);
-//     }
-//   };
-
-//   // Update active slide when carousel moves
-//   useEffect(() => {
-//     if (!api) return;
-
-//     api.on("select", () => {
-//       setActiveSlide(api.selectedScrollSnap());
-//     });
-
-//     // Cleanup
-//     return () => {
-//       api.off("select");
-//     };
-//   }, [api]);
-
-//   return (
-//     <div className="pl-28">
-//       <Carousel
-//         className="w-full h-full"
-//         setApi={setApi}
-//         plugins={[plugin]}
-//         opts={{
-//           // align: "start",
-//           loop: true,
-//           skipSnaps: false,
-//           duration: 5,
-//         }}
-//       >
-//         <CarouselContent className="w-full h-full transition-transform duration-1000 ease-in-out">
-//           {heroSlides.map((slide, index) => (
-//             <CarouselItem
-//               key={slide.id}
-//               className="transition-opacity duration-1000 ease-in-out"
-//             >
-//               <CarouselSlide
-//                 slide={slide}
-//                 index={index}
-//                 isActive={index === activeSlide}
-//                 totalSlides={heroSlides.length}
-//                 onSlideChange={handleSlideChange}
-//               />
-//             </CarouselItem>
-//           ))}
-//         </CarouselContent>
-//       </Carousel>
-//     </div>
-//   );
-// };
-
-// export default HeroSection;

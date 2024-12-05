@@ -2,7 +2,15 @@
 
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import { getCookie } from "cookies-next";
-import { ArrowLeft, ArrowRight, Bell, Search, UserCircle2 } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Bell,
+  Menu,
+  MenuIcon,
+  Search,
+  UserCircle2,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo } from "react";
@@ -82,21 +90,31 @@ export function Header() {
           </div>
 
           {isAuthenticated ? (
-            <Link href="/profile" className="hidden md:flex items-center justify-between w-[28%] gap-4 ">
-              <SearchBar />
-              <NotificationBell />
-              <div className="flex items-center justify-between space-x-2 text-white bg-black rounded-full py-3 px-4 w-[15vh] cursor-pointer">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src="/placeholder.svg" alt="User" />
-                  <AvatarFallback>U</AvatarFallback>
-                </Avatar>
-                <ArrowLeft
-                  className={`h-5 w-5 transition-transform`}
-                />
-              </div>
-            </Link>
+            <>
+                <Link href="/profile" className="md:hidden block"><Menu  className="text-white bg-black text-lg p-1 rounded"/></Link> 
+              <Link
+                href="/profile"
+                className="hidden md:flex items-center justify-between w-[28%] gap-4 "
+              >
+                <SearchBar />
+                <NotificationBell />
+                <div className="flex items-center justify-between space-x-2 text-white bg-black rounded-full py-3 px-4 w-[15vh] cursor-pointer">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/placeholder.svg" alt="User" />
+                    <AvatarFallback>U</AvatarFallback>
+                  </Avatar>
+                  <ArrowLeft className={`h-5 w-5 transition-transform`} />
+                </div>
+              </Link>
+            </>
           ) : (
-            <AuthButton />
+            <>
+              {" "}
+              
+              <Link href="/auth" className="md:hidden block"><Menu  className="text-white bg-black text-lg p-1 rounded"/></Link> 
+
+              <AuthButton />
+            </>
           )}
         </div>
       </div>

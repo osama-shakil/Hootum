@@ -15,12 +15,12 @@ const CarouselLayout = ({ children }) => {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-6xl mx-auto my-16"
+      className="w-full lg:max-w-6xl mx-auto my-16"
     >
       <CarouselContent className="-ml-2 md:-ml-4">
         {children}
       </CarouselContent>
-      <CarouselNext />
+      <CarouselNext className="hidden lg:block" />
     </Carousel>
   );
 };

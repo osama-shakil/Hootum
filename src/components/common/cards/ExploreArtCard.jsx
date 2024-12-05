@@ -3,9 +3,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-const ExploreArtCard = ({title,description ,text}) => {
+const ExploreArtCard = ({title,description ,text,className}) => {
   return (
-    <Card className="bg-white/50 backdrop-blur-md border-0 rounded-2xl">
+    <Card className={`bg-white/50 backdrop-blur-md border-0 rounded-2xl ${className}`}>
       <CardContent className="p-8 space-y-4">
         <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-800">
           {title}

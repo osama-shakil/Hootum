@@ -202,7 +202,7 @@ const heroSlides = [
     title: (
       <>
         UNLEASH YOUR INNER
-        <span className="text-[#532410]">COLLECTOR</span>
+        <span className="text-[#532410]">{" "}COLLECTOR</span>
       </>
     ),
     description:
@@ -280,4 +280,160 @@ const popularCategories = [
     image: "/popular/antique.png",
   },
 ];
-export { artPieces, heroSlides, spotlightProducts , popularCategories };
+
+
+
+const slidePosition = {
+  active: {
+    zIndex: 40,
+    opacity: 1,
+    scale: 1,
+    translateX: "0%",
+    translateY: "-3%",
+    imageTranslateX: "0%",
+    imageOpacity: 1,
+    imageScale: 1,
+    imageVisibility: "visible",
+    height: "2px",
+  },
+  rightFirst: {
+    zIndex: 25,
+    opacity: 0.8,
+    scale: 0.95,
+    translateX: "5%",
+    translateY: "0%",
+    imageTranslateX: "15%",
+    imageOpacity: 0,
+    imageScale: 0,
+    imageVisibility: "hidden",
+    height: "0",
+  },
+  rightSecond: {
+    zIndex: 20,
+    opacity: 0.6,
+    scale: 0.9,
+    translateX: "10%",
+    translateY: "3%",
+    imageTranslateX: "30%",
+    imageOpacity: 0,
+    imageScale: 0,
+    imageVisibility: "hidden",
+    height: "0",
+  },
+  leftFirst: {
+    zIndex: 25,
+    opacity: 0.8,
+    scale: 0.95,
+    translateX: "-5%",
+    translateY: "0%",
+    imageTranslateX: "-15%",
+    imageOpacity: 0,
+    imageScale: 0,
+    imageVisibility: "hidden",
+    height: "0",
+  },
+  leftSecond: {
+    zIndex: 20,
+    opacity: 0.6,
+    scale: 0.9,
+    translateX: "-10%",
+    translateY: "3%",
+    imageTranslateX: "-30%",
+    imageOpacity: 0,
+    imageScale: 0,
+    imageVisibility: "hidden",
+    height: "0",
+  },
+  hidden: {
+    zIndex: 10,
+    opacity: 0,
+    scale: 0.85,
+    translateX: "0%",
+    translateY: "0%",
+    imageTranslateX: "0%",
+    imageOpacity: 0,
+    imageScale: 0,
+    imageVisibility: "hidden",
+    height: "0",
+  },
+};
+
+
+
+const curatorsTestimonials = [
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "Azad hossain",
+    subtitle: "Artist",
+    description:
+      "The NFT art marketplace is not just a platform for buying and selling art; it is a thriving community. Artists, collectors, and enthusiasts come together, fostering a sense of collaboration and mutual appreciation. The interactions and connections I've made in this space are invaluable. Engaging with the community through discussions, exhibitions, and collaborations has enriched my perspective and deepened my appreciation for the digital art revolution.",
+  },
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "John Smith",
+    subtitle: "Designer",
+    description:
+      "Creating unique digital experiences through innovative design solutions.",
+  },
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "Emma Wilson",
+    subtitle: "Developer",
+    description:
+      "Full-stack developer passionate about building scalable applications.",
+  },
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "Michael Brown",
+    subtitle: "Product Manager",
+    description:
+      "Leading product strategies and driving innovation in digital products.",
+  },
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "Sarah Chen",
+    subtitle: "UX Researcher",
+    description: "Creating user-centered designs through research and testing.",
+  },
+  {
+    image: "/Curators testimonial/Ellipse 13.png",
+    title: "James Wilson",
+    subtitle: "Marketing Lead",
+    description:
+      "Developing strategic marketing campaigns for digital products.",
+  },
+];
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Sarah Chen',
+    text: '"As an artist, Shizuka has given me a platform to showcase my work without the traditional barriers of entry. The supportive community and promotional tools have helped me build my brand and gain visibility."',
+    image: "/testimonial/profile.png",
+  },
+  {
+    id: 2,
+    name: 'David Tom',
+    text: '"The platform has been instrumental in helping me reach art collectors globally. The tools and community support make it easy to manage my portfolio and conect with buyers."',
+    image: "/testimonial/profile.png",
+  },
+  {
+    id: 3,
+    name: 'Michael Ross',
+    text: '"I appreciate how the platform makes art accessible to everyone. It\'s transformed how I share and sell my artwork, reaching audiences I never thought possible."',
+    image: "/testimonial/profile.png",
+  },
+  {
+    id: 4,
+    name: 'James Wilson',
+    text: '"The community aspect of the platform is amazing. I\'ve connected with fellow artists and collectors, leading to collaborative opportunities and sales."',
+    image: "/testimonial/profile.png",
+  },
+  {
+    id: 5,
+    name: 'Emma Davis',
+    text: '"This platform has revolutionized how I present my artwork. The professional tools and global reach have helped me establish myself as a serious artist."',
+    image: "/testimonial/profile.png",
+  }
+];
+export { artPieces, heroSlides, spotlightProducts , popularCategories ,slidePosition,testimonials,curatorsTestimonials};

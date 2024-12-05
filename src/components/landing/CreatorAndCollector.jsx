@@ -34,8 +34,7 @@ const profiles = [
     badgeColor: "bg-purple-500",
     icon: "palette",
   },
- 
- 
+
   {
     id: 5,
     name: "Sruti",
@@ -93,11 +92,26 @@ const CreatorAndCollector = () => {
         title="Creator & collector Spotlight"
         btnText="Explore more"
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:container my-16">
+
+      {/* Mobile: Horizontal scroll container */}
+      <div className="md:hidden overflow-x-auto my-12 ">
+        <div className="flex gap-4 p-4 min-w-max">
+          {profiles.map((profile) => (
+            <CreatorCard key={profile.id} {...profile} />
+          ))}
+        </div>
+      </div>
+      {/* Desktop: Grid layout */}
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:container my-16">
         {profiles.map((profile) => (
           <CreatorCard key={profile.id} {...profile} />
         ))}
+
       </div>
+        <div className="hidden md:flex justify-center gap-2 mb-16">
+          <div className="w-3 h-3 rounded-full bg-black"></div>
+          <div className="w-3 h-3 rounded-full bg-gray-300 "></div>
+        </div>
     </div>
   );
 };

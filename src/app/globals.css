@@ -172,33 +172,29 @@ body {
   } */
 .custom-scrollbar {
   /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: #000 transparent;
+  scrollbar-width: thin !important;
+  scrollbar-color: #000 transparent !important;
 }
 
 /* Chrome, Safari, Edge */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 2px;
+  width: 2px !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #000000;
-  border-radius: 1px;
+  background: #000000 !important;
+  border-radius: 1px !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: #333333 !important;
 }
 
-/* Firefox */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #000000 transparent;
-}
+
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
@@ -206,3 +202,46 @@ body {
 
 
 
+
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f3f;
+}
+
+/* CustomScrollbar.css */
+/* Define the scrollbar styles */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #151515;
+  border-radius: 12px;
+  cursor: pointer;
+}

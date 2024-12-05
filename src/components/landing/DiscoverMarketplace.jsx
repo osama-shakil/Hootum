@@ -11,7 +11,20 @@ const DiscoverMarketplace = () => {
       <div className="md:container my-16">
         <FilterSection1 />
         <FilterSection2 />
-        <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 my-12">
+         
+        {/* Mobile: Horizontal scroll container */}
+        <div className="md:hidden overflow-x-auto my-12 ">
+          <div className="flex gap-4 p-4 min-w-max">
+            {artPieces.map((piece) => (
+              <div className="w-64" key={piece.id}>
+                <ArtCard piece={piece} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 my-12">
           {artPieces.map((piece) => (
             <ArtCard key={piece.id} piece={piece} />
           ))}
