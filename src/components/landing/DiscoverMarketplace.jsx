@@ -1,10 +1,20 @@
+"use client"
+
 import { artPieces } from "@/utils/SiteData";
 import SectionHeader from "../common/SectionHeader";
 import ArtCard from "./marketplace/ArtCard";
 import FilterSection1 from "./marketplace/FilterSection1";
 import FilterSection2 from "./marketplace/FilterSection2";
+import MarketplaceModal from "../common/MarketplaceModal";
+import { useState } from "react";
 
 const DiscoverMarketplace = () => {
+  const [open,setOpen] = useState(true);
+  const toggle = () => setOpen(!open);
+  const onAgreed=()=>{
+
+  }
+
   return (
     <div className=" ">
       <SectionHeader title="Discover Marketplace" />
@@ -30,6 +40,7 @@ const DiscoverMarketplace = () => {
           ))}
         </div>
       </div>
+      <MarketplaceModal open={open} toggle={toggle}  onAgreed={onAgreed} />
     </div>
   );
 };

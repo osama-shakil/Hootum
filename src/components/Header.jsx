@@ -77,7 +77,7 @@ export function Header() {
   const pathname = usePathname();
   const isAuthenticated = getCookie("token");
 
-  if (pathname === "/auth") return null;
+  // if (pathname === "/auth") return null;
 
   return (
     <header className="border-b border-black shadow-sm py-2">
@@ -91,7 +91,9 @@ export function Header() {
 
           {isAuthenticated ? (
             <>
-                <Link href="/profile" className="md:hidden block"><Menu  className="text-white bg-black text-lg p-1 rounded"/></Link> 
+              <Link href="/profile" className="md:hidden block">
+                <Menu className="text-white bg-black text-lg p-1 rounded" />
+              </Link>
               <Link
                 href="/profile"
                 className="hidden md:flex items-center justify-between w-[28%] gap-4 "
@@ -107,12 +109,14 @@ export function Header() {
                 </div>
               </Link>
             </>
+          ) : pathname === "/auth" ? (
+            <></>
           ) : (
             <>
               {" "}
-              
-              <Link href="/auth" className="md:hidden block"><Menu  className="text-white bg-black text-lg p-1 rounded"/></Link> 
-
+              <Link href="/auth" className="md:hidden block">
+                <Menu className="text-white bg-black text-lg p-1 rounded" />
+              </Link>
               <AuthButton />
             </>
           )}

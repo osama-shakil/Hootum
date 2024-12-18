@@ -1,8 +1,14 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/auth") return null;
+
   return (
     <footer className="w-full bg-black text-white pb-8">
       <div className=" md:container mx-auto px-12 md:px-6">
@@ -16,7 +22,9 @@ export default function Footer() {
           {/* Web Version */}
           <div className="md:col-span-9 border-l border-gray-600 py-8 md:py-16 md:block hidden ">
             <div className="grid grid-cols-1 md:grid-cols-3 border-b border-gray-600 pb-4">
-              <h3 className="text-lg font-semibold  pl-2 lg:pl-16">Hootum.io</h3>
+              <h3 className="text-lg font-semibold  pl-2 lg:pl-16">
+                Hootum.io
+              </h3>
               <h3 className="text-lg font-semibold">Info</h3>
               <h3 className="text-lg font-semibold">Join Newsletter</h3>
             </div>
@@ -86,66 +94,66 @@ export default function Footer() {
               </div>
             </div>
           </div>
-         
+
           {/* end */}
           {/* Mobile Version */}
           <div className="md:col-span-9 border-t border-gray-600  md:hidden  block ">
             <div className="grid grid-cols-2  border-b border-gray-600 ">
               <div className="col-span-1 ">
-              <div className="py-6  w-fit mx-auto">
-                <h3 className="text-lg font-semibol mb-4">Hootum.io</h3>
-                <nav className="flex flex-col space-y-3 ">
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Discover
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Connect wallet
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Create item
-                  </a>
-                </nav>
+                <div className="py-6  w-fit mx-auto">
+                  <h3 className="text-lg font-semibol mb-4">Hootum.io</h3>
+                  <nav className="flex flex-col space-y-3 ">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Discover
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Connect wallet
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Create item
+                    </a>
+                  </nav>
                 </div>
               </div>
 
               <div className="col-span-1 border-l  border-gray-600 ">
-              <div className="py-6  w-fit mx-auto">
-              <h3 className="text-lg font-semibold mb-4">Info</h3>
-                <nav className="flex flex-col space-y-3">
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Download
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Demos
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Support
-                  </a>
-                </nav>
+                <div className="py-6  w-fit mx-auto">
+                  <h3 className="text-lg font-semibold mb-4">Info</h3>
+                  <nav className="flex flex-col space-y-3">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Download
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Demos
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      Support
+                    </a>
+                  </nav>
                 </div>
               </div>
             </div>
             <div className=" md:hidden  grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 pt-4 my-8">
               <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Join Newsletter</h3>
+                <h3 className="text-lg font-semibold">Join Newsletter</h3>
 
                 <p className="text-sm text-gray-300">
                   Subscribe our newsletter to get more free design course and
@@ -166,10 +174,9 @@ export default function Footer() {
                   </Button>
                 </div>
               </div>
-
             </div>
-           
-              {/* end */}
+
+            {/* end */}
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 pt-8 border-t border-gray-600">
