@@ -1,9 +1,50 @@
-import React from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
 import ExploreArtCard from "../common/cards/ExploreArtCard";
+import MarketplaceModal from "../common/MarketplaceModal";
 
 const QuestionsSection = () => {
+
+  const [open, setOpen] = useState(false); // Modal visibility state
+	const [hasTriggered, setHasTriggered] = useState(false); // Track if the modal has been shown
+
+	useEffect(() => {
+		const section = document.getElementById('unique-section');
+
+		if (!section) {
+			console.warn('Section with ID "unique-section" not found.');
+			return;
+		}
+
+		// Observe section visibility
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting && !hasTriggered) {
+						setOpen(true); // Show modal when section is visible
+						setHasTriggered(true); // Mark as shown
+					}
+				});
+			},
+			{ threshold: 0.5 } // Trigger when 50% of the section is visible
+		);
+
+		observer.observe(section);
+
+		return () => {
+			if (section) observer.unobserve(section); // Cleanup observer on unmount
+		};
+	}, [hasTriggered]); // Dependency on `hasTriggered`
+
+	const toggle = state => setOpen(state);
+	const onAgreed = dontShowAgain => {
+		console.log("Don't show again:", dontShowAgain);
+	};
   return (
+    <>
+      			
     <div className="relative  h-screen  md:min-h-[90vh]">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
@@ -37,7 +78,7 @@ collectibles marketplace."
           className="max-w-xs"
         />
       </div>
-      <div className="hidden md:block absolute top-[45%] right-[1%] xl:right-[7%] xl:top-[45%]">
+      <div id='unique-section' className="hidden md:block absolute top-[45%] right-[1%] xl:right-[7%] xl:top-[45%]">
         <ExploreArtCard
           title="Explore Hootum Wallet"
           description="A pioneering Smart Wallet in the country,
@@ -71,7 +112,7 @@ collectibles marketplace."
             className="max-w-xs"
           />
         </div>
-        <div className=" ">
+        <div className=" " id='unique-section'>
           <ExploreArtCard
             title="Explore Hootum Wallet"
             description="A pioneering Smart Wallet in the country,
@@ -92,6 +133,8 @@ policies and regulations."
         <div className="w-3 h-3 rounded-full bg-white "></div>
       </div>
     </div>
+    <MarketplaceModal open={open} toggle={toggle} onAgreed={onAgreed} />
+    </>
   );
 };
 
