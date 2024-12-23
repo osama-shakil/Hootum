@@ -80,7 +80,7 @@ export default function FilterSection2() {
           />
           {/* Dynamic Value Above Slider Thumb */}
           <div
-            className="absolute text-sm font-medium text-white bg-black px-2 py-1 rounded-3xl -translate-y-[43px] transform whitespace-nowrap"
+            className="absolute text-sm font-medium text-white bg-black px-2 py-1 rounded-3xl -translate-y-[60px] transform whitespace-nowrap"
             style={{
               left: `calc(${((priceRange[0] - 5000) / 95000) * 100}% - 20px)`,
             }}
