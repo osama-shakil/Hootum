@@ -347,7 +347,7 @@ const TestimonialSlider = () => {
 							className='rounded-full
               w-2 h-2 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3
               self-start
-              mx-auto md:ml-[35%] lg:ml-[46%]
+              mx-auto md:ml-[35%] lg:ml-[43%] lg:mt-[3px]
               transition-all duration-300'
 							style={{ backgroundColor: '#FFB800' }}
 						></div>
