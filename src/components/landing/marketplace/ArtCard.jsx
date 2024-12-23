@@ -11,9 +11,9 @@ const Creator = ({ creator, className }) => (
       <AvatarImage src={creator.avatar} alt={creator.name} />
       <AvatarFallback>{creator.name[0]}</AvatarFallback>
     </Avatar>
-    <p className="text-sm text-gray-400 mt-2">{creator.role}</p>
-    <p className="text-lg text-black">{creator.name}</p>
-  </div>
+    <p className="text-[12px] text-gray-400 mt-2">{creator.role}</p>
+    <p className="text-[14px] font-semibold text-black whitespace-nowrap">{creator.name}</p>
+    </div>
 );
 
 const ArtCard = ({ piece }) => (
