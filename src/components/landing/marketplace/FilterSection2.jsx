@@ -9,13 +9,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
-import { ChevronDown } from "lucide-react";
 
 export default function FilterSection2() {
   const [priceRange, setPriceRange] = React.useState([60000]);
 
+  const handleSliderChange = (value) => {
+    setPriceRange(value);
+  };
+
   return (
     <div className="flex flex-col p-4 md:flex-row md:items-center md:justify-between my-0 lg:my-2">
+      {/* Price Filter */}
       <div className="hidden lg:flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">Price</label>
         <Select defaultValue="highest">
@@ -29,8 +33,9 @@ export default function FilterSection2() {
         </Select>
       </div>
 
+      {/* Likes Filter */}
       <div className="flex flex-col space-y-1 lg:w-[280px]">
-        <label className="text-sm font-medium">likes</label>
+        <label className="text-sm font-medium">Likes</label>
         <Select defaultValue="most">
           <SelectTrigger className="w-[300px] lg:w-full">
             <SelectValue />
@@ -42,6 +47,7 @@ export default function FilterSection2() {
         </Select>
       </div>
 
+      {/* Creator Filter */}
       <div className="hidden lg:flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">Creator</label>
         <Select defaultValue="verified">
@@ -55,24 +61,36 @@ export default function FilterSection2() {
         </Select>
       </div>
 
-      <div className="flex flex-col space-y-1 lg:w-[285px]">
+      {/* Price Range Slider */}
+      <div className="flex flex-col space-y-1 lg:w-[285px] relative">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium">Price range</label>
-          <span className="text-sm font-medium bg-black px-2 py-1 rounded-3xl text-white">
+          {/* <span className="text-sm font-medium bg-black px-2 py-1 rounded-3xl text-white">
             {priceRange[0].toLocaleString()} BDT
-          </span>
+          </span> */}
         </div>
-        <Slider
-          value={priceRange}
-          max={100000}
-          min={5000}
-          step={1000}
-          onValueChange={setPriceRange}
-          className="w-full"
-        />
+        <div className="relative">
+          <Slider
+            value={priceRange}
+            max={100000}
+            min={5000}
+            step={1000}
+            onValueChange={handleSliderChange}
+            className="w-full"
+          />
+          {/* Dynamic Value Above Slider Thumb */}
+          <div
+            className="absolute text-sm font-medium text-white bg-black px-2 py-1 rounded-3xl -translate-y-[43px] transform whitespace-nowrap"
+            style={{
+              left: `calc(${((priceRange[0] - 5000) / 95000) * 100}% - 20px)`,
+            }}
+          >
+            {priceRange[0].toLocaleString()} BDT
+          </div>
+        </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>5,000 BDT</span>
-          <span>100,000 BDT</span>
+          <span className="text-black">5,000 BDT</span>
+          <span className="text-black">100,000 BDT</span>
         </div>
       </div>
     </div>
