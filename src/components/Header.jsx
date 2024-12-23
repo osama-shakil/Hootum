@@ -63,13 +63,14 @@ const NotificationBell = memo(() => (
 NotificationBell.displayName = "NotificationBell";
 
 const AuthButton = memo(() => (
-  <Link
-    href="/auth"
-    className="hidden md:flex items-center justify-between space-x-2 text-white bg-black rounded-full py-3 px-4 w-[15vh]"
-  >
-    <UserCircle2 className="w-6 h-6" />
-    <ArrowRight className="h-5 w-6" />
-  </Link>
+<Link
+  href="/auth"
+  className="hidden md:flex items-center justify-between text-white bg-black rounded-full py-[11px] px-[16px] w-[125px] h-[44px]"
+>
+  <UserCircle2 className="w-[24px] h-[24px]" />
+  <ArrowRight className="w-[11.25px] h-[10.58px]" />
+</Link>
+
 ));
 AuthButton.displayName = "AuthButton";
 

@@ -143,7 +143,7 @@ const CarouselSlide = ({
 
       {/* Image Section with Full Height */}
       <div className="col-span-12 lg:col-span-5 lg:ml-4 h-full relative">
-        <div className="relative h-[80vh] w-full">
+        <div className="relative h-full w-full">
           <Image
             src={slide.image}
             alt={`Slide ${index + 1}`}

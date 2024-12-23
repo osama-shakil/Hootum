@@ -15,11 +15,11 @@ export default function FilterSection2() {
   const [priceRange, setPriceRange] = React.useState([60000]);
 
   return (
-    <div className="flex flex-col space-y-6 p-4 md:flex-row md:items-center md:justify-between  md:space-y-0">
-      <div className="hidden lg:flex flex-col space-y-1">
+    <div className="flex flex-col p-4 md:flex-row md:items-center md:justify-between my-0 lg:my-2">
+      <div className="hidden lg:flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">Price</label>
         <Select defaultValue="highest">
-          <SelectTrigger className="w-[300px]">
+          <SelectTrigger className="w-[300px] lg:w-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -29,10 +29,10 @@ export default function FilterSection2() {
         </Select>
       </div>
 
-      <div className="flex flex-col space-y-1">
+      <div className="flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">likes</label>
         <Select defaultValue="most">
-          <SelectTrigger className="w-[300px]">
+          <SelectTrigger className="w-[300px] lg:w-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -42,10 +42,10 @@ export default function FilterSection2() {
         </Select>
       </div>
 
-      <div className="hidden lg:flex flex-col space-y-1">
+      <div className="hidden lg:flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">Creator</label>
         <Select defaultValue="verified">
-          <SelectTrigger className="w-[300px]">
+          <SelectTrigger className="w-[300px] lg:w-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -55,7 +55,7 @@ export default function FilterSection2() {
         </Select>
       </div>
 
-      <div className="flex flex-col space-y-1 lg:w-[300px]">
+      <div className="flex flex-col space-y-1 lg:w-[285px]">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium">Price range</label>
           <span className="text-sm font-medium bg-black px-2 py-1 rounded-3xl text-white">

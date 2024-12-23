@@ -90,7 +90,7 @@ const CreatorAndCollector = () => {
     <div>
       <SectionHeader
         title="Creator & collector Spotlight"
-        btnText="Explore more"
+        // btnText="Explore more"
       />
 
       {/* Mobile: Horizontal scroll container */}

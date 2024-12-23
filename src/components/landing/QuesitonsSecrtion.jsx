@@ -17,7 +17,7 @@ const QuestionsSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="hidden md:block absolute top-[22%] left-1/2 -translate-x-1/2">
+      <div className="hidden md:block absolute top-[13%] left-1/2 -translate-x-1/2">
         <ExploreArtCard
           title="Secure on blockchain"
           description="Browse, create, sell, buy, auction or secure
@@ -27,7 +27,7 @@ Blockchain."
           className="max-w-sm"
         />
       </div>
-      <div className="hidden md:block absolute top-[45%] left-[4%] xl:left-[25%] ">
+      <div className="hidden md:block absolute top-[45%] left-[4%] xl:left-[16%] xl:top-[48%]">
         <ExploreArtCard
           title="What is Hootum?"
           description="Bangladesh's first Blockchain
@@ -37,7 +37,7 @@ collectibles marketplace."
           className="max-w-xs"
         />
       </div>
-      <div className="hidden md:block absolute top-[45%] right-[1%] xl:right-[18%] ">
+      <div className="hidden md:block absolute top-[45%] right-[1%] xl:right-[7%] xl:top-[45%]">
         <ExploreArtCard
           title="Explore Hootum Wallet"
           description="A pioneering Smart Wallet in the country,
