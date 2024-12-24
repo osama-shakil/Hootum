@@ -79,12 +79,12 @@ const Register = ({setActiveTab}) => {
               error={errors.confirmPassword?.message}
             />
           </div>
-          <div className="text-sm text-gray-500 my-12">
+          <div className="text-sm text-gray-500 my-6">
             By clicking Sign Up or Continue with Google, Facebook, You agree to Shizuka&apos;s{" "}
             <span className="text-theme-linkColor cursor-pointer">Terms of User</span> and{" "}
             <span className="text-theme-linkColor cursor-pointer">Privacy Policy</span> and to receiving emails from Shizuka.
           </div>
-          <div className="flex justify-end mt-14">
+          <div className="flex justify-end mt-10">
             <CustomButton 
               type="submit"
               text="Next"

@@ -20,11 +20,11 @@ export default function HandleRegistration() {
     }
   }, [activeTab]);
   return (
-    <div className="min-h-screen">
-      <main className="md:container  mx-auto px-4 py-8">
+    <div className="">
+      <main className="md:container  mx-auto px-4 py-4">
         <div className="grid lg:grid-cols-12 md:gap-12  gap-4 items-start mx-auto  ">
           <div className="lg:col-span-7 col-span-12 relative rounded-3xl overflow-hidden">
-            <div className="aspect-[3/2] relative min-h-[400px] md:min-h-[300px]">
+            <div className="aspect-[3/2] relative min-h-[400px] md:min-h-[520px]">
               <Image
                 src="/backgrounds-images/authImage.png"
                 alt="auth img"
