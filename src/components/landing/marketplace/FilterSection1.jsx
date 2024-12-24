@@ -112,7 +112,6 @@ export default function FilterSection1() {
           ))}
         </div>
       </div>
-
       {/* Filter Button - Show on desktop only */}
       <Button
         variant="outline"
