@@ -245,3 +245,9 @@ body {
   border-radius: 12px;
   cursor: pointer;
 }
+
+@layer utilities {
+  .clip-pointer {
+    clip-path: polygon(50% 100%, 0 0, 100% 0); /* Creates the triangle pointer */
+  }
+}

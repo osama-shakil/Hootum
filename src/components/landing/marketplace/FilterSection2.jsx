@@ -65,7 +65,7 @@ export default function FilterSection2() {
       <div className="flex flex-col space-y-1 lg:w-[285px] relative">
         <div className="flex items-center justify-between">
           <label className="text-sm font-medium">Price range</label>
-          {/* <span className="text-sm font-medium bg-black px-2 py-1 rounded-3xl text-white">
+            {/* <span className="text-sm font-medium bg-black px-2 py-1 rounded-3xl text-white">
             {priceRange[0].toLocaleString()} BDT
           </span> */}
         </div>
@@ -78,14 +78,15 @@ export default function FilterSection2() {
             onValueChange={handleSliderChange}
             className="w-full"
           />
-          {/* Dynamic Value Above Slider Thumb */}
+          {/* Dynamic Bubble Above Slider Thumb */}
           <div
-            className="absolute text-sm font-medium text-white bg-black px-2 py-1 rounded-3xl -translate-y-[60px] transform whitespace-nowrap"
+            className="absolute text-sm font-medium text-white bg-black px-3 py-1 rounded-full transform -translate-y-[63px] -translate-x-1/2 whitespace-nowrap"
             style={{
-              left: `calc(${((priceRange[0] - 5000) / 95000) * 100}% - 20px)`,
+              left: `calc(${((priceRange[0] - 5000) / 95000) * 100}%)`,
             }}
           >
             {priceRange[0].toLocaleString()} BDT
+            <div className="absolute bottom-0 left-1/2 h-2 w-3 -translate-x-1/2 translate-y-[80%] bg-black clip-pointer"></div>
           </div>
         </div>
         <div className="flex items-center justify-between text-sm text-muted-foreground">
