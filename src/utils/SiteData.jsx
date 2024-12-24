@@ -254,7 +254,7 @@ const popularCategories = [
   {
     id: 1,
     title: "Fine Art",
-    image: "/popular/blank.png",
+    image: "/popular/fine-art.png",
   },
   {
     id: 2,
@@ -408,31 +408,31 @@ const testimonials = [
     id: 1,
     name: 'Sarah Chen',
     text: '"As an artist, Shizuka has given me a platform to showcase my work without the traditional barriers of entry. The supportive community and promotional tools have helped me build my brand and gain visibility."',
-    image: "/testimonial/profile (3).png",
+    image: "/testimonial/profile (3).svg",
   },
   {
     id: 2,
     name: 'David Tom',
     text: '"The platform has been instrumental in helping me reach art collectors globally. The tools and community support make it easy to manage my portfolio and conect with buyers."',
-    image: "/testimonial/profile (4).png",
+    image: "/testimonial/profile (4).svg",
   },
   {
     id: 3,
     name: 'Michael Ross',
     text: '"I appreciate how the platform makes art accessible to everyone. It\'s transformed how I share and sell my artwork, reaching audiences I never thought possible."',
-    image: "/testimonial/profile (2).png",
+    image: "/testimonial/profile (2).svg",
   },
   {
     id: 4,
     name: 'James Wilson',
     text: '"The community aspect of the platform is amazing. I\'ve connected with fellow artists and collectors, leading to collaborative opportunities and sales."',
-    image: "/testimonial/profile (1).png",
+    image: "/testimonial/profile (1).svg",
   },
   {
     id: 5,
     name: 'Emma Davis',
     text: '"This platform has revolutionized how I present my artwork. The professional tools and global reach have helped me establish myself as a serious artist."',
-    image: "/testimonial/profile (5).png",
+    image: "/testimonial/profile (5).svg",
   }
 ];
 export { artPieces, heroSlides, spotlightProducts , popularCategories ,slidePosition,testimonials,curatorsTestimonials};
