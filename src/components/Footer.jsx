@@ -13,7 +13,7 @@ export default function Footer() {
 		<footer className='w-full bg-black text-white pb-8'>
 			<div className=' md:container mx-auto px-12 md:px-6'>
 				<div className='grid grid-cols-1 md:grid-cols-12'>
-					<div className='md:col-span-4 py-8 md:py-16'>
+					<div className='md:col-span-4 py-6 md:py-16'>
 						<div className='space-y-4'>
 							<h2 className='text-[36px] font-medium font-dmSans'>
 								Hootum.io
@@ -24,7 +24,7 @@ export default function Footer() {
 						</div>
 					</div>
 					{/* Web Version */}
-					<div className='md:col-span-8 border-l border-gray-600 py-8 md:py-16 md:block hidden'>
+					<div className='md:col-span-8 border-l border-gray-600 py-6 md:py-16 md:block hidden'>
 						<div className='grid grid-cols-8 gap-4 border-b border-gray-600 '>
 							{/* First 4-column section */}
 							<div className='col-span-4 '>
@@ -69,13 +69,13 @@ export default function Footer() {
 											</a>
 											<a
 												href='#'
-												className='text-gray-300 hover:text-white transition-colors text-[14px]'
+												className='text-gray-300 hover:text-white transition-colors text-[14px] pt-3'
 											>
 												Connect wallet
 											</a>
 											<a
 												href='#'
-												className='text-gray-300 hover:text-white transition-colors text-[14px]'
+												className='text-gray-300 hover:text-white transition-colors text-[14px] pt-3'
 											>
 												Create item
 											</a>
@@ -93,13 +93,13 @@ export default function Footer() {
 											</a>
 											<a
 												href='#'
-												className='text-gray-300 hover:text-white transition-colors text-[14px]'
+												className='text-gray-300 hover:text-white transition-colors text-[14px] pt-3'
 											>
 												Demos
 											</a>
 											<a
 												href='#'
-												className='text-gray-300 hover:text-white transition-colors text-[14px]'
+												className='text-gray-300 hover:text-white transition-colors text-[14px] pt-3'
 											>
 												Support
 											</a>
@@ -110,7 +110,7 @@ export default function Footer() {
 
 							{/* Second 4-column section */}
 							<div className='col-span-4'>
-								<p className='text-[14px] text-gray-300'>
+								<p className='text-[14px] text-gray-300 mb-4'>
 									Subscribe to our newsletter to get free
 									design courses and resources.
 								</p>
