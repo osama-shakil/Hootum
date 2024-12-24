@@ -7,7 +7,7 @@ const CustomButton = ({ isLoading, text, type, handleClick, className }) => {
       type={type}
       disabled={isLoading}
       onClick={handleClick}
-      className={`flex items-center justify-between space-x-2 rounded-full py-3 px-4 font-semibold w-[25vh] ${
+      className={`flex items-center justify-between  rounded-full py-2 px-4 font-semibold w-[25vh] ${
         isLoading
           ? "bg-gray-400 cursor-not-allowed"
           : "bg-black hover:bg-gray-800"
@@ -18,7 +18,7 @@ const CustomButton = ({ isLoading, text, type, handleClick, className }) => {
       ) : (
         <span>{text}</span>
       )}
-      <ArrowRight className="h-5 w-6 " />
+      <ArrowRight className="h-5 w-6 ml-3" />
     </button>
   );
 };
