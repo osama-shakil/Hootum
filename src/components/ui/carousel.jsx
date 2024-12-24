@@ -178,13 +178,25 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute h-8 w-8 rounded-full", orientation === "horizontal"
-        ? "-right-12 top-1/2 -translate-y-1/2"
+      className={cn("absolute h-12 w-12 rounded-full", orientation === "horizontal"
+        ? "-right-16 top-1/2 -translate-y-1/2"
         : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}>
-      <ArrowRight className="h-4 w-4" />
+      		<svg
+					fill='none'
+					viewBox='0 0 24 24'
+					stroke='currentColor'
+					className='h-[60px] w-[60px] m-auto text-[50px]' // Set size to 60px to match the button size better
+				>
+					<path
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth={2}
+						d='M9 5l7 7-7 7'
+					/>
+				</svg>
       <span className="sr-only">Next slide</span>
     </Button>)
   );

@@ -254,19 +254,18 @@ const popularCategories = [
   {
     id: 1,
     title: "Fine Art",
-    
-    image: "/popular/fine-art.png",
+    image: "/popular/blank.png",
   },
   {
     id: 2,
     title: "Sculpture",
-    image: "/popular/blank.png",
+    image: "/popular/product-img.png",
   },
   {
     id: 3,
     title: "Watches",
   
-    image: "/popular/blank.png",
+    image: "/popular/item-card.png",
   },
   {
     id: 4,
@@ -276,8 +275,8 @@ const popularCategories = [
   },
   {
     id: 5,
-    title: "Sculpture",
-    image: "/popular/antique.png",
+    title: "Fine Art",
+    image: "/popular/fine-art.png",
   },
 ];
 

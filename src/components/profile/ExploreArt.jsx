@@ -14,7 +14,7 @@ const ExploreArt = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Tabs Section */}
-      <div className="py-6 md:container">
+      <div className="py-2 md:container">
         <div className="flex flex-wrap justify-center gap-2 p-4">
           {tabs.map((tab) => (
             <Button
