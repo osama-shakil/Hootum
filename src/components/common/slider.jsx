@@ -232,7 +232,7 @@ const TestimonialSlider = () => {
         isMobile ? 'block lg:hidden' : 'hidden lg:block'
       }`}
     >
-      <div className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-[35px] ml-[-15px]">
+      <div className="absolute left-1/2 -translate-x-1/2 flex items-center lg:space-x-[35px] space-x-[5px] ml-0 lg:ml-[-15px]">
         {getOrderedIndices().map((index) => {
           const testimonial = testimonials[index];
           const isActive = index === currentIndex;
@@ -245,7 +245,7 @@ const TestimonialSlider = () => {
             >
               <div
                 className={`relative ${
-                  isActive ? 'w-[105px] h-[105px]' : 'w-[60px] h-[60px]'
+                  isActive ? 'w-[85px] h-[85px] lg:w-[105px] lg:h-[105px]' : 'w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]'
                 }`}
               >
                 <Image
@@ -315,10 +315,10 @@ const TestimonialSlider = () => {
 				<div className='w-full md:max-w-md flex flex-col mx-auto md:mx-0 md:ml-32 lg:ml-64 transition-all duration-300'>
 					{/* Main Testimonial Bubble */}
 					<div
-						className='text-white text-center relative mb-1 p-8 sm:p-12 md:p-16 px-6 sm:px-8 md:px-12 mx-auto'
+						className='text-white text-center relative mb-1 p-8 sm:p-12 md:p-16 px-6 sm:px-8 md:px-12 mx-auto sm:w-full lg:w-[455px] lg:h-[250px]'
 						style={{
-							width: '455px', // Setting the width to 455px
-							height: '250px', // Setting the height to 250px
+							// width: '455px', // Setting the width to 455px
+							// height: '250px', // Setting the height to 250px
 							backgroundColor: '#FFB800', // Applying the color code
 							borderRadius: '50%', // Makes it an ellipse
 						}}

@@ -12,9 +12,9 @@ const TestimonialCard = ({ slide, onClick }) => (
       }}
       onClick={onClick}
     >
-      <div className="relative bg-white rounded-3xl shadow-lg h-[385px] w-[620px] pt-16 mx-auto border-[1.5px] border-gray-300 mt-16">
+      <div className="relative bg-white rounded-3xl shadow-lg w-full md:h-[385px] md:w-[620px] pt-16 mx-auto border-[1.5px] border-gray-300 mt-16">
         <div
-          className="absolute left-1/2 md:-top-20 -top-10 -translate-x-1/2 transition-all duration-300 ease-out"
+          className="absolute left-1/2 md:-top-20 -top-10  transition-all duration-300 ease-out"
           style={{
             zIndex: slide.zIndex + 1,
             opacity: slide.imageOpacity,
