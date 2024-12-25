@@ -361,41 +361,41 @@ const slidePosition = {
 
 const curatorsTestimonials = [
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "Azad hossain",
     subtitle: "Artist",
     description:
       "The NFT art marketplace is not just a platform for buying and selling art; it is a thriving community. Artists, collectors, and enthusiasts come together, fostering a sense of collaboration and mutual appreciation. The interactions and connections I've made in this space are invaluable. Engaging with the community through discussions, exhibitions, and collaborations has enriched my perspective and deepened my appreciation for the digital art revolution.",
   },
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "John Smith",
     subtitle: "Designer",
     description:
       "Creating unique digital experiences through innovative design solutions.",
   },
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "Emma Wilson",
     subtitle: "Developer",
     description:
       "Full-stack developer passionate about building scalable applications.",
   },
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "Michael Brown",
     subtitle: "Product Manager",
     description:
       "Leading product strategies and driving innovation in digital products.",
   },
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "Sarah Chen",
     subtitle: "UX Researcher",
     description: "Creating user-centered designs through research and testing.",
   },
   {
-    image: "/Curators testimonial/Ellipse 13.png",
+    image: "/Curators testimonial/Ellipse 17.svg",
     title: "James Wilson",
     subtitle: "Marketing Lead",
     description:

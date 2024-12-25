@@ -12,7 +12,7 @@ const TestimonialCard = ({ slide, onClick }) => (
       }}
       onClick={onClick}
     >
-      <div className="relative bg-white rounded-3xl shadow-lg h-[400px] pt-16 mx-auto border-[1.5px] border-gray-300 mt-16">
+      <div className="relative bg-white rounded-3xl shadow-lg h-[385px] w-[620px] pt-16 mx-auto border-[1.5px] border-gray-300 mt-16">
         <div
           className="absolute left-1/2 md:-top-20 -top-10 -translate-x-1/2 transition-all duration-300 ease-out"
           style={{
@@ -22,7 +22,7 @@ const TestimonialCard = ({ slide, onClick }) => (
             visibility: slide.imageVisibility,
           }}
         >
-          <Avatar className="md:w-32 w-24 md:h-32 h-24 border-4 border-white">
+          <Avatar className="md:w-[132px] w-24 md:h-[132px] h-24 border-4 border-white">
             <AvatarImage
               src={slide.image}
               alt={slide.title}
@@ -40,11 +40,11 @@ const TestimonialCard = ({ slide, onClick }) => (
   
         <div className="flex flex-col items-center text-center space-y-3 w-full h-full">
           <div className="space-y-1 w-full h-full flex flex-col">
-            <h3 className="text-lg font-semibold text-gray-900">{slide.title}</h3>
-            <p className="text-sm text-gray-500">{slide.subtitle}</p>
+            <h3 className="text-[24px] font-semibold text-gray-900">{slide.title}</h3>
+            <p className="text-[18px] text-gray-500">{slide.subtitle}</p>
             <hr className="my-4" />
             <div className="flex-1 overflow-auto px-6">
-              <p className="text-md text-gray-600 leading-relaxed text-start scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+              <p className="text-[16px] text-gray-600 leading-relaxed text-start scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent pt-2">
                 {slide.description}
               </p>
             </div>

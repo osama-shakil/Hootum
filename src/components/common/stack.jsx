@@ -47,6 +47,14 @@ const StackedCarousel = () => {
 
   return (
     <div className="relative w-full  md:max-w-4xl mx-auto min-h-[600px] px-20 mt-[150px] my-16">
+    <Image
+  className=" absolute lg:top-[-10%] lg:right-[36px]"
+  src="/backgrounds-images/Vector.svg"
+  alt="Background pattern"
+  width={600}  // Specify the image's natural width (in pixels)
+  height={650} // Specify the image's natural height (in pixels)
+  priority
+/>
       {/* Background Image */}
       <div className="absolute top-0 right-[100px] -z-10  ">
         <div className="relative w-[70%] h-[70%]">
