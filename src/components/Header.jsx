@@ -95,20 +95,24 @@ export function Header() {
               <Link href="/profile" className="md:hidden block">
                 <Menu className="text-white bg-black text-lg p-1 rounded" />
               </Link>
-              <Link
-                href="/profile"
+              <div
+                
                 className="hidden md:flex items-center justify-between w-[28%] gap-4 "
               >
                 <SearchBar />
                 <NotificationBell />
+                <Link
+                href="/profile"
+                className="hidden md:flex items-center justify-between w-[28%] gap-4 "
+              >
                 <div className="flex items-center justify-between space-x-2 text-white bg-black rounded-full py-3 px-4 w-[15vh] cursor-pointer">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src="/placeholder.svg" alt="User" />
                     <AvatarFallback>U</AvatarFallback>
                   </Avatar>
                   <ArrowLeft className={`h-5 w-5 transition-transform`} />
-                </div>
-              </Link>
+                </div></Link>
+              </div>
             </>
           ) : pathname === "/auth" ? (
             <></>

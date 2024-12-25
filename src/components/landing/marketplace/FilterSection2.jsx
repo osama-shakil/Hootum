@@ -80,7 +80,7 @@ export default function FilterSection2() {
           />
           {/* Dynamic Bubble Above Slider Thumb */}
           <div
-            className="absolute text-sm font-medium text-white bg-black px-3 py-1 rounded-full transform -translate-y-[63px] -translate-x-1/2 whitespace-nowrap"
+            className="absolute text-sm font-medium text-white bg-black px-3 py-1 rounded-full transform -translate-y-[59px] -translate-x-1/2 whitespace-nowrap"
             style={{
               left: `calc(${((priceRange[0] - 5000) / 95000) * 100}%)`,
             }}
