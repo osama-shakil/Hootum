@@ -34,10 +34,11 @@ export default function HandleRegistration() {
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-theme-primary p-6 text-white">
-              <h2 className="text-2xl font-bold mb-4">
-                Discover and buy Amazing Art
-              </h2>
-              <ul className="space-y-1">
+            <h2 className="text-[17px] font-medium md:text-2xl md:font-bold mb-4">
+  Discover and buy Amazing Art
+</h2>
+
+              <ul className="space-y-1 text-[14px] md:text-[16px]">
                 <li>Take control over your career</li>
                 <li>Secure your future with blockchain</li>
                 <li>Personalized support</li>

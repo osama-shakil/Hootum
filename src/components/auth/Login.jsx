@@ -59,8 +59,8 @@ const Login = () => {
               error={errors.password?.message}
             />
           </div>
-          <div className="flex justify-between items-center mt-0 lg:mt-[21%] mb-2">
-            <p className="text-lg font-normal text-black hover:text-gray-700">
+          <div className="flex justify-between items-center mt-4 md:mt-[21%] md:mb-2">
+            <p className="text-[14px] md:text-lg font-normal text-black hover:text-gray-700">
               Forgot Password?
             </p>
             <CustomButton type="submit" text={"Log In"}   />
