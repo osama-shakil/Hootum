@@ -11,8 +11,8 @@ const EmailVerification = ({ setActiveTab }) => {
 
   return (
     <div className="flex flex-col min-h-[calc(100%-4rem)]">
-      <div className="flex-1 p-2 sm:p-4 my-4 sm:my-4">
-        <h2 className="text-xl sm:text-2xl font-bold">Email Verification</h2>
+      <div className="flex-1 p-2 sm:p-2 my-4 sm:my-4">
+        <h2 className="text-md sm:text-2xl font-bold">Email Verification</h2>
         <p className="text-xs sm:text-sm text-muted-foreground mt-1">
           Enter OTP which you received in your email{" "}
           <span className="text-foreground break-all">firvik@nocdum.in</span>

@@ -39,7 +39,7 @@ const OTPComp = ({otp,setOtp}) => {
       setOtp(newOtp)
     }
   return (
-    <div className="flex gap-2 justify-between  w-[50%] md:w-[70%] my-10">
+    <div className="flex justify-between  md:w-[70%] my-10">
     {otp.map((digit, index) => (
       <Input
         key={index}
@@ -51,7 +51,7 @@ const OTPComp = ({otp,setOtp}) => {
         onKeyDown={(e) => handleKeyDown(index, e)}
         onPaste={handlePaste}
         ref={(el) => (inputRefs.current[index] = el)}
-        className="w-12 h-14 md:w-14 md:h-16 text-center text-lg bg-gray-50 border-2 border-gray-200 "
+        className="w-10 h-12 md:w-14 md:h-16 text-center text-lg bg-gray-50 border-2 border-gray-200 "
       />
     ))}
   </div>   
