@@ -212,7 +212,7 @@ export default function Footer() {
 									<Button
 										size='icon'
 										variant='ghost'
-										className='text-white rounded-full bg-white absolute right-0 hover:text-gray-300 h-10 w-10'
+										className='text-white rounded-full bg-white absolute right-3 top-1 hover:text-gray-300 h-8 w-8'
 									>
 										<ArrowRight className='h-4 w-4 text-black' />
 									</Button>
