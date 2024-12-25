@@ -228,7 +228,7 @@ const TestimonialSlider = () => {
 
   const ProfileImages = ({ isMobile = false }) => (
     <div
-      className={`relative h-[8rem] ${
+      className={`relative h-[7rem] md:h-[8rem] mt-4 md:mt-0 ${
         isMobile ? 'block lg:hidden' : 'hidden lg:block'
       }`}
     >
@@ -276,7 +276,7 @@ const TestimonialSlider = () => {
   
 
 	return (
-		<div className='w-full lg:max-w-4xl mx-auto px-4 py-8 my-16'>
+		<div className='w-full lg:max-w-4xl mx-auto px-4 py-4 md:py-8 my-4 md:my-16'>
 			<style jsx global>{`
 				@keyframes slideLeft {
 					0% {
@@ -306,7 +306,7 @@ const TestimonialSlider = () => {
 				}
 			`}</style>
 
-			<h2 className='font-dm-sans font-bold text-[36px] leading-[46.87px] text-center md:text-left md:ml-[10rem]'>
+			<h2 className='font-dm-sans font-bold text-[33px] md:text-[36px] leading-[46.87px] pb-3 md:pb-0 md:text-center md:text-left md:ml-[10rem]'>
 				Good experience
 			</h2>
 
@@ -315,7 +315,7 @@ const TestimonialSlider = () => {
 				<div className='w-full md:max-w-md flex flex-col mx-auto md:mx-0 md:ml-32 lg:ml-64 transition-all duration-300'>
 					{/* Main Testimonial Bubble */}
 					<div
-						className='text-white text-center relative mb-1 p-8 sm:p-12 md:p-16 px-6 sm:px-8 md:px-12 mx-auto sm:w-full lg:w-[455px] lg:h-[250px]'
+						className='text-white text-center relative mb-1 p-8 sm:p-12 md:p-16 px-6 sm:px-8 md:px-12 mx-auto w-[280px] min-h-[290px] md:w-[455px] md:min-h-[250px]'
 						style={{
 							// width: '455px', // Setting the width to 455px
 							// height: '250px', // Setting the height to 250px
@@ -325,7 +325,7 @@ const TestimonialSlider = () => {
 					>
 						<p
 							key={currentIndex}
-							className={`text-sm sm:text-base md:text-md mx-auto ${getSlideAnimation()}`}
+							className={`text-sm sm:text-base md:text-md mx-auto px-2 ${getSlideAnimation()}`}
 							onAnimationEnd={() => setSlideDirection('none')}
 						>
 							{testimonials[currentIndex].text}
@@ -337,7 +337,7 @@ const TestimonialSlider = () => {
 						{/* First Circle */}
 						<div
 							className='rounded-full 
-              w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 
+              w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ml-[20%] md:ml-[0%]
               mb-1 md:mb-1'
 							style={{ backgroundColor: '#FFB800' }}
 						></div>
@@ -345,9 +345,9 @@ const TestimonialSlider = () => {
 						{/* Second Circle */}
 						<div
 							className='rounded-full
-              w-2 h-2 sm:w-3.5 sm:h-3.5 md:w-3 md:h-3
+              w-2 h-2 sm:w-3 sm:h-3 md:w-3 md:h-3
               self-start
-              mx-auto md:ml-[35%] lg:ml-[43%] lg:mt-[3px]
+              mx-auto md:ml-[43%] lg:mt-[3px] ml-[53%]
               transition-all duration-300'
 							style={{ backgroundColor: '#FFB800' }}
 						></div>
