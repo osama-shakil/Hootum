@@ -15,15 +15,15 @@ const HeroSection = () => {
 
 
   // Auto-slide effect
-  useEffect(() => {
-    if (!api) return;
+  // useEffect(() => {
+  //   if (!api) return;
 
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 8000);
+  //   const interval = setInterval(() => {
+  //     api.scrollNext();
+  //   }, 8000);
 
-    return () => clearInterval(interval);
-  }, [api]);
+  //   return () => clearInterval(interval);
+  // }, [api]);
 
   // Handle slide change
   const handleSlideChange = (index) => {

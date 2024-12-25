@@ -91,10 +91,10 @@ const CarouselSlide = ({
 }) => {
   const StatisticsDisplay = ({ stats }) => {
     return (
-      <div className="flex gap-12">
+      <div className="flex gap-6 text-center lg:gap-12">
         {stats.map((stat, index) => (
           <div key={index}>
-            <div className="text-3xl font-bold">{stat.value}</div>
+            <div className="text-2xl lg:text-3xl font-bold">{stat.value}</div>
             <div className="text-muted-foreground">{stat.label}</div>
           </div>
         ))}

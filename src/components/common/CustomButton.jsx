@@ -7,7 +7,7 @@ const CustomButton = ({ isLoading, text, type, handleClick, className }) => {
       type={type}
       disabled={isLoading}
       onClick={handleClick}
-      className={`flex items-center justify-between  rounded-full py-2 px-4 font-semibold w-[25vh] ${
+      className={`flex items-center justify-between  rounded-full py-2 px-4 font-semibold w-[29vh] ${
         isLoading
           ? "bg-gray-400 cursor-not-allowed"
           : "bg-black hover:bg-gray-800"
