@@ -46,7 +46,7 @@ const StackedCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-[95%] md:w-full  md:max-w-4xl mx-auto min-h-[600px] px-2 md:px-20  md:mt-[150px] my-16">
+    <div className="relative w-[95%] md:w-full  md:max-w-4xl mx-auto min-h-[560px] px-2 md:px-20  md:mt-[150px] my-16">
     <Image
   className="hidden lg:block absolute lg:top-[-10%] lg:right-[36px]"
   src="/backgrounds-images/Vector.svg"
