@@ -51,7 +51,7 @@ const OTPComp = ({otp,setOtp}) => {
         onKeyDown={(e) => handleKeyDown(index, e)}
         onPaste={handlePaste}
         ref={(el) => (inputRefs.current[index] = el)}
-        className="w-14 h-16 text-center text-lg bg-gray-50 border-2 border-gray-200 "
+        className="w-12 h-14 md:w-14 md:h-16 text-center text-lg bg-gray-50 border-2 border-gray-200 "
       />
     ))}
   </div>   
