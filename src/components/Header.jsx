@@ -93,7 +93,7 @@ export function Header() {
           {isAuthenticated ? (
             <>
               <Link href="/profile" className="md:hidden block">
-                <Menu className="text-white bg-black text-lg p-1 rounded" />
+              <Menu className="text-white bg-black w-9 h-9 p-1 rounded" />
               </Link>
               <div
                 
@@ -120,7 +120,7 @@ export function Header() {
             <>
               {" "}
               <Link href="/auth" className="md:hidden block">
-                <Menu className="text-white bg-black text-lg p-1 rounded" />
+                <Menu className="text-white bg-black w-9 h-9 p-1 rounded" />
               </Link>
               <AuthButton />
             </>
