@@ -105,7 +105,7 @@ const CarouselSlide = ({
   return (
     <div className="grid grid-cols-12 min-h-screen pb-4 md:pb-0">
     {/* Content Section */}
-    <div className="col-span-12 lg:col-span-7 space-y-4 md:space-y-8 py-8 md:py-24 flex flex-col justify-between">
+    <div className="col-span-12 md:pl-2 lg:col-span-7 space-y-4 md:space-y-8 py-8 md:py-24 flex flex-col justify-between">
       <h1 className="text-[20px] md:text-4xl lg:text-7xl font-bold md:font-semibold tracking-tight">
         {slide.title}
       </h1>
