@@ -9,13 +9,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import MobileFilterModal from "@/components/common/MobileFilterModal";
 
 export default function FilterSection2() {
+  const [open, setOpen] = React.useState(false); // Modal visibility state
   const [priceRange, setPriceRange] = React.useState([60000]);
 
   const handleSliderChange = (value) => {
     setPriceRange(value);
   };
+  const toggle = state => setOpen(state);
 
   return (<>
     <div className="hidden md:flex flex-col p-4 md:flex-row md:items-center md:justify-between my-0 lg:my-2">
@@ -125,10 +128,12 @@ export default function FilterSection2() {
           </SelectContent>
         </Select>
       </div>
-      <button className="p-4 mt-8 w-[300px] font-normal rounded-full text-sm bg-black text-white">
+      <button onClick={toggle} className="p-4 mt-8 w-[300px] font-normal rounded-full text-sm bg-black text-white">
       Advanced Filter
 </button>
       </div>
+
+      <MobileFilterModal open={open} toggle={toggle}/>
     </>
   );
 }
