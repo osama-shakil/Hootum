@@ -17,8 +17,8 @@ export default function FilterSection2() {
     setPriceRange(value);
   };
 
-  return (
-    <div className="flex flex-col p-4 md:flex-row md:items-center md:justify-between my-0 lg:my-2">
+  return (<>
+    <div className="hidden md:flex flex-col p-4 md:flex-row md:items-center md:justify-between my-0 lg:my-2">
       {/* Price Filter */}
       <div className="hidden lg:flex flex-col space-y-1 lg:w-[280px]">
         <label className="text-sm font-medium">Price</label>
@@ -95,5 +95,40 @@ export default function FilterSection2() {
         </div>
       </div>
     </div>
+
+
+    {/* Mobile Filter Section */}
+
+    <div className="md:hidden flex flex-col p-2 items-center justify-between">
+      {/* Price Filter */}
+      <div className="flex flex-col">
+        {/* <label className="text-sm font-medium">Price</label> */}
+        <Select defaultValue="recentlyadded">
+          <SelectTrigger className="w-[300px] font-normal">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="recentlyadded">Recently added</SelectItem>
+            <SelectItem value="lowest">Lowest price</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="flex flex-col mt-4">
+        {/* <label className="text-sm font-medium">Price</label> */}
+        <Select defaultValue="allItems">
+          <SelectTrigger className="w-[300px] font-normal">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="allItems">All items</SelectItem>
+            <SelectItem value="lowest">Lowest price</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      <button className="p-4 mt-8 w-[300px] font-normal rounded-full text-sm bg-black text-white">
+      Advanced Filter
+</button>
+      </div>
+    </>
   );
 }

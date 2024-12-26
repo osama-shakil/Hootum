@@ -12,7 +12,7 @@ const DiscoverMarketplace = () => {
 	return (
 		<div className=' '>
 			<SectionHeader title='Discover Marketplace' />
-			<div className='md:container my-16'>
+			<div className='md:container my-8 md:my-16'>
 				<FilterSection1 />
 				<FilterSection2 />
 
@@ -33,7 +33,7 @@ const DiscoverMarketplace = () => {
 						<ArtCard key={piece.id} piece={piece} />
 					))}
 				</div>
-				<div className='flex items-center justify-center mt-3'>
+				<div className='flex items-center justify-center mt-3 hidden md:grid'>
 					<button className='px-4 py-3 w-[214px] h-[44px] rounded-[20px] border border-black flex items-center justify-between bg-white'>
 						<span>Load more</span>
 						<svg

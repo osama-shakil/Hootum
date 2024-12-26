@@ -77,7 +77,7 @@ export default function FilterSection1() {
   const [activeCategory, setActiveCategory] = React.useState("All items")
 
   return (
-    <div className="flex flex-col space-y-4 p-4 border-b md:flex-row md:items-center md:justify-between md:space-y-0 md:p-6">
+    <div className="hidden md:flex flex-col space-y-4 p-4 border-b md:flex-row md:items-center md:justify-between md:space-y-0 md:p-6">
       <div className="hidden lg:flex justify-between items-center w-full md:w-auto">
         <Select>
           <SelectTrigger className="w-[200px] md:w-[300px]">

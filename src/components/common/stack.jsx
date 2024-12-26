@@ -56,7 +56,7 @@ const StackedCarousel = () => {
   priority
 />
       {/* Background Image */}
-      <div className="absolute top-0 right-[100px] -z-10  ">
+      {/* <div className="absolute top-0 right-[100px] -z-10  ">
         <div className="relative w-[70%] h-[70%]">
           <Image
             src="/images/user/605.jpg"
@@ -66,7 +66,7 @@ const StackedCarousel = () => {
             priority
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Navigation container */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
