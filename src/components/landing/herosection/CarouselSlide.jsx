@@ -105,21 +105,21 @@ const CarouselSlide = ({
   return (
     <div className="grid grid-cols-12 items-center min-h-[60vh]">
       {/* Content Section */}
-      <div className="col-span-12 lg:col-span-7 space-y-8 h-full py-24">
-        <h1 className="text-4xl lg:text-7xl font-semibold tracking-tight">
+      <div className="col-span-12 lg:col-span-7 space-y-4 md:space-y-8 h-full py-8 md:py-24">
+        <h1 className="text-[20px] md:text-4xl lg:text-7xl font-bold md:font-semibold tracking-tight">
           {slide.title}
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-[600px]">
+        <p className="text-[16px] md:text-lg text-muted-foreground max-w-[600px]">
           {slide.description}
         </p>
 
         <CustomButton
           text="Get started"
-          className="w-[10vw] h-16"
+          className=" w-[150px] h-12 md:h-16"
         />
 
-        <div className="pt-12 lg:pt-28 relative">
+        <div className=" pt-4 md:pt-12 lg:pt-28 relative">
           {/* Dynamic Statistics */}
           <StatisticsDisplay stats={slide.stats} />
 
