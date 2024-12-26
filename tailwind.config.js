@@ -47,7 +47,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				sans: ['Avenir', 'sans-serif'],
+				sans: ['DM Sans', 'sans-serif'],
 				primary: ['metropolis', 'sans-serif'],
 				secondary: ['roboto', 'sans-serif'],
 			},
@@ -62,6 +62,7 @@ module.exports = {
 					secondary: '#333333',
 					gray: '#F5F5F5',
 					linkColor: '#1877F2',
+					textPrimary: '#23262F'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

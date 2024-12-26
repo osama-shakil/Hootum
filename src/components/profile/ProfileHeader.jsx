@@ -113,7 +113,7 @@ const ProfileHeader = () => {
 								/>
 							</div>
 						</div>
-						<p className='text-sm md:text-md font-mono break-all mb-2 flex items-center gap-1'>
+						<p className='text-sm md:text-[14px] text-theme-textPrimary font-sans font-bold break-all mb-2 flex items-center gap-1'>
 							0xc4c16a645...b21a
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
