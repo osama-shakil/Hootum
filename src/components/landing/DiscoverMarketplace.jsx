@@ -19,7 +19,6 @@ const DiscoverMarketplace = () => {
 		// 		console.warn('Section with ID "unique-section" not found.');
 		// 		return;
 		// 	}
-	
 		// 	// Observe section visibility
 		// 	const observer = new IntersectionObserver(
 		// 		entries => {
