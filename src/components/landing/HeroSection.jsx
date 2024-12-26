@@ -32,7 +32,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="px-4 lg:mx-0 lg:pl-28">
+    <div className="px-4 md:px-0 lg:mx-0 lg:pl-28">
       <Carousel
         className="w-full h-full"
         setApi={setApi}
