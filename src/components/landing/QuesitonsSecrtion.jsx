@@ -6,41 +6,7 @@ import ExploreArtCard from '../common/cards/ExploreArtCard';
 import MarketplaceModal from '../common/MarketplaceModal';
 
 const QuestionsSection = () => {
-	const [open, setOpen] = useState(false); // Modal visibility state
-	const [hasTriggered, setHasTriggered] = useState(false); // Track if the modal has been shown
 
-	useEffect(() => {
-		const section = document.getElementById('unique-section');
-
-		if (!section) {
-			console.warn('Section with ID "unique-section" not found.');
-			return;
-		}
-
-		// Observe section visibility
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting && !hasTriggered) {
-						setOpen(true); // Show modal when section is visible
-						setHasTriggered(true); // Mark as shown
-					}
-				});
-			},
-			{ threshold: 0.5 } // Trigger when 50% of the section is visible
-		);
-
-		observer.observe(section);
-
-		return () => {
-			if (section) observer.unobserve(section); // Cleanup observer on unmount
-		};
-	}, [hasTriggered]); // Dependency on `hasTriggered`
-
-	const toggle = state => setOpen(state);
-	const onAgreed = dontShowAgain => {
-		console.log("Don't show again:", dontShowAgain);
-	};
 	return (
 		<>
 			<div className='relative  h-full md:h-screen mb-3 px-2 md:px-0 md:mb-0 md:min-h-[90vh]'>
@@ -134,7 +100,6 @@ policies and regulations.'
 					<div className='w-3 h-3 rounded-full bg-white '></div>
 				</div>
 			</div>
-			<MarketplaceModal open={open} toggle={toggle} onAgreed={onAgreed} />
 		</>
 	);
 };
