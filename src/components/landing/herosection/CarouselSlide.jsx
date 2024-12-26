@@ -103,58 +103,57 @@ const CarouselSlide = ({
   };
 
   return (
-    <div className="grid grid-cols-12 items-center min-h-[60vh]">
-      {/* Content Section */}
-      <div className="col-span-12 lg:col-span-7 space-y-4 md:space-y-8 h-full py-8 md:py-24">
-        <h1 className="text-[20px] md:text-4xl lg:text-7xl font-bold md:font-semibold tracking-tight">
-          {slide.title}
-        </h1>
-
-        <p className="text-[16px] md:text-lg text-muted-foreground max-w-[600px]">
-          {slide.description}
-        </p>
-
-        <CustomButton
-          text="Get started"
-          className=" w-[150px] h-12 md:h-16"
-        />
-
-        <div className=" pt-4 md:pt-12 lg:pt-28 relative">
-          {/* Dynamic Statistics */}
-          <StatisticsDisplay stats={slide.stats} />
-
-          {/* Carousel Indicators */}
-          <div className="absolute bottom-0 left-3/4 transform -translate-x-1/2 hidden lg:block">
-            <div className="flex justify-center gap-2 mt-8">
-              {Array.from({ length: totalSlides }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => onSlideChange(i)}
-                  className={`h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                    i === index ? "bg-black w-9" : "bg-gray-300 w-3 hover:bg-gray-400"
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
+    <div className="grid grid-cols-12 min-h-screen pb-4 md:pb-0">
+    {/* Content Section */}
+    <div className="col-span-12 lg:col-span-7 space-y-4 md:space-y-8 py-8 md:py-24 flex flex-col justify-between">
+      <h1 className="text-[20px] md:text-4xl lg:text-7xl font-bold md:font-semibold tracking-tight">
+        {slide.title}
+      </h1>
+  
+      <p className="text-[16px] md:text-lg text-muted-foreground max-w-[600px]">
+        {slide.description}
+      </p>
+  
+      <CustomButton text="Get started" className="w-[150px] h-12 md:h-16" />
+  
+      <div className="pt-4 md:pt-12 lg:pt-28 relative">
+        {/* Dynamic Statistics */}
+        <StatisticsDisplay stats={slide.stats} />
+  
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-0 left-3/4 transform -translate-x-1/2 hidden lg:block">
+          <div className="flex justify-center gap-2 mt-8">
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => onSlideChange(i)}
+                className={`h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                  i === index ? "bg-black w-9" : "bg-gray-300 w-3 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Image Section with Full Height */}
-      <div className="col-span-12 lg:col-span-5 lg:ml-4 h-full relative">
-        <div className="relative h-full w-full">
-          <Image
-            src={slide.image}
-            alt={`Slide ${index + 1}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={index === 0}
-          />
-        </div>
+    </div>
+  
+    {/* Image Section */}
+    <div className="col-span-12 lg:col-span-5 relative flex justify-center items-center">
+      <div className="relative w-full h-[200px] md:h-full">
+        <Image
+          src={slide.image}
+          alt={`Slide ${index + 1}`}
+          layout="fill"
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={index === 0}
+        />
       </div>
     </div>
+  </div>
+  
+  
   );
 };
 
