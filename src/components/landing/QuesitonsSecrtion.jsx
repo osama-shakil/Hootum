@@ -93,12 +93,12 @@ policies and regulations.'
 					</div>
 				</div>
 				{/* Navigation Dots */}
-				<div className='md:flex hidden  absolute bottom-8 left-1/2 transform -translate-x-1/2  gap-2'>
+				{/* <div className='md:flex hidden  absolute bottom-8 left-1/2 transform -translate-x-1/2  gap-2'>
 					<div className='w-3 h-3 rounded-full bg-black'></div>
 					<div className='w-3 h-3 rounded-full bg-white '></div>
 					<div className='w-3 h-3 rounded-full bg-white '></div>
 					<div className='w-3 h-3 rounded-full bg-white '></div>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);
