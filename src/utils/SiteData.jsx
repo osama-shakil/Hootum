@@ -156,7 +156,7 @@ const heroSlides = [
     ),
     description:
       "Experience the perfect blend of physical and digital realms with our unique Phygital NFTs. Unlock exclusive content, tangible assets, and digital ownership like never before.",
-    image: "/hero/welcome.png",
+    image: "/hero/welcome.svg",
     stats: [
       { value: "98k+", label: "Assets" },
       { value: "12k+", label: "Auctions" },

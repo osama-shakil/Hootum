@@ -15,15 +15,15 @@ const HeroSection = () => {
 
 
   // Auto-slide effect
-  // useEffect(() => {
-  //   if (!api) return;
+  useEffect(() => {
+    if (!api) return;
 
-  //   const interval = setInterval(() => {
-  //     api.scrollNext();
-  //   }, 8000);
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 8000);
 
-  //   return () => clearInterval(interval);
-  // }, [api]);
+    return () => clearInterval(interval);
+  }, [api]);
 
   // Handle slide change
   const handleSlideChange = (index) => {
@@ -32,7 +32,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="px-4 lg:mx-0 lg:pl-28">
+    <div className="px-4 md:px-0 lg:mx-0 lg:pl-28">
       <Carousel
         className="w-full h-full"
         setApi={setApi}
@@ -40,6 +40,7 @@ const HeroSection = () => {
         opts={{
           align: "start",
           duration: 100,
+          loop:true,
         }}
       >
         <CarouselContent className="w-full h-full">
