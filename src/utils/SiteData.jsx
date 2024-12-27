@@ -173,7 +173,7 @@ const heroSlides = [
     ),
     description:
       "Experience the perfect blend of physical and digital realms with our unique Phygital NFTs. Unlock exclusive content, tangible assets, and digital ownership like never before.",
-    image: "/hero/discover.png",
+    image: "/hero/discover.svg",
     stats: [
       { value: "98k+", label: "Artwork" },
       { value: "12k+", label: "Auctions" },
@@ -190,7 +190,7 @@ const heroSlides = [
     ),
     description:
       "Experience the charm of bygone eras with our vast selection of antiques. buy now and bring a piece of history into your home.",
-    image: "/hero/vintage.png",
+    image: "/hero/vintage.svg",
     stats: [
       { value: "78k+", label: "Collectables" },
       { value: "10k+", label: "Auctions" },
@@ -207,7 +207,7 @@ const heroSlides = [
     ),
     description:
       "Experience the charm of bygone eras with our vast selection of antiques. buy now and bring a piece of history into your home.",
-    image: "/hero/unleash.png",
+    image: "/hero/unleash.svg",
     stats: [
       { value: "8k+", label: "Watches" },
       { value: "11k+", label: "Auctions" },

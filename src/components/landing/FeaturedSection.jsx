@@ -7,21 +7,21 @@ const featuredCardsData = [
 		title: 'Artwork',
 		description:
 			'Original artworks created using mediums like oil, acrylic, watercolor, and more.',
-		image: '/featured-collection/artwork.png',
+		image: '/featured-collection/artwork.svg',
 	},
 	{
 		id: 'antique',
 		title: 'Antique',
 		description:
 			'A well-known global marketplace where you can find a variety of antiques, including art pieces.',
-		image: '/featured-collection/antique.png',
+		image: '/featured-collection/antique.svg',
 	},
 	{
 		id: 'watches',
 		title: 'Watches',
 		description:
 			'Discover the precision with luxury watch, a true masterpiece for the discerning collector.',
-		image: '/featured-collection/watches.png',
+		image: '/featured-collection/watches.svg',
 	},
 ];
 const featuredCardsData2 = [
@@ -30,28 +30,28 @@ const featuredCardsData2 = [
 		title: 'Sculptures',
 		description:
 			'Three-dimensional art pieces crafted from materials such as stone, metal, clay, or wood.',
-		image: '/featured-collection/sculptures.png',
+		image: '/featured-collection/sculptures.svg',
 	},
 	{
 		id: 'cards',
 		title: 'Cards',
 		description:
 			'Elevate Your Collection with card NFTs! - Unique Digital Cards for True Collectors',
-		image: '/featured-collection/cards.png',
+		image: '/featured-collection/cards.svg',
 	},
 	{
 		id: 'fashion',
 		title: 'Fashion',
 		description:
 			'Step into the world of timeless elegance with our "Elegant Opulence" collection.',
-		image: '/featured-collection/fashion.png',
+		image: '/featured-collection/fashion.svg',
 	},
 	{
 		id: 'musics',
 		title: 'Musics',
 		description:
 			'A journey through ambient, crafted to elevate your auditory experience to celestial heights.',
-		image: '/featured-collection/musics.png',
+		image: '/featured-collection/musics.svg',
 	},
 ];
 const FeaturedSection = () => {

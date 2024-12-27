@@ -13,10 +13,10 @@ const QuestionsSection = () => {
 				{/* Background Image */}
 				<div className='absolute inset-0 w-full h-full z-0'>
 					<Image
-						src='/backgrounds-images/Container.png' // Replace with your actual image path
+						src='/backgrounds-images/Container.svg' // Replace with your actual image path
 						alt='Background'
 						fill
-						className='lg:object-fill  object-cover'
+						className='object-cover'
 						priority
 					/>
 				</div>
