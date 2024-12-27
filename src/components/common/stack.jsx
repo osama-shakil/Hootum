@@ -1,17 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
-
+import { useState, useRef, useCallback, useEffect } from "react";
 import { curatorsTestimonials, slidePosition } from "@/utils/SiteData";
 import TestimonialCard from "./cards/TestimonialCard";
 import NavigationButton from "./NavigationButton";
 
-
-
 const StackedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [stackedSlides, setStackedSlides] = useState([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragDelta, setDragDelta] = useState(0);
+
+  const sliderRef = useRef(null);
 
   const getSlidePosition = useCallback((relativeIndex, totalSlides) => {
     if (relativeIndex === 0) return slidePosition.active;
@@ -41,32 +43,55 @@ const StackedCarousel = () => {
 
   const prevSlide = useCallback(() => {
     setCurrentIndex(
-      (prev) => (prev - 1 + curatorsTestimonials.length) % curatorsTestimonials.length
+      (prev) =>
+        (prev - 1 + curatorsTestimonials.length) % curatorsTestimonials.length
     );
   }, []);
 
+  const handleDragStart = (e) => {
+    setIsDragging(true);
+    setDragStartX(e.type === "touchstart" ? e.touches[0].clientX : e.clientX);
+  };
+
+  const handleDragMove = (e) => {
+    if (!isDragging) return;
+
+    const currentX = e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+    setDragDelta(currentX - dragStartX);
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+
+    if (dragDelta > 50) {
+      prevSlide(); // Swipe right -> previous slide
+    } else if (dragDelta < -50) {
+      nextSlide(); // Swipe left -> next slide
+    }
+
+    setDragDelta(0);
+  };
+
   return (
-    <div className="relative w-[95%] md:w-full  md:max-w-4xl mx-auto min-h-[560px] px-2 md:px-20  md:mt-[150px] my-16">
-    <Image
-  className="hidden lg:block absolute lg:top-[-10%] lg:right-[36px]"
-  src="/backgrounds-images/Vector.svg"
-  alt="Background pattern"
-  width={600}  // Specify the image's natural width (in pixels)
-  height={650} // Specify the image's natural height (in pixels)
-  priority
-/>
+    <div
+      className="relative w-[95%] md:w-full md:max-w-4xl mx-auto min-h-[560px] px-2 md:px-20 md:mt-[150px] my-16"
+      onMouseDown={handleDragStart}
+      onMouseMove={handleDragMove}
+      onMouseUp={handleDragEnd}
+      onMouseLeave={handleDragEnd}
+      onTouchStart={handleDragStart}
+      onTouchMove={handleDragMove}
+      onTouchEnd={handleDragEnd}
+    >
       {/* Background Image */}
-      {/* <div className="absolute top-0 right-[100px] -z-10  ">
-        <div className="relative w-[70%] h-[70%]">
-          <Image
-            src="/images/user/605.jpg"
-            alt="Background pattern"
-            fill
-            className="rounded-full object-cover"
-            priority
-          />
-        </div>
-      </div> */}
+      <Image
+        className="hidden lg:block absolute lg:top-[-10%] lg:right-[36px]"
+        src="/backgrounds-images/Vector.svg"
+        alt="Background pattern"
+        width={600}
+        height={650}
+        priority
+      />
 
       {/* Navigation container */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
