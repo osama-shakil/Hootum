@@ -11,7 +11,6 @@ import { useState } from 'react';
 const DiscoverMarketplace = () => {
 		const [open, setOpen] = useState(false); // Modal visibility state
 		// const [hasTriggered, setHasTriggered] = useState(false); // Track if the modal has been shown
-
 		// useEffect(() => {
 		// 	const section = document.getElementById('unique-section');
 	
