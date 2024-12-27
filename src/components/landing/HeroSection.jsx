@@ -20,7 +20,7 @@ const HeroSection = () => {
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 8000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [api]);
@@ -38,8 +38,8 @@ const HeroSection = () => {
         setApi={setApi}
         onSelect={(index) => setActiveSlide(index)}
         opts={{
-          align: "start",
-          duration: 100,
+          // align: "start",
+          // duration: 100,
           loop:true,
         }}
       >
