@@ -57,7 +57,7 @@ const CategoriesSlider = () => {
 
 		const interval = setInterval(() => {
 			api.scrollNext();
-		}, 10000);
+		}, 7000);
 
 		return () => clearInterval(interval);
 	}, [api]);

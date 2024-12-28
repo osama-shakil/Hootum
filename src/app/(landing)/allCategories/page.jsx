@@ -28,9 +28,9 @@ const page = () => {
 	];
 
 	return (
-		<div className='md:container mx-auto py-8'>
+		<div className='md:container mx-auto pb-20'>
 			<CategoriesSlider />
-			<div className='flex flex-col md:flex-row items-start gap-2 sm:gap-4 w-full py-2 sm:py-4 px-12'>
+			<div className='flex flex-col md:flex-row items-start gap-2 sm:gap-4 w-full py-2 sm:py-4 md:mt-8 px-12'>
 				<div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-4 w-full py-2 sm:py-4'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
@@ -38,13 +38,13 @@ const page = () => {
 					</h2>
 				</div>
 
-				<div className='border border-black rounded-[5px] p-4 w-full md:w-[300px]'>
+				<div className='border border-black rounded-[5px] p-2 w-full md:w-[300px]'>
 					{/* Search Input */}
 					<div className='flex items-center rounded-lg px-1 py-2'>
 						<input
 							type='text'
 							placeholder='search'
-							className='flex-grow outline-none text-black placeholder-black text-[0.875rem]'
+							className='flex-grow outline-none text-black text-[0.875rem]'
 						/>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -78,7 +78,7 @@ const page = () => {
 					</div>
 				</div>
 			</div>
-			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-4 px-12'>
+			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-14 px-12 md:px-0'>
 				{popularCategories.map(category => (
 					<Card className='overflow-hidden max-w-sm'>
 						<CardContent className='p-0'>
@@ -100,7 +100,7 @@ const page = () => {
 					</Card>
 				))}
 			</div>
-			<div className='flex items-center justify-center mt-3 md:grid mt-12'>
+			<div className='flex items-center justify-center mt-3 md:grid mt-14'>
 				<button className='px-4 py-3 w-[214px] h-[44px] rounded-[20px] border border-black flex items-center justify-between bg-white'>
 					<span>Load more</span>
 					<svg
