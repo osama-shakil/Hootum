@@ -30,7 +30,7 @@ const page = () => {
 	return (
 		<div className='md:container mx-auto pb-20'>
 			<CategoriesSlider />
-			<div className='flex flex-col md:flex-row items-start gap-2 sm:gap-4 w-full py-2 sm:py-4 md:mt-8 px-12'>
+			<div className='flex flex-col md:flex-row items-start gap-2 sm:gap-4 w-full py-2 sm:py-4 md:mt-10 px-12 md:px-0'>
 				<div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-4 w-full py-2 sm:py-4'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
@@ -38,7 +38,7 @@ const page = () => {
 					</h2>
 				</div>
 
-				<div className='border border-black rounded-[5px] p-2 w-full md:w-[300px]'>
+				<div className='border border-black rounded-[5px] p-2 w-full md:w-[300px] md:mr-12'>
 					{/* Search Input */}
 					<div className='flex items-center rounded-lg px-1 py-2'>
 						<input
