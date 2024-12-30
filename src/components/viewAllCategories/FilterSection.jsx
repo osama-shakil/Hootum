@@ -85,7 +85,7 @@ const FilterSection = () => {
 
 						{/* Dropdown Section */}
 						{isOpenName && (
-							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+							<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
 								{name.map((item, index) => (
 									<div
 										key={index}
@@ -133,7 +133,7 @@ const FilterSection = () => {
 
 						{/* Dropdown Section */}
 						{isOpenMedium && (
-							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+							<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
 								{mediums.map((item, index) => (
 									<div
 										key={index}
@@ -180,7 +180,7 @@ const FilterSection = () => {
 
 						{/* Dropdown Section */}
 						{isOpenPrice && (
-							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+							<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
 								{price.map((item, index) => (
 									<div
 										key={index}
