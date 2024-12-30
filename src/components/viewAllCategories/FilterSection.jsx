@@ -1,6 +1,23 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from 'lucide-react';
 const FilterSection = () => {
+	const [isOpenName, setIsOpenName] = useState(false); // To manage dropdown visibility
+	const [isOpenMedium, setIsOpenMedium] = useState(false); // To manage dropdown visibility
+	const [isOpenPrice, setIsOpenPrice] = useState(false); // To manage dropdown visibility
+	const [selectedName, setSelectedName] = useState('Artist name');
+	const [selectedMedium, setSelectedMedium] = useState('Mediums');
+	const [selectedPrice, setSelectedPrice] = useState('Price');
+	const mediums = [
+		'Acrylic painting',
+		'Ink',
+		'Oil painting',
+		'Water color',
+		'Pastel color',
+		'Black & white',
+	];
+	const name = ['Artist1', 'Artist2', 'Artist3'];
+	const price = ['High to Low', 'Low to High'];
 	return (
 		<>
 			<div className='hidden md:block w-[280px] bg-white rounded-lg pr-4'>
@@ -50,74 +67,145 @@ const FilterSection = () => {
 				{/* Dropdown sections */}
 				<div className='space-y-3'>
 					{/* Artist Name */}
-					<div className='relative'>
-						<label htmlFor='artist-name' className='sr-only'>
-							Artist Name
-						</label>
-						<select
-							id='artist-name'
-							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] font-medium appearance-none bg-white'
+					<div>
+						{/* Header Section */}
+						<div
+							className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+							onClick={() => setIsOpenName(!isOpenName)}
 						>
-							<option value=''>Artist name</option>
-							<option value='artist1'>Artist 1</option>
-							<option value='artist2'>Artist 2</option>
-							<option value='artist3'>Artist 3</option>
-						</select>
-						<ChevronDownIcon className='absolute right-3 top-3 w-5 h-5 text-black pointer-events-none border border-black rounded-[100%]' />
+							<span className='text-black text-[14px] font-medium'>
+								{selectedName}
+							</span>
+							{isOpenName ? (
+								<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							) : (
+								<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							)}
+						</div>
+
+						{/* Dropdown Section */}
+						{isOpenName && (
+							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+								{name.map((item, index) => (
+									<div
+										key={index}
+										className='flex items-center gap-2'
+									>
+										<input
+											type='radio'
+											name='name'
+											id={item}
+											className='w-4 h-4 accent-black'
+											checked={selectedName === item}
+											onChange={() => {
+												setSelectedName(item); // Update selected value
+											}}
+										/>
+										<label
+											htmlFor={item}
+											className='text-black text-[14px] font-medium cursor-pointer'
+										>
+											{item}
+										</label>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 
 					{/* Mediums */}
+
 					<div>
-						<div className='flex justify-between items-center border border-black rounded px-3 py-3'>
+						{/* Header Section */}
+						<div
+							className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+							onClick={() => setIsOpenMedium(!isOpenMedium)}
+						>
 							<span className='text-black text-[14px] font-medium'>
-								Mediums
+								{selectedMedium}
 							</span>
-							<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-[100%]' />
+							{isOpenMedium ? (
+								<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							) : (
+								<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							)}
 						</div>
-						<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px] space-y-6'>
-							{[
-								'Acrylic painting',
-								'Ink',
-								'Oil painting',
-								'Water color',
-								'Pastel color',
-								'Black & white',
-							].map((item, index) => (
-								<div
-									key={index}
-									className='flex items-center gap-2'
-								>
-									<input
-										type='radio'
-										name='medium'
-										id={item}
-										className='w-4 h-4 accent-black'
-									/>
-									<label
-										htmlFor={item}
-										className='text-black text-[14px] font-medium'
+
+						{/* Dropdown Section */}
+						{isOpenMedium && (
+							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+								{mediums.map((item, index) => (
+									<div
+										key={index}
+										className='flex items-center gap-2'
 									>
-										{item}
-									</label>
-								</div>
-							))}
-						</div>
+										<input
+											type='radio'
+											name='medium'
+											id={item}
+											className='w-4 h-4 accent-black'
+											checked={selectedMedium === item}
+											onChange={() => {
+												setSelectedMedium(item); // Update selected value
+											}}
+										/>
+										<label
+											htmlFor={item}
+											className='text-black text-[14px] font-medium cursor-pointer'
+										>
+											{item}
+										</label>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 
 					{/* Price Dropdown */}
-					<div className='relative'>
-						<label htmlFor='price' className='sr-only'>
-							Price
-						</label>
-						<select
-							id='price'
-							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] font-medium appearance-none bg-white'
+					<div>
+						{/* Header Section */}
+						<div
+							className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+							onClick={() => setIsOpenPrice(!isOpenPrice)}
 						>
-							<option value=''>Price</option>
-							<option value='low'>Low to High</option>
-							<option value='high'>High to Low</option>
-						</select>
-						<ChevronDownIcon className='absolute right-3 top-3 w-5 h-5 text-black pointer-events-none border border-black rounded-[100%]' />
+							<span className='text-black text-[14px] font-medium'>
+								{selectedPrice}
+							</span>
+							{isOpenPrice ? (
+								<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							) : (
+								<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+							)}
+						</div>
+
+						{/* Dropdown Section */}
+						{isOpenPrice && (
+							<div className='mt-2 space-y-2 pl-4 border border-black py-3 rounded-[5px]'>
+								{price.map((item, index) => (
+									<div
+										key={index}
+										className='flex items-center gap-2'
+									>
+										<input
+											type='radio'
+											name='price'
+											id={item}
+											className='w-4 h-4 accent-black'
+											checked={selectedPrice === item}
+											onChange={() => {
+												setSelectedPrice(item); // Update selected value
+											}}
+										/>
+										<label
+											htmlFor={item}
+											className='text-black text-[14px] font-medium cursor-pointer'
+										>
+											{item}
+										</label>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 
