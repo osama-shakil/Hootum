@@ -30,6 +30,24 @@ const SelectTrigger = React.forwardRef(({ className, children, ...props }, ref) 
 ))
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
+const SelectTriggercategory = React.forwardRef(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "flex h-15 w-full items-center justify-between rounded-full border border-neutral-200 bg-white px-3 py-3 text-sm ring-offset-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 dark:border-neutral-800 dark:bg-neutral-950 dark:ring-offset-neutral-950 dark:placeholder:text-neutral-400 dark:focus:ring-neutral-300",
+      className
+    )}
+    {...props}>
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <div className="p-1 rounded-full border border-black">
+        <ChevronDown className="h-4 w-4 text-black" />
+      </div>
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+))
+SelectTriggercategory.displayName = SelectPrimitive.Trigger.displayName
+
 const SelectScrollUpButton = React.forwardRef(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollUpButton
     ref={ref}
@@ -115,6 +133,7 @@ export {
   SelectGroup,
   SelectValue,
   SelectTrigger,
+  SelectTriggercategory,
   SelectContent,
   SelectLabel,
   SelectItem,

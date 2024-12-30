@@ -5,7 +5,7 @@ import {
 	Select,
 	SelectContent,
 	SelectItem,
-	SelectTrigger,
+	SelectTriggercategory,
 	SelectValue,
 } from '@/components/ui/select';
 import Image from 'next/image';
@@ -77,24 +77,24 @@ const page = () => {
 
 				<div className='border border-black rounded-[5px] p-2 w-full md:w-[300px] md:mr-12'>
 					{/* Search Input */}
-					<div className='flex items-center rounded-lg px-1 py-2'>
+					<div className='flex items-center rounded-lg px-2 py-2'>
 						<input
 							type='text'
 							placeholder='search'
 							className='flex-grow outline-none text-black text-[0.875rem]'
 						/>
 						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							fill='none'
+							width='24'
+							height='24'
 							viewBox='0 0 24 24'
-							strokeWidth={2}
-							stroke='black'
-							className='w-5 h-5 mr-2'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								d='M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 0l5 5'
+								fill-rule='evenodd'
+								clip-rule='evenodd'
+								d='M14.9056 16.3199C13.551 17.3729 11.8487 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10C18 11.8487 17.3729 13.551 16.3199 14.9056L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L14.9056 16.3199ZM16 10C16 13.3137 13.3137 16 10 16C6.68629 16 4 13.3137 4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10Z'
+								fill='black'
 							/>
 						</svg>
 					</div>
@@ -102,9 +102,9 @@ const page = () => {
 					{/* Sort Dropdown */}
 					<div className='mt-1'>
 						<Select defaultValue='sort'>
-							<SelectTrigger className='rounded-[5px] py-2 border-black focus:ring-0 focus:ring-offset-0'>
+							<SelectTriggercategory className='rounded-[5px] py-2 px-2 border-black focus:ring-0 focus:ring-offset-0'>
 								<SelectValue />
-							</SelectTrigger>
+							</SelectTriggercategory>
 							<SelectContent>
 								<SelectItem value='sort'>sort</SelectItem>
 								<SelectItem value='least'>
