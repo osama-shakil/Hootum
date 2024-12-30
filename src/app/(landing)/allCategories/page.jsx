@@ -115,7 +115,7 @@ const page = () => {
 					</div>
 				</div>
 			</div>
-			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-14 px-12 md:px-0'>
+			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 mt-8 gap-x-9 gap-y-12 px-12 md:px-0'>
 				{popularCategories.map(category => (
 					<Card className='overflow-hidden max-w-sm'>
 						<CardContent className='p-0'>
@@ -137,7 +137,7 @@ const page = () => {
 					</Card>
 				))}
 			</div>
-			<div className='flex items-center justify-center mt-3 md:grid mt-14'>
+			<div className='flex items-center justify-center mt-3 md:grid mt-12'>
 				<button className='px-4 py-3 w-[214px] h-[44px] rounded-[20px] border border-black flex items-center justify-between bg-white'>
 					<span>Load more</span>
 					<svg

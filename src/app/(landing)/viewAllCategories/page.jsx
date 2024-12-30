@@ -137,7 +137,7 @@ const page = () => {
 				<FilterSection />
 
 				{/* Product Grid Section */}
-				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6'>
+				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-14'>
 					{artPieces.map(piece => (
 						<ArtCard key={piece.id} piece={piece} />
 					))}
