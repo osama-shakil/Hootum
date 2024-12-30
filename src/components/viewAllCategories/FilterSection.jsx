@@ -56,7 +56,7 @@ const FilterSection = () => {
 						</label>
 						<select
 							id='artist-name'
-							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] appearance-none bg-white'
+							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] font-medium appearance-none bg-white'
 						>
 							<option value=''>Artist name</option>
 							<option value='artist1'>Artist 1</option>
@@ -69,7 +69,7 @@ const FilterSection = () => {
 					{/* Mediums */}
 					<div>
 						<div className='flex justify-between items-center border border-black rounded px-3 py-3'>
-							<span className='text-black text-[14px]'>
+							<span className='text-black text-[14px] font-medium'>
 								Mediums
 							</span>
 							<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-[100%]' />
@@ -91,11 +91,11 @@ const FilterSection = () => {
 										type='radio'
 										name='medium'
 										id={item}
-										className='w-4 h-4'
+										className='w-4 h-4 accent-black'
 									/>
 									<label
 										htmlFor={item}
-										className='text-black text-[14px]'
+										className='text-black text-[14px] font-medium'
 									>
 										{item}
 									</label>
@@ -111,7 +111,7 @@ const FilterSection = () => {
 						</label>
 						<select
 							id='price'
-							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] appearance-none bg-white'
+							className='w-full border border-black rounded-[5px] px-3 py-3 text-black text-[14px] font-medium appearance-none bg-white'
 						>
 							<option value=''>Price</option>
 							<option value='low'>Low to High</option>
