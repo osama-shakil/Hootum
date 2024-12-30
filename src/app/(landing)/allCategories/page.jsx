@@ -26,10 +26,47 @@ const page = () => {
 		{ id: 11, title: 'Bag', image: '/popular/bag.svg' },
 		{ id: 12, title: 'Stickers', image: '/popular/Stickers.svg' },
 	];
+	const allCategorySlides = [
+		{
+			id: 1,
+			title: 'Fine Art',
+			description:
+				'Elevate your surroundings with captivating paintings, sculptures, and more. Dive into the artistry and find the masterpiece that speaks to you. Start your art journey now!',
+			image: '/allcategories/categories (5).svg',
+		},
+		{
+			id: 2,
+			title: 'Sculpture',
+			description:
+				'Elegant hand-carved sculpture crafted from high-quality stone, showcasing intricate details and a timeless design. Perfect as a centerpiece for home decor or as a unique gift. Its smooth finish and artistic expression make it a standout addition to any collection.',
+			image: '/allcategories/categories (4).svg',
+		},
+		{
+			id: 3,
+			title: 'Watches',
+			description:
+				'Stylish and meticulously crafted watches that combine timeless design with reliable functionality. Whether you prefer classic elegance, modern minimalism, or bold statement pieces, our collection offers something for every taste. Perfect for everyday wear or special occasions, these watches are the ultimate accessory to elevate your style.',
+			image: '/allcategories/categories (3).svg',
+		},
+		{
+			id: 4,
+			title: 'Digital Art',
+			description:
+				'Vibrant digital artwork blending creativity and technology to deliver striking visuals. Each piece is meticulously designed, offering high-resolution detail and dynamic color. Perfect for enhancing any space, whether displayed on screens or printed for wall art. Ideal for art lovers, modern decor enthusiasts, or as a unique digital collectible.',
+			image: '/allcategories/categories (2).svg',
+		},
+		{
+			id: 5,
+			title: 'Antique Watch',
+			description:
+				'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
+			image: '/allcategories/categories (1).svg',
+		},
+	];
 
 	return (
 		<div className='md:container mx-auto pb-20'>
-			<CategoriesSlider />
+			<CategoriesSlider allCategorySlides={allCategorySlides} />
 			<div className='flex flex-col md:flex-row items-start gap-2 sm:gap-4 w-full py-2 sm:py-4 md:mt-10 px-12 md:px-0'>
 				<div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-4 w-full py-2 sm:py-4'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
