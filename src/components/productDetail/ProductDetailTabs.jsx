@@ -13,7 +13,7 @@ const ProductDetailTabs = () => {
 		{ id: 4, title: 'Reviews', component: <Reviews /> },
 	];
 
-	const [activeTab, setActiveTab] = useState(1);
+	const [activeTab, setActiveTab] = useState(4);
 	return (
 		<>
 			<div className='flex border-b border-gray-300'>
