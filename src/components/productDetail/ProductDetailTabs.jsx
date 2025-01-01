@@ -16,15 +16,15 @@ const ProductDetailTabs = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	return (
 		<>
-			<div className='flex border-b border-gray-300'>
+			<div className='flex border-b border-[#999999'>
 				{tabs.map(tab => (
 					<button
 						key={tab.id}
 						onClick={() => setActiveTab(tab.id)}
-						className={`flex-1 text-center py-2 ${
+						className={`flex-1 text-center font-sans font-normal text-base py-2 ${
 							activeTab === tab.id
 								? 'border-b-2 border-black text-black'
-								: 'text-gray-500'
+								: 'text-[#999999]'
 						}`}
 					>
 						{tab.title}
@@ -33,7 +33,7 @@ const ProductDetailTabs = () => {
 			</div>
 
 			{/* Tab Content */}
-			<div className='p-6'>
+			<div className='md:p-6 px-2'>
 				{tabs.map(tab => (
 					<div
 						key={tab.id}
