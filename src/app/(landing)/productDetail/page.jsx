@@ -24,7 +24,7 @@ const page = () => {
 	};
 
 	return (
-		<div className='container mx-auto p-4 md:p-8'>
+		<div className='md:container mx-auto p-4 md:p-8 font-sans'>
 			<div className='flex items-center space-x-2'>
 				{/* Arrow Left Icon */}
 				<div className='cursor-pointer'>
@@ -44,11 +44,11 @@ const page = () => {
 				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
 			</div>
 			{/* Grid Layout */}
-			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-3'>
+			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-8'>
 				{/* Left Section */}
 				<div className='col-span-12 md:col-span-8 flex flex-col gap-4'>
 					{/* Thumbnails and Main Image */}
-					<div className='flex flex-col md:flex-row gap-12'>
+					<div className='flex flex-col md:flex-row gap-6'>
 						{/* Thumbnails */}
 						<div className='flex flex-row md:flex-col gap-4'>
 							{images.map((image, index) => (
@@ -56,30 +56,32 @@ const page = () => {
 									key={index}
 									className={`${
 										selectedImage === image
-											? 'border p-2 border-[#0000004D]'
-											: 'p-2'
-									}`} // Apply border only to selected image
+											? 'border border-[#0000004D] p-1 rounded-md'
+											: 'p-1'
+									}`} // Highlight active thumbnail
 								>
 									<img
 										src={image}
 										alt={`Thumbnail ${index + 1}`}
 										onClick={() =>
 											handleThumbnailClick(image)
-										} // Set selected image on click
-										className='h-[80px] w-[80px] rounded-md object-cover cursor-pointer'
-										style={{ boxSizing: 'border-box' }} // Ensure padding does not affect size
+										} // Set active image on click
+										className='h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-md object-cover cursor-pointer'
 									/>
 								</div>
 							))}
 						</div>
 
 						{/* Main Image */}
-						<div className='flex-grow'>
-							<img
-								src={selectedImage}
-								alt='Main Art'
-								className='border rounded-lg w-full max-w-[400px] h-auto'
-							/>
+						<div className='flex-grow flex justify-center items-center'>
+							<div className='relative'>
+								<img
+									src={selectedImage}
+									alt='Main Art'
+									className='border rounded-lg w-[300px] md:w-[400px] lg:w-[500px] h-auto'
+								/>
+								{/* Add optional styling for shadow or background */}
+							</div>
 						</div>
 					</div>
 				</div>
