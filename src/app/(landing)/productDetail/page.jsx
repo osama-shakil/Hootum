@@ -1,7 +1,12 @@
 'use client';
+import CuratedFeaturedCard from '@/components/common/cards/CuratedFeaturedCard';
+import CustomButton from '@/components/common/CustomButton';
 import AuthCard from '@/components/productDetail/AuthCard';
 import BuyNow from '@/components/productDetail/BuyNow';
 import ProductDetailTabs from '@/components/productDetail/ProductDetailTabs';
+import CarouselLayout from '@/components/profile/carousel/Carousel';
+import { CarouselItem } from '@/components/ui/carousel';
+import { spotlightProducts } from '@/utils/SiteData';
 import React, { useState } from 'react';
 
 const page = () => {
@@ -95,6 +100,64 @@ const page = () => {
 				<div className='col-span-12 md:col-span-4 space-y-3'>
 					<AuthCard />
 				</div>
+			</div>
+			<div className='mt-16'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
+					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
+						MORE BY THIS ARTIST
+					</h2>
+
+					<CustomButton
+						text='View all'
+						// handleClick={handleClick}
+						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
+					/>
+				</div>
+				<CarouselLayout>
+					{spotlightProducts.map(product => (
+						<CarouselItem
+							key={product.id}
+							className='pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4'
+						>
+							<CuratedFeaturedCard
+								key={product.id}
+								{...product}
+							/>
+						</CarouselItem>
+					))}
+				</CarouselLayout>
+			</div>
+			<div className='w-full lg:max-w-6xl mx-auto'>
+				<hr className='border-t border-neutral-200' />
+			</div>
+
+			<div className='mt-16'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
+					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
+						RELATED ITEMS
+					</h2>
+
+					<CustomButton
+						text='View all'
+						// handleClick={handleClick}
+						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
+					/>
+				</div>
+				<CarouselLayout>
+					{spotlightProducts.map(product => (
+						<CarouselItem
+							key={product.id}
+							className='pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4'
+						>
+							<CuratedFeaturedCard
+								key={product.id}
+								{...product}
+							/>
+						</CarouselItem>
+					))}
+				</CarouselLayout>
 			</div>
 		</div>
 	);
