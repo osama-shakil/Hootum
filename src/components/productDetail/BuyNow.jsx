@@ -215,19 +215,6 @@ const BuyNow = () => {
 					Buy Now
 				</button>
 			</div>
-			{/* Tags */}
-			<div className='flex flex-wrap justify-center gap-2 pt-4'>
-				{['Fine Art', 'Oil Painting', 'Silk Painting', 'Poet'].map(
-					(tag, index) => (
-						<span
-							key={index}
-							className='text-sm bg-gray-200 text- px-3 py-1 rounded-[5px] hover:bg-gray-300'
-						>
-							{tag}
-						</span>
-					)
-				)}
-			</div>
 		</>
 	);
 };

@@ -78,7 +78,7 @@ const page = () => {
 								<img
 									src={selectedImage}
 									alt='Main Art'
-									className='border rounded-lg w-[300px] md:w-[400px] lg:w-[500px] h-auto'
+									className='border rounded-lg w-[300px] md:w-[400px] lg:w-[430px] h-auto'
 								/>
 								{/* Add optional styling for shadow or background */}
 							</div>
@@ -94,13 +94,31 @@ const page = () => {
 
 			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 mt-6 items-start'>
 				{/* Tabs */}
-				<div className='col-span-12 md:col-span-8 flex flex-col gap-4'>
+				<div className='col-span-12 md:col-span-8 flex flex-col gap-4 mt-5'>
 					<ProductDetailTabs />
 				</div>
 
 				{/* Authentication Card */}
-				<div className='col-span-12 md:col-span-4 space-y-3'>
-					<AuthCard />
+				<div className='col-span-12 md:col-span-4 space-y-7'>
+					{/* Tags */}
+					<div className='flex flex-wrap justify-center gap-2'>
+						{[
+							'Fine Art',
+							'Oil Painting',
+							'Silk Painting',
+							'Poet',
+						].map((tag, index) => (
+							<span
+								key={index}
+								className='text-sm bg-gray-200 text- px-3 py-1 rounded-[5px] hover:bg-gray-300'
+							>
+								{tag}
+							</span>
+						))}
+					</div>
+					<div className='space-y-3'>
+						<AuthCard />
+					</div>
 				</div>
 			</div>
 			<div className='mt-16'>
