@@ -9,7 +9,7 @@ const ReviewsCard = ({ reviews }) => {
 			{reviews.map((review, index) => (
 				<div
 					key={index}
-					className='flex items-start space-x-4 bg-[#fafafa] p-6 rounded-[20px] mt-3 border border-[#ededed]'
+					className='flex items-start space-x-4 bg-[#fafafa] p-2 md:p-6 rounded-[20px] mt-3 border border-[#ededed]'
 				>
 					<div className='w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-medium overflow-hidden'>
 						{imageUrl ? (

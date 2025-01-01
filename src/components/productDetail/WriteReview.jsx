@@ -18,7 +18,7 @@ const WriteReview = () => {
 	return (
 		<div>
 			<h3 className='text-2xl font-bold font-sans'>Write a Review</h3>
-			<div className='bg-[#fafafa] rounded-[20px] p-6 mt-3 border border-[#ededed]'>
+			<div className='bg-[#fafafa] rounded-[20px] p-2 md:p-6 mt-3 border border-[#ededed]'>
 				<form onSubmit={handleSubmit} className='space-y-6'>
 					{/* Star Rating */}
 					<div>

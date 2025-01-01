@@ -38,11 +38,11 @@ const Feedback = ({ ratingData, overallRating }) => {
 				</div>
 
 				{/* Rating Distribution (8 columns) */}
-				<div className='col-span-12 md:col-span-8 bg-[#fafafa] p-6 border border-[#ededed] rounded-[20px] space-y-2'>
+				<div className='col-span-12 md:col-span-8 bg-[#fafafa] md:p-6 p-2 border border-[#ededed] rounded-[20px] space-y-2'>
 					{ratingData.map((item, index) => (
 						<div
 							key={index}
-							className='grid grid-cols-12 items-center gap-4'
+							className='grid grid-cols-12 items-center gap-1 md:gap-4'
 						>
 							{/* Progress Bar */}
 							<div className='col-span-7'>
