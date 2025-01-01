@@ -16,12 +16,13 @@ const ProductDetailTabs = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	return (
 		<>
-			<div className='flex border-b border-[#999999'>
+			{/* Responsive Tabs */}
+			<div className='flex md:justify-between border-b border-[#999999] overflow-x-auto md:overflow-x-visible no-scrollbar'>
 				{tabs.map(tab => (
 					<button
 						key={tab.id}
 						onClick={() => setActiveTab(tab.id)}
-						className={`flex-1 text-center font-sans font-normal text-base py-2 ${
+						className={`flex-shrink-0 md:flex-1 text-center font-sans font-normal text-base py-2 px-4 ${
 							activeTab === tab.id
 								? 'border-b-2 border-black text-black'
 								: 'text-[#999999]'

@@ -44,7 +44,7 @@ const page = () => {
 				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
 			</div>
 			{/* Grid Layout */}
-			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 items-start'>
+			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-3'>
 				{/* Left Section */}
 				<div className='col-span-12 md:col-span-8 flex flex-col gap-4'>
 					{/* Thumbnails and Main Image */}
