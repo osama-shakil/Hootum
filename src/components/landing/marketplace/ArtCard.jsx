@@ -16,8 +16,8 @@ const Creator = ({ creator, className }) => (
     </div>
 );
 
-const ArtCard = ({ piece }) => (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+const ArtCard = ({ piece,handleClick }) => (
+    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer" onClick={handleClick}>
       <CardHeader className="p-0">
         <div className="aspect-square w-full h-74 p-2">
           <Image

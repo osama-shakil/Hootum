@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
 	darkMode: ['class'],
 	content: [
@@ -24,7 +26,6 @@ module.exports = {
 		extend: {
 			animation: {
 				marquee: 'marquee 25s linear infinite',
-				// marquee2: 'marquee2 25s linear infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
@@ -33,10 +34,6 @@ module.exports = {
 					'0%': { transform: 'translateX(100%)' },
 					'100%': { transform: 'translateX(-100%)' },
 				},
-				// marquee2: {
-				// 	'0%': { transform: 'translateX(-100%)' },
-				// 	'100%': { transform: 'translateX(100%)' },
-				// },
 				'accordion-down': {
 					from: { height: '0' },
 					to: { height: 'var(--radix-accordion-content-height)' },
@@ -62,7 +59,7 @@ module.exports = {
 					secondary: '#333333',
 					gray: '#F5F5F5',
 					linkColor: '#1877F2',
-					textPrimary: '#23262F'
+					textPrimary: '#23262F',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -97,7 +94,23 @@ module.exports = {
 			boxShadow: {
 				custom: '-1px 5px 13px 5px rgba(231, 227, 227, 0.68)',
 			},
+			textShadow: {
+				custom: '0px 2px 4px rgba(0, 0, 0, 0.3)', // Your custom text shadow
+			},
 		},
 	},
-	plugins: [require('tailwindcss-animate'), require('autoprefixer')],
+	plugins: [
+		require('tailwindcss-animate'),
+		require('autoprefixer'),
+		plugin(function ({ addUtilities, theme }) {
+			addUtilities(
+				{
+					'.text-shadow-custom': {
+						textShadow: theme('textShadow.custom'), // Linking custom text shadow
+					},
+				},
+				['responsive', 'hover']
+			);
+		}),
+	],
 };

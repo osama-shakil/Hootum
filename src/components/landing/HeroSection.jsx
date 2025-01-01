@@ -20,7 +20,7 @@ const HeroSection = () => {
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 8000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [api]);
@@ -32,14 +32,14 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="px-4 md:px-0 lg:mx-0 lg:pl-28">
+    <div className="px-4 md:px-0 lg:mx-0 lg:pl-14">
       <Carousel
         className="w-full h-full"
         setApi={setApi}
         onSelect={(index) => setActiveSlide(index)}
         opts={{
-          align: "start",
-          duration: 100,
+          // align: "start",
+          // duration: 100,
           loop:true,
         }}
       >
