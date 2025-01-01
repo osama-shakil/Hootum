@@ -50,14 +50,14 @@ const page = () => {
 					{/* Thumbnails and Main Image */}
 					<div className='flex flex-col md:flex-row gap-6'>
 						{/* Thumbnails */}
-						<div className='flex flex-row md:flex-col gap-4'>
+						<div className='flex flex-row md:flex-col justify-between md:justify-start gap-4 order-2 md:order-1'>
 							{images.map((image, index) => (
 								<div
 									key={index}
 									className={`${
 										selectedImage === image
-											? 'border border-[#0000004D] p-1 rounded-md'
-											: 'p-1'
+											? 'border border-[#0000004D] p-2 rounded-md'
+											: 'p-2'
 									}`} // Highlight active thumbnail
 								>
 									<img
@@ -73,14 +73,13 @@ const page = () => {
 						</div>
 
 						{/* Main Image */}
-						<div className='flex-grow flex justify-center items-center'>
+						<div className='flex-grow flex justify-center items-center order-1 md:order-2'>
 							<div className='relative'>
 								<img
 									src={selectedImage}
 									alt='Main Art'
-									className='border rounded-lg w-[300px] md:w-[400px] lg:w-[430px] h-auto'
+									className='border rounded-lg w-[395px] md:w-[400px] lg:w-[430px] h-auto'
 								/>
-								{/* Add optional styling for shadow or background */}
 							</div>
 						</div>
 					</div>
