@@ -202,7 +202,7 @@ const heroSlides = [
     title: (
       <>
         UNLEASH YOUR INNER
-        <span className="text-[#532410]">{" "}COLLECTOR</span>
+        <span className="text-[#532410]"> COLLECTOR</span>
       </>
     ),
     description:
@@ -248,8 +248,6 @@ const spotlightProducts = [
   },
 ];
 
-
-
 const popularCategories = [
   {
     id: 1,
@@ -264,7 +262,7 @@ const popularCategories = [
   {
     id: 3,
     title: "Watches",
-  
+
     image: "/popular/item-card.png",
   },
   {
@@ -279,8 +277,6 @@ const popularCategories = [
     image: "/popular/fine-art.png",
   },
 ];
-
-
 
 const slidePosition = {
   active: {
@@ -357,8 +353,6 @@ const slidePosition = {
   },
 };
 
-
-
 const curatorsTestimonials = [
   {
     image: "/Curators testimonial/Ellipse 17.svg",
@@ -392,7 +386,8 @@ const curatorsTestimonials = [
     image: "/testimonial/profile (4).svg",
     title: "Sarah Chen",
     subtitle: "UX Researcher",
-    description: "The NFT art marketplace is not just a platform for buying and selling art; it is a thriving community. Artists, collectors, and enthusiasts come together, fostering a sense of collaboration and mutual appreciation. The interactions and connections I've made in this space are invaluable. Engaging with the community through discussions, exhibitions, and collaborations has enriched my perspective and deepened my appreciation for the digital art revolution.",
+    description:
+      "The NFT art marketplace is not just a platform for buying and selling art; it is a thriving community. Artists, collectors, and enthusiasts come together, fostering a sense of collaboration and mutual appreciation. The interactions and connections I've made in this space are invaluable. Engaging with the community through discussions, exhibitions, and collaborations has enriched my perspective and deepened my appreciation for the digital art revolution.",
   },
   {
     image: "/testimonial/profile (5).svg",
@@ -406,33 +401,41 @@ const curatorsTestimonials = [
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Chen',
+    name: "Sarah Chen",
     text: '"As an artist, Shizuka has given me a platform to showcase my work without the traditional barriers of entry. The supportive community and promotional tools have helped me build my brand and gain visibility."',
     image: "/testimonial/profile (3).svg",
   },
   {
     id: 2,
-    name: 'David Tom',
+    name: "David Tom",
     text: '"The platform has been instrumental in helping me reach art collectors globally. The tools and community support make it easy to manage my portfolio and conect with buyers."',
     image: "/testimonial/profile (4).svg",
   },
   {
     id: 3,
-    name: 'Michael Ross',
+    name: "Michael Ross",
     text: '"I appreciate how the platform makes art accessible to everyone. It\'s transformed how I share and sell my artwork, reaching audiences I never thought possible."',
     image: "/testimonial/profile (2).svg",
   },
   {
     id: 4,
-    name: 'James Wilson',
+    name: "James Wilson",
     text: '"The community aspect of the platform is amazing. I\'ve connected with fellow artists and collectors, leading to collaborative opportunities and sales."',
     image: "/testimonial/profile (1).svg",
   },
   {
     id: 5,
-    name: 'Emma Davis',
+    name: "Emma Davis",
     text: '"This platform has revolutionized how I present my artwork. The professional tools and global reach have helped me establish myself as a serious artist."',
     image: "/testimonial/profile (5).svg",
-  }
+  },
 ];
-export { artPieces, heroSlides, spotlightProducts , popularCategories ,slidePosition,testimonials,curatorsTestimonials};
+export {
+  artPieces,
+  heroSlides,
+  spotlightProducts,
+  popularCategories,
+  slidePosition,
+  testimonials,
+  curatorsTestimonials,
+};
