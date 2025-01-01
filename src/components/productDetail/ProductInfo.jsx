@@ -3,11 +3,11 @@ import ConditionReport from './ConditionReport';
 
 const ProductInfo = () => {
 	return (
-		<div className='p-6 space-y-8'>
+		<div className='space-y-10'>
 			{/* Description */}
 			<div>
-				<h2 className='text-lg font-semibold mb-2'>DESCRIPTION</h2>
-				<p className='text-gray-700'>
+				<h2 className='text-2xl font-medium font-sans'>DESCRIPTION</h2>
+				<p className='text-base font-sans font-normal mt-4'>
 					Portrait of a Kazi Nazrul Islam. I was interested in
 					capturing a sense of movement and the expression on her
 					face. Colors were important here, particularly with regard
@@ -15,9 +15,7 @@ const ProductInfo = () => {
 					palette here is a little different to what I usually work
 					with, and I think it conveys a deeper, more mysterious tone
 					to the whole piece.{' '}
-					<span className='font-semibold text-black cursor-pointer'>
-						Read more.
-					</span>
+					<span className='font-bold cursor-pointer'>Read more.</span>
 				</p>
 			</div>
 
@@ -25,7 +23,7 @@ const ProductInfo = () => {
 			<ConditionReport />
 
 			{/* Details */}
-			<div className='grid grid-cols-2 gap-6'>
+			<div className='grid grid-cols-2 gap-5'>
 				{[
 					{ label: 'SUBJECT', value: 'Conceptual' },
 					{ label: 'STYLE', value: 'Landscape' },
@@ -44,8 +42,10 @@ const ProductInfo = () => {
 					{ label: 'SIGNATURE', value: 'Yes' },
 				].map(({ label, value }, index) => (
 					<div key={index} className='space-y-1'>
-						<p className='text-gray-500 text-sm'>{label}</p>
-						<p className='text-black font-medium whitespace-pre-line'>
+						<p className='text-2xl font-medium font-sans'>
+							{label}
+						</p>
+						<p className='text-base font-normal font-sans whitespace-pre-line inline-flex p-3 rounded-[5px] bg-[#f2f2f2]'>
 							{value}
 						</p>
 					</div>

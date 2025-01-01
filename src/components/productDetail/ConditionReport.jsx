@@ -28,7 +28,7 @@ const ConditionReport = () => {
 
 	return (
 		<div className='flex flex-col gap-4'>
-			<h3 className='text-lg font-semibold'>Condition Report</h3>
+			<h3 className='text-2xl font-medium font-sans'>Condition Report</h3>
 			<div className='flex flex-wrap gap-20'>
 				{conditions.map((condition, index) => (
 					<div
@@ -39,8 +39,8 @@ const ConditionReport = () => {
 						<div
 							className={`w-6 h-6 rounded-full flex justify-center items-center ${
 								selected === condition.label
-									? 'bg-white'
-									: 'bg-gray-200'
+									? ''
+									: 'bg-[#e5e5e5]'
 							}`}
 						>
 							{selected === condition.label &&
@@ -48,10 +48,10 @@ const ConditionReport = () => {
 								svgIcon}
 						</div>
 						<span
-							className={`text-sm ${
+							className={`text-base font-sans font-normal ${
 								selected === condition.label
 									? 'text-black'
-									: 'text-gray-500'
+									: 'text-[#999999]'
 							}`}
 						>
 							{condition.label}
