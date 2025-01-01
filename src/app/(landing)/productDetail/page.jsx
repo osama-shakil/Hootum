@@ -7,9 +7,15 @@ import ProductDetailTabs from '@/components/productDetail/ProductDetailTabs';
 import CarouselLayout from '@/components/profile/carousel/Carousel';
 import { CarouselItem } from '@/components/ui/carousel';
 import { spotlightProducts } from '@/utils/SiteData';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const page = () => {
+	const router = useRouter(); // Initialize the Next.js router
+	
+		const handleGoBack = () => {
+			router.back(); // Navigate to the previous page
+		};
 	const images = [
 		'/popular/fine-art.svg', // Replace these with actual image paths in your public folder
 		'/popular/product-img.svg',
@@ -27,7 +33,7 @@ const page = () => {
 		<div className='md:container mx-auto p-4 md:p-8 font-sans'>
 			<div className='flex items-center space-x-2'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						width='10'
 						height='18'

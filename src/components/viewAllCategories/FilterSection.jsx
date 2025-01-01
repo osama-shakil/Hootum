@@ -5,9 +5,30 @@ const FilterSection = () => {
 	const [isOpenName, setIsOpenName] = useState(false); // To manage dropdown visibility
 	const [isOpenMedium, setIsOpenMedium] = useState(false); // To manage dropdown visibility
 	const [isOpenPrice, setIsOpenPrice] = useState(false); // To manage dropdown visibility
+	const [isOpenMaterials, setIsOpenMaterials] = useState(false); // To manage dropdown visibility
+	const [isOpenSize, setIsOpenSize] = useState(false); // To manage dropdown visibility
+	const [isOpenOrientations, setIsOpenOrientations] = useState(false); // To manage dropdown visibility
+	const [isOpenPeriod, setIsOpenPeriod] = useState(false); // To manage dropdown visibility
+	const [isOpenRegion, setIsOpenRegion] = useState(false); // To manage dropdown visibility
+	const [isOpenFeatures, setIsOpenFeatures] = useState(false); // To manage dropdown visibility
+	const [isOpenStyle, setIsOpenStyle] = useState(false); // To manage dropdown visibility
+	const [isOpenSubject, setIsOpenSubject] = useState(false); // To manage dropdown visibility
+
+	const [isOpenAll, setIsOpenAll] = useState(false); // To manage dropdown visibility
+
 	const [selectedName, setSelectedName] = useState('Artist name');
 	const [selectedMedium, setSelectedMedium] = useState('Mediums');
 	const [selectedPrice, setSelectedPrice] = useState('Price');
+	const [selectedMaterials, setSelectedMaterials] = useState('Materials');
+	const [selectedSize, setSelectedSize] = useState('Size');
+	const [selectedOrientations, setSelectedOrientations] =
+		useState('Orientations');
+	const [selectedPeriod, setSelectedPeriod] = useState('Period');
+	const [selectedRegion, setSelectedRegion] = useState('Region & Country');
+	const [selectedFeatures, setSelectedFeatures] =
+		useState('Special Features');
+	const [selectedStyle, setSelectedStyle] = useState('Style');
+	const [selectedSubject, setSelectedSubject] = useState('Subject');
 	const mediums = [
 		'Acrylic painting',
 		'Ink',
@@ -45,7 +66,10 @@ const FilterSection = () => {
 
 				{/* Reset filter */}
 
-				<div className='flex items-center gap-2 text-black mb-4 pl-4'>
+				<div
+					className='flex items-center gap-2 text-black mb-4 pl-4 cursor-pointer'
+					onClick={() => setIsOpenAll(false)}
+				>
 					<svg
 						width='18'
 						height='18'
@@ -160,6 +184,65 @@ const FilterSection = () => {
 							</div>
 						)}
 					</div>
+					{/* Material */}
+					{isOpenAll ? (
+						<>
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenMaterials(!isOpenMaterials)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedMaterials}
+									</span>
+									{isOpenMaterials ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenMaterials && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedMaterials ===
+														item
+													}
+													onChange={() => {
+														setSelectedMaterials(
+															item
+														); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+						</>
+					) : (
+						<></>
+					)}
 
 					{/* Price Dropdown */}
 					<div>
@@ -207,14 +290,385 @@ const FilterSection = () => {
 							</div>
 						)}
 					</div>
+
+					{isOpenAll ? (
+						<>
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() => setIsOpenSize(!isOpenSize)}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedSize}
+									</span>
+									{isOpenSize ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenSize && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedSize === item
+													}
+													onChange={() => {
+														setSelectedSize(item); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenOrientations(
+											!isOpenOrientations
+										)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedOrientations}
+									</span>
+									{isOpenOrientations ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenOrientations && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedOrientations ===
+														item
+													}
+													onChange={() => {
+														setSelectedOrientations(
+															item
+														); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenPeriod(!isOpenPeriod)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedPeriod}
+									</span>
+									{isOpenPeriod ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenPeriod && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedPeriod === item
+													}
+													onChange={() => {
+														setSelectedPeriod(item); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenRegion(!isOpenRegion)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedRegion}
+									</span>
+									{isOpenRegion ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenRegion && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedRegion === item
+													}
+													onChange={() => {
+														setSelectedRegion(item); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenFeatures(!isOpenFeatures)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedFeatures}
+									</span>
+									{isOpenFeatures ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenFeatures && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedFeatures ===
+														item
+													}
+													onChange={() => {
+														setSelectedFeatures(
+															item
+														); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() => setIsOpenStyle(!isOpenStyle)}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedStyle}
+									</span>
+									{isOpenStyle ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenStyle && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedStyle === item
+													}
+													onChange={() => {
+														setSelectedStyle(item); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+
+							<div>
+								{/* Header Section */}
+								<div
+									className='flex justify-between items-center border border-black rounded px-3 py-3 cursor-pointer'
+									onClick={() =>
+										setIsOpenSubject(!isOpenSubject)
+									}
+								>
+									<span className='text-black text-[14px] font-medium'>
+										{selectedSubject}
+									</span>
+									{isOpenSubject ? (
+										<ChevronUpIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									) : (
+										<ChevronDownIcon className='w-5 h-5 text-black border border-black rounded-full' />
+									)}
+								</div>
+
+								{/* Dropdown Section */}
+								{isOpenSubject && (
+									<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+										{price.map((item, index) => (
+											<div
+												key={index}
+												className='flex items-center gap-2'
+											>
+												<input
+													type='radio'
+													name='price'
+													id={item}
+													className='w-4 h-4 accent-black'
+													checked={
+														selectedSubject === item
+													}
+													onChange={() => {
+														setSelectedSubject(
+															item
+														); // Update selected value
+													}}
+												/>
+												<label
+													htmlFor={item}
+													className='text-black text-[14px] font-medium cursor-pointer'
+												>
+													{item}
+												</label>
+											</div>
+										))}
+									</div>
+								)}
+							</div>
+						</>
+					) : (
+						<></>
+					)}
 				</div>
 
 				{/* Footer Button */}
-				<div className='mt-10'>
-					<button className='w-full bg-black text-white text-[14px] font-medium py-2 rounded-[20px]'>
-						See All (10)
-					</button>
-				</div>
+				{isOpenAll ? (
+					<></>
+				) : (
+					<>
+						<div className='mt-10'>
+							<button
+								className='w-full bg-black text-white text-[14px] font-medium py-2 rounded-[20px]'
+								onClick={() => setIsOpenAll(true)}
+							>
+								See All (10)
+							</button>
+						</div>
+					</>
+				)}
 			</div>
 
 			{/* For Mobile screen filter section */}

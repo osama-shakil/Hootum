@@ -9,9 +9,15 @@ import {
 	SelectValue,
 } from '@/components/ui/select';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { use, useState } from 'react';
 
 const page = () => {
+	const router = useRouter(); // Initialize the Next.js router
+
+	const handleClick = () => {
+		router.push('/viewAllCategories'); // Redirect to /allcategories
+	};
 	const popularCategories = [
 		{ id: 1, title: 'Fine Art', image: '/popular/fine-art.svg' },
 		{ id: 2, title: 'Sculpture', image: '/popular/product-img.svg' },
@@ -101,14 +107,17 @@ const page = () => {
 
 					{/* Sort Dropdown */}
 					<div className='mt-1'>
-						<Select defaultValue='sort'>
+						<Select defaultValue='atoz'>
 							<SelectTriggercategory className='rounded-[5px] py-2 px-2 border-black focus:ring-0 focus:ring-offset-0'>
 								<SelectValue />
 							</SelectTriggercategory>
 							<SelectContent>
-								<SelectItem value='sort'>sort</SelectItem>
-								<SelectItem value='least'>
-									Least liked
+								<SelectItem value='atoz'>A-Z</SelectItem>
+								<SelectItem value='newtoold'>
+									New to Old
+								</SelectItem>
+								<SelectItem value='oldtonew'>
+									Old to New
 								</SelectItem>
 							</SelectContent>
 						</Select>
@@ -117,7 +126,10 @@ const page = () => {
 			</div>
 			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 mt-8 gap-x-9 gap-y-12 px-12 md:px-0'>
 				{popularCategories.map(category => (
-					<Card className='overflow-hidden max-w-sm'>
+					<Card
+						className='overflow-hidden max-w-sm cursor-pointer'
+						onClick={handleClick}
+					>
 						<CardContent className='p-0'>
 							<div className='p-4'>
 								<h3 className='font-medium text-lg'>

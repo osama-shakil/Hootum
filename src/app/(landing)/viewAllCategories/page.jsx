@@ -4,9 +4,18 @@ import LoadMoreButton from '@/components/common/LoadMoreButton';
 import ArtCard from '@/components/landing/marketplace/ArtCard';
 import FilterSection from '@/components/viewAllCategories/FilterSection';
 import { artPieces } from '@/utils/SiteData';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const page = () => {
+	const router = useRouter(); // Initialize the Next.js router
+
+	const handleGoBack = () => {
+		router.back(); // Navigate to the previous page
+	};
+	const handleClick = () => {
+		router.push('/productDetail'); // Redirect to /productDetails
+	};
 	const allCategorySlides = [
 		// {
 		// 	id: 1,
@@ -74,7 +83,7 @@ const page = () => {
 			<CategoriesSlider allCategorySlides={allCategorySlides} />
 			<div className='flex items-center space-x-2 mt-8'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
@@ -139,7 +148,11 @@ const page = () => {
 				{/* Product Grid Section */}
 				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-14'>
 					{artPieces.map(piece => (
-						<ArtCard key={piece.id} piece={piece} />
+						<ArtCard
+							key={piece.id}
+							piece={piece}
+							handleClick={handleClick}
+						/>
 					))}
 				</div>
 			</div>
