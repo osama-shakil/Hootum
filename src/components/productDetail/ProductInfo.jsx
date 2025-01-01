@@ -23,7 +23,7 @@ const ProductInfo = () => {
 			<ConditionReport />
 
 			{/* Details */}
-			<div className='grid grid-cols-2 gap-5'>
+			<div className='grid grid-cols-2 gap-7 md:gap-5'>
 				{[
 					{ label: 'SUBJECT', value: 'Conceptual' },
 					{ label: 'STYLE', value: 'Landscape' },
@@ -42,7 +42,7 @@ const ProductInfo = () => {
 					{ label: 'SIGNATURE', value: 'Yes' },
 				].map(({ label, value }, index) => (
 					<div key={index} className='space-y-1'>
-						<p className='text-2xl font-medium font-sans'>
+						<p className='text-[1.2rem] md:text-2xl font-medium font-sans'>
 							{label}
 						</p>
 						<p className='text-base font-normal font-sans whitespace-pre-line inline-flex p-3 rounded-[5px] bg-[#f2f2f2]'>

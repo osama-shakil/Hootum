@@ -34,7 +34,7 @@ const ProductDetailTabs = () => {
 			</div>
 
 			{/* Tab Content */}
-			<div className='md:p-6 px-2'>
+			<div className='md:p-6'>
 				{tabs.map(tab => (
 					<div
 						key={tab.id}

@@ -4,7 +4,7 @@ import Rating from './Rating';
 const BuyNow = () => {
 	return (
 		<>
-			<div className='border border-[#D3D3D3] px-4 pb-4 rounded-[5px] space-y-4'>
+			<div className='border-y md:border border-[#D3D3D3] md:px-4 pb-4 rounded-[5px] space-y-4'>
 				{/* Artist Info */}
 				<div className='flex items-center justify-between border-bottom border-b'>
 					<div className='flex space-x-2 items-center'>

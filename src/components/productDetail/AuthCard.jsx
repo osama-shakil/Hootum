@@ -5,7 +5,7 @@ const AuthCard = () => {
 	const [isAuth, setIsAuth] = useState('notAuthenticate');
 	return (
 		<>
-			<div className='p-6 rounded-[5px] border border-[#D3D3D3] space-y-6'>
+			<div className='p-2 md:p-6 rounded-[5px] border border-[#D3D3D3] space-y-6'>
 				{/* Authentication Header */}
 				<div className='flex items-center justify-between'>
 					<h2
@@ -146,7 +146,7 @@ const AuthCard = () => {
 			</div>
 
 			<div
-				className='p-6 space-y-5 mt-5'
+				className='p-2 md:p-6 space-y-5 mt-5'
 				style={{ backgroundColor: '#f2f2f2' }}
 			>
 				{/* Contact Section */}
@@ -176,11 +176,11 @@ const AuthCard = () => {
 				</div>
 
 				{/* Share Section */}
-				<div className='flex items-center justify-between'>
+				<div className='flex flex-col md:flex-row md:items-center justify-between space-y-5 md:space-y-0'>
 					<h3 className='text-base font-medium'>
 						Share this object with your friends
 					</h3>
-					<div className='flex items-center gap-2'>
+					<div className='flex items-center gap-6 md:gap-2'>
 						<svg
 							width='18'
 							height='18'

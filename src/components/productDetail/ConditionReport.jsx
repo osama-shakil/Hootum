@@ -29,7 +29,7 @@ const ConditionReport = () => {
 	return (
 		<div className='flex flex-col gap-4'>
 			<h3 className='text-2xl font-medium font-sans'>Condition Report</h3>
-			<div className='flex flex-wrap gap-20'>
+			<div className='flex flex-wrap gap-1 md:gap-20 justify-between md:justify-start'>
 				{conditions.map((condition, index) => (
 					<div
 						key={index}
