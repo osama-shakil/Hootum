@@ -2,13 +2,12 @@ import React from 'react';
 
 const Feedback = ({ ratingData, overallRating }) => {
 	return (
-		<>
-			<h3 className='text-2xl font-bold'>Feedback</h3>
-
+		<div>
+			<h3 className='text-2xl font-bold font-sans'>Feedback</h3>
 			<div className='grid grid-cols-12 gap-6 mt-3'>
 				{/* Overall Rating (4 columns) */}
-				<div className='col-span-12 md:col-span-4 flex flex-col items-center justify-center bg-[#fafafa] p-6 border border-[#0000000D] rounded-[20px]'>
-					<div className='text-5xl font-bold text-[#164C96]'>
+				<div className='col-span-12 md:col-span-4 flex flex-col items-center justify-center bg-[#fafafa] p-6 border border-[#ededed] rounded-[20px]'>
+					<div className='text-5xl font-bold text-[#164C96] font-sans'>
 						{overallRating}
 					</div>
 					<div className='flex items-center space-x-1 mt-2'>
@@ -33,13 +32,13 @@ const Feedback = ({ ratingData, overallRating }) => {
 							</svg>
 						))}
 					</div>
-					<div className='text-base font-normal mt-1'>
+					<div className='text-base font-normal font-sans mt-1'>
 						Product Rating
 					</div>
 				</div>
 
 				{/* Rating Distribution (8 columns) */}
-				<div className='col-span-12 md:col-span-8 bg-[#fafafa] p-6 border border-[#0000000D] rounded-[20px] space-y-2'>
+				<div className='col-span-12 md:col-span-8 bg-[#fafafa] p-6 border border-[#ededed] rounded-[20px] space-y-2'>
 					{ratingData.map((item, index) => (
 						<div
 							key={index}
@@ -87,7 +86,7 @@ const Feedback = ({ ratingData, overallRating }) => {
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

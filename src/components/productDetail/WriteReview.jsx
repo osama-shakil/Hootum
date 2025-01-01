@@ -16,24 +16,22 @@ const WriteReview = () => {
 	};
 
 	return (
-		<>
-			<h1 className='text-lg font-semibold text-gray-900 mt-5'>
-				Write a Review
-			</h1>
-			<div className='bg-[#fafafa] rounded-lg p-6 space-y-6'>
+		<div>
+			<h3 className='text-2xl font-bold font-sans'>Write a Review</h3>
+			<div className='bg-[#fafafa] rounded-[20px] p-6 mt-3 border border-[#ededed]'>
 				<form onSubmit={handleSubmit} className='space-y-6'>
 					{/* Star Rating */}
 					<div>
-						<label className='block text-sm font-medium text-gray-700'>
+						<label className='block text-base font-normal font-sans'>
 							What is it like to Product?
 						</label>
-						<div className='flex space-x-2 mt-2'>
+						<div className='inline-flex space-x-1 mt-2 bg-white px-4 rounded-[50px]'>
 							{[1, 2, 3, 4, 5].map(star => (
 								<button
 									type='button'
 									key={star}
 									onClick={() => handleStarClick(star)}
-									className={`text-2xl ${
+									className={`text-base ${
 										star <= rating
 											? 'text-yellow-500'
 											: 'text-gray-300'
@@ -49,7 +47,7 @@ const WriteReview = () => {
 					<div>
 						<label
 							htmlFor='review-title'
-							className='block text-sm font-medium text-gray-700'
+							className='text-base font-normal font-sans'
 						>
 							Review Title
 						</label>
@@ -59,7 +57,7 @@ const WriteReview = () => {
 							value={title}
 							onChange={e => setTitle(e.target.value)}
 							placeholder='Great Products'
-							className='mt-2 block w-full border border-gray-300 rounded-md p-2 text-sm text-gray-700 focus:ring focus:ring-blue-300 focus:outline-none'
+							className='mt-2 block w-full border border-[#ededed] rounded-[20px] p-3 text-[15px] font-sans text-[#808080] focus:none focus:outline-none'
 						/>
 					</div>
 
@@ -67,7 +65,7 @@ const WriteReview = () => {
 					<div>
 						<label
 							htmlFor='review-content'
-							className='block text-sm font-medium text-gray-700'
+							className='block text-base font-normal'
 						>
 							Review Content
 						</label>
@@ -77,21 +75,14 @@ const WriteReview = () => {
 							onChange={e => setContent(e.target.value)}
 							placeholder='Write your review here...'
 							rows='4'
-							className='mt-2 block w-full border border-gray-300 rounded-md p-2 text-sm text-gray-700 focus:ring focus:ring-blue-300 focus:outline-none'
+							className='mt-2 block w-full border border-[#ededed] rounded-[20px] p-3 text-sm font-sans text-[#808080] focus:none focus:outline-none'
 						></textarea>
 					</div>
 
 					{/* Submit Button */}
-					<button
-						type='submit'
-						className='w-full flex items-center justify-center bg-black text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-800'
-					>
-						Submit Review
-						<span className='ml-2 text-lg'>➔</span>
-					</button>
 				</form>
 
-				{/* Display Submitted Data */}
+				{/* Display Submitted Data
 				{submittedData && (
 					<div className='mt-6 p-4 bg-gray-50 border border-gray-200 rounded-md'>
 						<h2 className='text-sm font-medium text-gray-700'>
@@ -108,9 +99,38 @@ const WriteReview = () => {
 							<strong>Content:</strong> {submittedData.content}
 						</p>
 					</div>
-				)}
+				)} */}
 			</div>
-		</>
+			<button
+				type='submit'
+				className=' flex items-center bg-black text-white text-base font-sans font-medium font-sans mt-4 px-6 py-3 rounded-[100px] m-0'
+			>
+				Submit Review
+				<svg
+					className='ml-5'
+					width='22'
+					height='22'
+					viewBox='0 0 22 22'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<path
+						d='M7.10352 7.01941L14.5819 7.01941L14.5819 14.4978'
+						stroke='white'
+						stroke-width='1.5'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+					/>
+					<path
+						d='M14.5858 7.02153L6.63086 14.9764'
+						stroke='white'
+						stroke-width='1.5'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+					/>
+				</svg>
+			</button>
+		</div>
 	);
 };
 

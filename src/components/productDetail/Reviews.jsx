@@ -34,7 +34,7 @@ const Reviews = () => {
 	];
 
 	return (
-		<div className='space-y-8'>
+		<div className='space-y-14'>
 			<Feedback ratingData={ratingData} overallRating={overallRating} />
 			<ReviewsCard reviews={reviews} />
 			<WriteReview />

@@ -2,13 +2,12 @@ import React from 'react';
 
 const ReviewsCard = ({ reviews }) => {
 	return (
-		<>
-			<h3 className='text-2xl font-bold'>Reviews</h3>
-
+		<div>
+			<h3 className='text-2xl font-bold font-sans'>Reviews</h3>
 			{reviews.map((review, index) => (
 				<div
 					key={index}
-					className='flex items-start space-x-4 bg-[#fafafa] p-6 rounded-[20px] mt-3'
+					className='flex items-start space-x-4 bg-[#fafafa] p-6 rounded-[20px] mt-3 border border-[#ededed]'
 				>
 					<div className='w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-medium'>
 						{review.author[0]}
@@ -18,7 +17,7 @@ const ReviewsCard = ({ reviews }) => {
 							<h4 className='font-medium text-base'>
 								{review.author}
 							</h4>
-							<span className='text-sm text-[#7d7d7d] ml-2 font-normal'>
+							<span className='text-sm text-[#7d7d7d] ml-2 font-normal font-sans'>
 								{review.date}
 							</span>
 						</div>
@@ -44,14 +43,14 @@ const ReviewsCard = ({ reviews }) => {
 								</svg>
 							))}
 						</div>
-						<p className='text-base font-normal mt-2'>
+						<p className='text-base font-normal mt-2 font-sans'>
 							{review.title}
 						</p>
-						<p className='text-base font-normal text-[#7d7d7d] mt-2'>
+						<p className='text-base font-normal font-sans text-[#7d7d7d] mt-2'>
 							{review.comment}
 						</p>
 						<div className='flex items-center space-x-4 mt-2'>
-							<button className='text-sm text-[#7d7d7d] hover:underline flex items-center bg-[#ededed] px-4 rounded-[50px] py-[8px]'>
+							<button className='text-sm text-[#7d7d7d] hover:underline flex items-center bg-[#ededed] px-4 font-sans rounded-[50px] py-[8px]'>
 								<svg
 									className='mr-1'
 									width='15'
@@ -76,7 +75,7 @@ const ReviewsCard = ({ reviews }) => {
 								</svg>
 								Like
 							</button>
-							<button className='text-sm hover:underline'>
+							<button className='text-sm hover:underline font-sans'>
 								Reply
 							</button>
 						</div>
@@ -84,7 +83,7 @@ const ReviewsCard = ({ reviews }) => {
 				</div>
 			))}
 
-			<button className='flex items-center mt-6 bg-black text-white px-6 py-3 rounded-full font-normal text-sm hover:bg-gray-800'>
+			<button className='flex items-center bg-black text-white px-6 py-3 mt-4 rounded-full font-sans font-normal text-sm hover:bg-gray-800'>
 				View all reviews
 				<svg
 					className='ml-5'
@@ -110,7 +109,7 @@ const ReviewsCard = ({ reviews }) => {
 					/>
 				</svg>
 			</button>
-		</>
+		</div>
 	);
 };
 
