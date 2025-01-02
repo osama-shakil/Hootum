@@ -1,7 +1,9 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-const PaymentSection = () => {
+const page = () => {
+	const route = useRouter();
 	const [paymentMethods, setPaymentMethods] = useState([
 		{
 			id: 1,
@@ -62,6 +64,10 @@ const PaymentSection = () => {
 			setNewMethod('');
 			setShowAddNew(false);
 		}
+	};
+
+	const handleSubmit = () => {
+		route.push('/payment-success');
 	};
 
 	return (
@@ -138,7 +144,10 @@ const PaymentSection = () => {
 					)}
 				</div>
 				<div className='px-3 md:px-10 mt-10 pb-8'>
-					<button className='bg-black text-base font-bold font-sans text-white px-5 py-3 rounded-full hover:bg-gray-800 flex items-center space-x-7'>
+					<button
+						onClick={handleSubmit}
+						className='bg-black text-base font-bold font-sans text-white px-5 py-3 rounded-full hover:bg-gray-800 flex items-center space-x-7'
+					>
 						<span>Pay now</span>
 						<svg
 							width='15'
@@ -224,4 +233,4 @@ const PaymentSection = () => {
 	);
 };
 
-export default PaymentSection;
+export default page;

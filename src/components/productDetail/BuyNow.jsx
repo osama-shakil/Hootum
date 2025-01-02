@@ -19,7 +19,7 @@ const BuyNow = () => {
 	};
 
 	const handleConfirmationModal = () => {
-		route.push('/allCategories');
+		route.push('/payment');
 	};
 	return (
 		<>
