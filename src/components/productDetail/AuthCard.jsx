@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const AuthCard = () => {
-	const [isAuth, setIsAuth] = useState('notAuthenticate');
+	const [isAuth, setIsAuth] = useState('auth');
 	return (
 		<>
 			<div className='p-2 md:p-6 rounded-[5px] border border-[#D3D3D3] space-y-6'>

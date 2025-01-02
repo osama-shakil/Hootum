@@ -92,7 +92,7 @@ const page = () => {
 				</div>
 
 				{/* Right Section */}
-				<div className='col-span-12 md:col-span-4 space-y-3'>
+				<div className='col-span-12 md:col-span-4'>
 					<BuyNow />
 				</div>
 			</div>
