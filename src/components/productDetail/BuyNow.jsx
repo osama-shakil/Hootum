@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Rating from './Rating';
+import TermsAndConditions from '../auth/TermsAndConditions';
+import { useRouter } from 'next/navigation';
+import ConfirmationModal from './ConfirmationModal';
 
 const BuyNow = () => {
+	const route = useRouter();
+	const [open, setOpen] = useState(false);
+	const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
+
+	const toggle = () => setOpen(!open);
+	const toggleConfirmationModal = () =>
+		setOpenConfirmationModal(!openConfirmationModal);
+
+	const handleClick = () => {
+		toggleConfirmationModal(); // Open Confirmation Modal
+		setOpen(false); // Close Initial Modal
+	};
+
+	const handleConfirmationModal = () => {
+		route.push('/allCategories');
+	};
 	return (
 		<>
 			<div className='border-y md:border border-[#D3D3D3] md:px-4 pb-4 rounded-[5px] space-y-4'>
@@ -211,10 +230,28 @@ const BuyNow = () => {
 				</div>
 
 				{/* Buy Button */}
-				<button className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'>
+				<button
+					onClick={() => toggle()}
+					className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
+				>
 					Buy Now
 				</button>
 			</div>
+
+			{open && (
+				<TermsAndConditions
+					open={open}
+					toggle={toggle}
+					onAgreed={handleClick}
+				/>
+			)}
+			{openConfirmationModal && (
+				<ConfirmationModal
+					open={openConfirmationModal}
+					toggle={toggleConfirmationModal}
+					onAgreed={handleConfirmationModal}
+				/>
+			)}
 		</>
 	);
 };

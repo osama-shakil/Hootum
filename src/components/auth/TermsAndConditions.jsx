@@ -32,7 +32,7 @@ const TermsAndConditions = ({ open, toggle, onAgreed }) => {
               overscrollBehavior: "contain", // Prevents scroll chaining
             }}
           >
-            <Card className="bg-gray-50 rounded-3xl border-0">
+            <Card className="bg-[#0000000D] rounded-[20px] border-0">
               <CardContent className="p-6">
                 <div className="space-y-4 text-gray-600 text-sm">
                   <p className="text-gray-500">Last Revised: January 8, 2024</p>
