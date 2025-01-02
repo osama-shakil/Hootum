@@ -10,6 +10,7 @@ import {
   DialogDescription
 } from "@/components/ui/dialog";
 import { Check } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 const CustomCheckbox = ({ id, checked, onChange, label, className = "" }) => {
   return (
@@ -46,6 +47,7 @@ const CustomCheckbox = ({ id, checked, onChange, label, className = "" }) => {
 };
 
 const MarketplaceModal = ({ open, toggle, onAgreed }) => {
+	const router = useRouter();
   const [dontShowAgain, setDontShowAgain] = useState(false);
 
   const handleCancel = () => {
@@ -53,8 +55,13 @@ const MarketplaceModal = ({ open, toggle, onAgreed }) => {
   };
 
   const handleProceed = () => {
-    onAgreed(dontShowAgain);
-    toggle(false);
+	if (typeof window !== 'undefined') {
+		// Store the isBidding value in localStorage
+		localStorage.setItem('isBidding', 'true');
+
+		// Navigate to the destination page
+		router.push('/allCategories');
+	}
   };
 
   return (

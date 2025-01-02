@@ -7,15 +7,28 @@ import ProductDetailTabs from '@/components/productDetail/ProductDetailTabs';
 import CarouselLayout from '@/components/profile/carousel/Carousel';
 import { CarouselItem } from '@/components/ui/carousel';
 import { spotlightProducts } from '@/utils/SiteData';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 const page = () => {
 	const router = useRouter(); // Initialize the Next.js router
-	
-		const handleGoBack = () => {
-			router.back(); // Navigate to the previous page
-		};
+
+	// const searchParams = useSearchParams();
+	// const isBidding = searchParams.get('isBidding');
+
+	const [isBidding, setIsBidding] = useState(false);
+
+	useEffect(() => {
+		const biddingStatus = localStorage.getItem('isBidding');
+
+		if (biddingStatus) {
+			setIsBidding(biddingStatus === 'true');
+		}
+	}, []);
+
+	const handleGoBack = () => {
+		router.back(); // Navigate to the previous page
+	};
 	const images = [
 		'/popular/fine-art.svg', // Replace these with actual image paths in your public folder
 		'/popular/product-img.svg',
@@ -93,7 +106,7 @@ const page = () => {
 
 				{/* Right Section */}
 				<div className='col-span-12 md:col-span-4'>
-					<BuyNow />
+					<BuyNow isBidding={isBidding} />
 				</div>
 			</div>
 
@@ -106,23 +119,30 @@ const page = () => {
 				{/* Authentication Card */}
 				<div className='col-span-12 md:col-span-4 space-y-7 order-1 md:order-2'>
 					{/* Tags */}
-					<div className='flex flex-wrap justify-center gap-2'>
-						{[
-							'Fine Art',
-							'Oil Painting',
-							'Silk Painting',
-							'Poet',
-						].map((tag, index) => (
-							<span
-								key={index}
-								className='text-sm bg-gray-200 text- px-3 py-1 rounded-[5px] hover:bg-gray-300'
-							>
-								{tag}
-							</span>
-						))}
-					</div>
+					{isBidding ? (
+						<></>
+					) : (
+						<>
+							<div className='flex flex-wrap justify-center gap-2'>
+								{[
+									'Fine Art',
+									'Oil Painting',
+									'Silk Painting',
+									'Poet',
+								].map((tag, index) => (
+									<span
+										key={index}
+										className='text-sm bg-gray-200 text- px-3 py-1 rounded-[5px] hover:bg-gray-300'
+									>
+										{tag}
+									</span>
+								))}
+							</div>
+						</>
+					)}
+
 					<div className='space-y-3'>
-						<AuthCard />
+						<AuthCard isBidding={isBidding} />
 					</div>
 				</div>
 			</div>

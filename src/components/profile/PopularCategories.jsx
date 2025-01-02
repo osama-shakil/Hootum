@@ -9,9 +9,15 @@ import { useRouter } from 'next/navigation';
 
 const PopularCategories = () => {
 	const router = useRouter(); // Initialize the Next.js router
-
 	const handleClick = () => {
-		router.push('/allCategories'); // Redirect to /allcategories
+		// router.push('/allCategories?isBidding=false');
+		if (typeof window !== 'undefined') {
+			// Store the isBidding value in localStorage
+			localStorage.setItem('isBidding', 'false');
+
+			// Navigate to the destination page
+			router.push('/allCategories');
+		}
 	};
 
 	return (

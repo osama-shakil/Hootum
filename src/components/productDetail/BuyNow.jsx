@@ -4,13 +4,13 @@ import TermsAndConditions from '../auth/TermsAndConditions';
 import { useRouter } from 'next/navigation';
 import ConfirmationModal from './ConfirmationModal';
 
-const BuyNow = () => {
+const BuyNow = ({ isBidding }) => {
 	const route = useRouter();
 	const [open, setOpen] = useState(false);
 	const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
 
-	const [price, setPrice] = useState('19200'); // Only the numeric value
-	const [isBidding, setIsBidding] = useState(false);
+	const [price, setPrice] = useState(''); // Only the numeric value
+	// const [isBidding, setIsBidding] = useState(false);
 
 	const handleChange = e => {
 		const value = e.target.value.replace(/[^\d]/g, ''); // Allow only numbers
@@ -243,9 +243,9 @@ const BuyNow = () => {
 											: '',
 									}}
 									type='text'
-									className='border rounded-[5px] pl-8 p-2 w-full text-[18px] font-bold outline-none'
-									placeholder='Enter amount'
-									value={price}
+									className='border rounded-[5px] pl-8 p-2 w-full text-[18px] font-bold outline-none placeholder:text-[#0000001A]'
+									placeholder='25,200'
+									value={isBidding ? price : '19200'}
 									onChange={isBidding ? handleChange : ''}
 									readOnly={!isBidding}
 								/>
