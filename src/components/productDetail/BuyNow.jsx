@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Rating from './Rating';
 import TermsAndConditions from '../auth/TermsAndConditions';
 import { useRouter } from 'next/navigation';
-import ConfirmationModal from './ConfirmationModal';
+import BuyConfirmationModal from './BuyConfirmationModal';
+import BidConfirmationModal from './BidConfirmationModal';
 
 const BuyNow = ({ isBidding }) => {
 	const route = useRouter();
 	const [open, setOpen] = useState(false);
-	const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
+	const [openBuyConfirmationModal, setOpenBuyConfirmationModal] = useState(false);
+	const [openBidConfirmationModal, setOpenBidConfirmationModal] = useState(false);
 
 	const [price, setPrice] = useState(''); // Only the numeric value
 	// const [isBidding, setIsBidding] = useState(false);
@@ -18,11 +20,17 @@ const BuyNow = ({ isBidding }) => {
 	};
 
 	const toggle = () => setOpen(!open);
-	const toggleConfirmationModal = () =>
-		setOpenConfirmationModal(!openConfirmationModal);
+	const toggleBuyConfirmationModal = () =>
+		setOpenBuyConfirmationModal(!openBuyConfirmationModal);
+	const toggleBidConfirmationModal = () =>
+		setOpenBidConfirmationModal(!openBidConfirmationModal);
 
 	const handleClick = () => {
-		toggleConfirmationModal(); // Open Confirmation Modal
+		if (isBidding) {
+			toggleBidConfirmationModal();
+		} else {
+			toggleBuyConfirmationModal();
+		}
 		setOpen(false); // Close Initial Modal
 	};
 
@@ -336,10 +344,17 @@ const BuyNow = ({ isBidding }) => {
 					onAgreed={handleClick}
 				/>
 			)}
-			{openConfirmationModal && (
-				<ConfirmationModal
-					open={openConfirmationModal}
-					toggle={toggleConfirmationModal}
+			{openBuyConfirmationModal && (
+				<BuyConfirmationModal
+					open={openBuyConfirmationModal}
+					toggle={toggleBuyConfirmationModal}
+					onAgreed={handleConfirmationModal}
+				/>
+			)}
+			{openBidConfirmationModal && (
+				<BidConfirmationModal
+					open={openBidConfirmationModal}
+					toggle={toggleBidConfirmationModal}
 					onAgreed={handleConfirmationModal}
 				/>
 			)}

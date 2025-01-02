@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
-const ConfirmationModal = ({ open, toggle, onAgreed }) => {
+const BuyConfirmationModal = ({ open, toggle, onAgreed }) => {
 	return (
 		<>
 			<Dialog open={open} onOpenChange={toggle}>
@@ -64,4 +64,7 @@ const ConfirmationModal = ({ open, toggle, onAgreed }) => {
 	);
 };
 
-export default ConfirmationModal;
+export default BuyConfirmationModal;
+
+
+
