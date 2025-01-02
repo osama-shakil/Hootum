@@ -5,7 +5,7 @@ const AuthCard = ({ isBidding }) => {
 	const [isAuth, setIsAuth] = useState('auth');
 	return (
 		<>
-			<div className='p-2 md:p-6 rounded-[5px] border border-[#D3D3D3] space-y-6'>
+			<div className='p-2 md:p-6 rounded-[5px] border border-[#D3D3D3] space-y-6 order-2 md:order-1'>
 				{/* Authentication Header */}
 				<div className='flex items-center justify-between'>
 					<h2
@@ -146,7 +146,7 @@ const AuthCard = ({ isBidding }) => {
 			</div>
 
 			{isBidding ? (
-				<div className='flex items-center justify-between px-4 border border-[#D3D3D3]'>
+				<div className='flex items-center justify-between px-4 border border-[#D3D3D3] order-1 md:order-2'>
 					<div className='flex space-x-2 items-center'>
 						<svg
 							width='28'

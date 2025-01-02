@@ -2,6 +2,7 @@
 import CuratedFeaturedCard from '@/components/common/cards/CuratedFeaturedCard';
 import CustomButton from '@/components/common/CustomButton';
 import AuthCard from '@/components/productDetail/AuthCard';
+import BidsList from '@/components/productDetail/BidsList';
 import BuyNow from '@/components/productDetail/BuyNow';
 import ProductDetailTabs from '@/components/productDetail/ProductDetailTabs';
 import CarouselLayout from '@/components/profile/carousel/Carousel';
@@ -120,7 +121,9 @@ const page = () => {
 				<div className='col-span-12 md:col-span-4 space-y-7 order-1 md:order-2'>
 					{/* Tags */}
 					{isBidding ? (
-						<></>
+						<>
+							<BidsList />
+						</>
 					) : (
 						<>
 							<div className='flex flex-wrap justify-center gap-2'>
