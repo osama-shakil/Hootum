@@ -43,10 +43,10 @@ const BuyNow = ({ isBidding }) => {
 		<>
 			{isBidding ? (
 				<div className='flex items-center justify-between'>
-					<p className='text-sm font-normal font-sans'>
+					<p className='text-sm font-normal'>
 						Current Bid: ৳ 22,500
 					</p>
-					<p className='text-sm font-normal font-sans'>
+					<p className='text-sm font-normal '>
 						Closes in 3d 8h 32m 01s
 					</p>
 				</div>
@@ -311,7 +311,7 @@ const BuyNow = ({ isBidding }) => {
 
 				{isBidding ? (
 					<>
-						<div className='flex items-center mt-1 text-sm font-sans font-normal'>
+						<div className='flex items-center mt-1 text-sm  font-normal'>
 							<svg
 								width='18'
 								height='19'

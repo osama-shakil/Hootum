@@ -44,10 +44,10 @@ const page = () => {
 	};
 
 	return (
-		<div className='md:container mx-auto p-4 md:p-8 font-sans'>
-			<div className='flex items-center space-x-2'>
+		<div className='md:container mx-auto p-4 md:p-8'>
+			<div className='flex items-center space-x-2 cursor-pointer ' onClick={handleGoBack}>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer' onClick={handleGoBack}>
+				<div className='cursor-pointer'>
 					<svg
 						width='10'
 						height='18'

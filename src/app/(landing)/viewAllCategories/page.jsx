@@ -81,9 +81,12 @@ const page = () => {
 	return (
 		<div className='md:container mx-auto pb-20'>
 			<CategoriesSlider allCategorySlides={allCategorySlides} />
-			<div className='flex items-center space-x-2 mt-8'>
+			<div
+				className='flex items-center space-x-2 mt-8 cursor-pointer'
+				onClick={handleGoBack}
+			>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer' onClick={handleGoBack}>
+				<div className='cursor-pointer'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
@@ -122,7 +125,7 @@ const page = () => {
 					<input
 						type='text'
 						placeholder='Search'
-						className='outline-none text-sm placeholder-gray-500 flex-grow md:w-[180px]'
+						className='outline-none text-sm placeholder-gray-500 flex-grow md:w-[250px]'
 					/>
 					{/* Search Icon */}
 					<svg

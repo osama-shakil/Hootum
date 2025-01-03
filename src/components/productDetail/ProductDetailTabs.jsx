@@ -22,10 +22,10 @@ const ProductDetailTabs = () => {
 					<button
 						key={tab.id}
 						onClick={() => setActiveTab(tab.id)}
-						className={`flex-shrink-0 md:flex-1 text-center font-sans font-normal text-base py-2 px-4 ${
+						className={`flex-shrink-0 md:flex-1 text-center text-base py-2 px-4 ${
 							activeTab === tab.id
-								? 'border-b-2 border-black text-black'
-								: 'text-[#999999]'
+								? 'border-b-2 border-black text-black font-medium'
+								: 'text-[#999999] font-normal'
 						}`}
 					>
 						{tab.title}
