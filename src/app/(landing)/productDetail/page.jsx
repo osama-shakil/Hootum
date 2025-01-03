@@ -69,7 +69,7 @@ const page = () => {
 			{/* Grid Layout */}
 			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6  items-start mt-8'>
 				{/* Left Section */}
-				<div className='col-span-12 md:col-span-1 flex flex-col gap-4'>
+				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col gap-4'>
 					{/* Thumbnails and Main Image */}
 					<div className='flex flex-col md:flex-row gap-6'>
 						{/* Thumbnails */}
@@ -113,19 +113,19 @@ const page = () => {
 				</div>
 
 				{/* Right Section */}
-				<div className='col-span-12 md:col-span-1'>
+				<div className='col-span-12 md:col-span-12 lg:col-span-1'>
 					<BuyNow isBidding={isBidding} />
 				</div>
 			</div>
 
 			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6 mt-6 items-start'>
 				{/* Tabs */}
-				<div className='col-span-12 md:col-span-1 flex flex-col mt-5 order-2 md:order-1'>
+				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col mt-5 order-2 lg:order-1'>
 					<ProductDetailTabs />
 				</div>
 
 				{/* Authentication Card */}
-				<div className='col-span-12 md:col-span-1 space-y-7 order-1 md:order-2'>
+				<div className='col-span-12 md:col-span-12 lg:col-span-1 space-y-7 order-1 lg:order-2'>
 					{/* Tags */}
 					{isBidding ? (
 						<>
