@@ -45,7 +45,10 @@ const page = () => {
 
 	return (
 		<div className='md:container mx-auto p-4 md:p-8'>
-			<div className='flex items-center space-x-2 cursor-pointer ' onClick={handleGoBack}>
+			<div
+				className='flex items-center space-x-2 cursor-pointer '
+				onClick={handleGoBack}
+			>
 				{/* Arrow Left Icon */}
 				<div className='cursor-pointer'>
 					<svg
@@ -64,13 +67,13 @@ const page = () => {
 				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
 			</div>
 			{/* Grid Layout */}
-			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-8'>
+			<div className='grid grid-cols-1 md:grid-cols-7.8-4.2 gap-6  items-start mt-8'>
 				{/* Left Section */}
-				<div className='col-span-12 md:col-span-8 flex flex-col gap-4'>
+				<div className='col-span-12 md:col-span-1 flex flex-col gap-4'>
 					{/* Thumbnails and Main Image */}
 					<div className='flex flex-col md:flex-row gap-6'>
 						{/* Thumbnails */}
-						<div className='flex flex-row md:flex-col justify-between md:justify-start gap-4 order-2 md:order-1'>
+						<div className='flex flex-row md:flex-col justify-between gap-4 order-2 md:order-1'>
 							{images.map((image, index) => (
 								<div
 									key={index}
@@ -86,7 +89,7 @@ const page = () => {
 										onClick={() =>
 											handleThumbnailClick(image)
 										} // Set active image on click
-										className='h-[60px] w-[60px] md:h-[80px] md:w-[80px] rounded-md object-cover cursor-pointer'
+										className='h-[50px] w-[50px] md:h-[80px] md:w-[80px] rounded-md object-cover cursor-pointer'
 									/>
 								</div>
 							))}
@@ -98,7 +101,7 @@ const page = () => {
 								<img
 									src={selectedImage}
 									alt='Main Art'
-									className='border rounded-lg w-[395px] md:w-[400px] lg:w-[430px] h-auto'
+									className='border rounded-lg w-[395px] md:w-[550px] h-auto md:h-[505px] object-cover'
 								/>
 							</div>
 						</div>
@@ -106,19 +109,19 @@ const page = () => {
 				</div>
 
 				{/* Right Section */}
-				<div className='col-span-12 md:col-span-4'>
+				<div className='col-span-12 md:col-span-1'>
 					<BuyNow isBidding={isBidding} />
 				</div>
 			</div>
 
-			<div className='grid grid-cols-1 md:grid-cols-12 gap-6 mt-6 items-start'>
+			<div className='grid grid-cols-1 md:grid-cols-7.8-4.2 gap-6 mt-6 items-start'>
 				{/* Tabs */}
-				<div className='col-span-12 md:col-span-8 flex flex-col gap-4 mt-5 order-2 md:order-1'>
+				<div className='col-span-12 md:col-span-1 flex flex-col mt-5 order-2 md:order-1'>
 					<ProductDetailTabs />
 				</div>
 
 				{/* Authentication Card */}
-				<div className='col-span-12 md:col-span-4 space-y-7 order-1 md:order-2'>
+				<div className='col-span-12 md:col-span-1 space-y-7 order-1 md:order-2'>
 					{/* Tags */}
 					{isBidding ? (
 						<>
