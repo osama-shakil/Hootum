@@ -25,7 +25,7 @@ module.exports = {
 		},
 		extend: {
 			gridTemplateColumns: {
-				'7.8-4.2': '7.8fr 4.2fr', // Custom grid template
+				'7.6-4.4': '7.6fr 4.4fr', // Custom grid template
 			},
 			animation: {
 				marquee: 'marquee 25s linear infinite',

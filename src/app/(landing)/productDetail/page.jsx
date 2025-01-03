@@ -44,7 +44,7 @@ const page = () => {
 	};
 
 	return (
-		<div className='md:container mx-auto p-4 md:p-8'>
+		<div className='md:container mx-auto p-4 md:p-6'>
 			<div
 				className='flex items-center space-x-2 cursor-pointer '
 				onClick={handleGoBack}
@@ -67,7 +67,7 @@ const page = () => {
 				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
 			</div>
 			{/* Grid Layout */}
-			<div className='grid grid-cols-1 md:grid-cols-7.8-4.2 gap-6  items-start mt-8'>
+			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6  items-start mt-8'>
 				{/* Left Section */}
 				<div className='col-span-12 md:col-span-1 flex flex-col gap-4'>
 					{/* Thumbnails and Main Image */}
@@ -101,7 +101,11 @@ const page = () => {
 								<img
 									src={selectedImage}
 									alt='Main Art'
-									className='border rounded-lg w-[395px] md:w-[550px] h-auto md:h-[505px] object-cover'
+									className={`border rounded-lg w-[395px] md:w-[550px] h-auto  object-cover ${
+										isBidding
+											? 'md:h-[510px]'
+											: 'md:h-[475px]'
+									}`}
 								/>
 							</div>
 						</div>
@@ -114,7 +118,7 @@ const page = () => {
 				</div>
 			</div>
 
-			<div className='grid grid-cols-1 md:grid-cols-7.8-4.2 gap-6 mt-6 items-start'>
+			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6 mt-6 items-start'>
 				{/* Tabs */}
 				<div className='col-span-12 md:col-span-1 flex flex-col mt-5 order-2 md:order-1'>
 					<ProductDetailTabs />
