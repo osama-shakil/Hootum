@@ -67,7 +67,7 @@ const DiscoverMarketplace = () => {
 						<ArtCard key={piece.id} piece={piece} />
 					))}
 				</div>
-				<div className='flex items-center justify-center mt-3 hidden md:grid'>
+				<div className='flex items-center justify-center mt-3 md:grid'>
 					<button onClick={toggle} className='px-4 py-3 w-[214px] h-[44px] rounded-[20px] border border-black flex items-center justify-between bg-white'>
 						<span>Load more</span>
 						<svg
