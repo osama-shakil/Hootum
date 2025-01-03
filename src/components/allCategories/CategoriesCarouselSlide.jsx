@@ -21,13 +21,13 @@ const CategoriesCarouselSlide = ({
 
 			{/* Description card */}
 			<div className='relative z-10 max-w-md bg-white bg-opacity-50 backdrop-blur-md p-6 rounded-lg shadow-md md:ml-10 mx-6 md:mx-0'>
-				<h2 className='text-2xl font-semibold text-black mb-4 underline'>
+				<h2 className='text-[32px] font-normal text-black mb-4 underline'>
 					{slide.title}
 				</h2>
-				<p className='text-black text-sm'>{slide.description}</p>
+				<p className='text-black text-base font-normal'>{slide.description}</p>
 				<a
 					href='#'
-					className='inline-flex items-center mt-4 text-black hover:underline font-medium'
+					className='inline-flex items-center mt-4 text-black underline hover:underline font-medium'
 				>
 					Know more
 					<ArrowRight className='ml-1 h-4 w-4 -rotate-45' />

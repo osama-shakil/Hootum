@@ -115,7 +115,7 @@ const BuyNow = ({ isBidding }) => {
 							</div>
 						</div>
 						<div className='border-l border-[#D3D3D3] h-[75px]'>
-							<button className='px-6 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-300 ml-2'>
+							<button className='px-6 md:px-8 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-300 ml-2'>
 								<span className='text-[12px] font-medium'>
 									Follow
 								</span>

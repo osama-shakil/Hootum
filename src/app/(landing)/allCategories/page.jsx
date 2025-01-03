@@ -1,19 +1,15 @@
 'use client';
 import CategoriesSlider from '@/components/allCategories/CategoriesSlider';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTriggercategory,
-	SelectValue,
-} from '@/components/ui/select';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { use, useState } from 'react';
 
 const page = () => {
 	const router = useRouter(); // Initialize the Next.js router
+
+	const [isOpenMedium, setIsOpenMedium] = useState(false); // To manage dropdown visibility
+	const [selectedMedium, setSelectedMedium] = useState('Sort');
 
 	const handleClick = () => {
 		router.push('/viewAllCategories'); // Redirect to /allcategories
@@ -69,6 +65,7 @@ const page = () => {
 			image: '/allcategories/categories (1).svg',
 		},
 	];
+	const mediums = ['By default ', 'A-Z', 'New to old', 'Old to new'];
 
 	return (
 		<div className='md:container mx-auto pb-20'>
@@ -81,32 +78,120 @@ const page = () => {
 					</h2>
 				</div>
 
-				<div className='border border-black rounded-[5px] p-2 w-full md:w-[300px] md:mr-12'>
+				<div className='border border-black rounded-[5px] p-2 w-full md:w-[320px] md:mr-12'>
 					{/* Search Input */}
-					<div className='flex items-center rounded-lg px-2 py-2'>
+					<div className='flex items-center rounded-lg px-3 py-2'>
 						<input
 							type='text'
-							placeholder='search'
+							placeholder='Search'
 							className='flex-grow outline-none text-black text-[0.875rem]'
 						/>
 						<svg
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
+							width='18'
+							height='18'
+							viewBox='0 0 20 20'
 							fill='none'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
 								fill-rule='evenodd'
 								clip-rule='evenodd'
-								d='M14.9056 16.3199C13.551 17.3729 11.8487 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10C18 11.8487 17.3729 13.551 16.3199 14.9056L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0976 20.6834 22.0976 20.2929 21.7071L14.9056 16.3199ZM16 10C16 13.3137 13.3137 16 10 16C6.68629 16 4 13.3137 4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10Z'
+								d='M12.9056 14.3199C11.551 15.3729 9.84871 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 9.84871 15.3729 11.551 14.3199 12.9056L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L12.9056 14.3199ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8Z'
 								fill='black'
 							/>
 						</svg>
 					</div>
 
 					{/* Sort Dropdown */}
-					<div className='mt-1'>
+
+					<div>
+						{/* Header Section */}
+						<div
+							className='flex justify-between items-center border border-black rounded px-3 py-2 cursor-pointer'
+							onClick={() => setIsOpenMedium(!isOpenMedium)}
+						>
+							<span className='text-black text-[14px] font-medium'>
+								{selectedMedium}
+							</span>
+							{isOpenMedium ? (
+								<svg
+									width='30'
+									height='30'
+									viewBox='0 0 32 32'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<rect
+										x='0.5'
+										y='0.5'
+										width='31'
+										height='31'
+										rx='15.5'
+										stroke='black'
+									/>
+									<path
+										fill-rule='evenodd'
+										clip-rule='evenodd'
+										d='M11.7929 18.7071C12.1834 19.0976 12.8166 19.0976 13.2071 18.7071L16 15.9142L18.7929 18.7071C19.1834 19.0976 19.8166 19.0976 20.2071 18.7071C20.5976 18.3166 20.5976 17.6834 20.2071 17.2929L16.7071 13.7929C16.3166 13.4024 15.6834 13.4024 15.2929 13.7929L11.7929 17.2929C11.4024 17.6834 11.4024 18.3166 11.7929 18.7071Z'
+										fill='black'
+									/>
+								</svg>
+							) : (
+								<svg
+									width='30'
+									height='30'
+									viewBox='0 0 32 32'
+									fill='none'
+									xmlns='http://www.w3.org/2000/svg'
+								>
+									<rect
+										x='0.5'
+										y='0.5'
+										width='31'
+										height='31'
+										rx='15.5'
+										stroke='black'
+									/>
+									<path
+										fill-rule='evenodd'
+										clip-rule='evenodd'
+										d='M20.2071 13.7929C19.8166 13.4024 19.1834 13.4024 18.7929 13.7929L16 16.5858L13.2071 13.7929C12.8166 13.4024 12.1834 13.4024 11.7929 13.7929C11.4024 14.1834 11.4024 14.8166 11.7929 15.2071L15.2929 18.7071C15.6834 19.0976 16.3166 19.0976 16.7071 18.7071L20.2071 15.2071C20.5976 14.8166 20.5976 14.1834 20.2071 13.7929Z'
+										fill='black'
+									/>
+								</svg>
+							)}
+						</div>
+
+						{/* Dropdown Section */}
+						{isOpenMedium && (
+							<div className='mt-2 space-y-6 pl-4 border border-black py-3 rounded-[5px]'>
+								{mediums.map((item, index) => (
+									<div
+										key={index}
+										className='flex items-center gap-2'
+									>
+										<input
+											type='radio'
+											name='medium'
+											id={item}
+											className='w-4 h-4 accent-black'
+											checked={selectedMedium === item}
+											onChange={() => {
+												setSelectedMedium(item); // Update selected value
+											}}
+										/>
+										<label
+											htmlFor={item}
+											className='text-black text-[14px] font-medium cursor-pointer'
+										>
+											{item}
+										</label>
+									</div>
+								))}
+							</div>
+						)}
+					</div>
+					{/* <div className='mt-1'>
 						<Select defaultValue='atoz'>
 							<SelectTriggercategory className='rounded-[5px] py-2 px-2 border-black focus:ring-0 focus:ring-offset-0'>
 								<SelectValue />
@@ -121,7 +206,7 @@ const page = () => {
 								</SelectItem>
 							</SelectContent>
 						</Select>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 mt-8 gap-x-9 gap-y-12 px-12 md:px-0'>
