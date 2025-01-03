@@ -31,7 +31,7 @@ const PopularCategories = () => {
 				{popularCategories.map(product => (
 					<CarouselItem
 						key={product.id}
-						className='pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4'
+						className='pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4 text-center'
 					>
 						<PopularCategoryCard key={product.id} {...product} />
 					</CarouselItem>
