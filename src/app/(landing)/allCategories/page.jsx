@@ -212,10 +212,10 @@ const page = () => {
 			<div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 mt-8 gap-x-9 gap-y-12 px-12 md:px-0'>
 				{popularCategories.map(category => (
 					<Card
-						className='overflow-hidden max-w-sm cursor-pointer'
+						className='overflow-hidden max-w-sm cursor-pointer border-[#D3D3D3] text-center'
 						onClick={handleClick}
 					>
-						<CardContent className='p-0'>
+						<CardContent className='p-[5px]'>
 							<div className='p-4'>
 								<h3 className='font-medium text-lg'>
 									{category.title}
@@ -234,7 +234,7 @@ const page = () => {
 					</Card>
 				))}
 			</div>
-			<div className='flex items-center justify-center mt-3 md:grid mt-12'>
+			<div className='flex items-center justify-center md:grid mt-16 pb-5'>
 				<button className='px-4 py-3 w-[214px] h-[44px] rounded-[20px] border border-black flex items-center justify-between bg-white'>
 					<span>Load more</span>
 					<svg
