@@ -5,14 +5,14 @@ const BidConfirmationModal = ({ open, toggle, onAgreed }) => {
 	return (
 		<>
 			<Dialog open={open} onOpenChange={toggle}>
-				<DialogContent className='p-8 sm:max-w-[800px]'>
-					<div className='text-center bg-[#0000000D] rounded-[20px] border border-[#0000001A] w-[550px] m-auto p-6'>
+				<DialogContent className='p-8 sm:w-full max-w-[800px]'>
+					<div className='text-center bg-[#0000000D] rounded-[20px] border border-[#0000001A] md:w-[550px] m-auto p-6'>
 						{/* Image */}
 						<div className='mb-4'>
 							<img
 								src='/payment/signed.svg'
 								alt='Confirmation Icon'
-								className='mx-auto w-[340px] h-[237px]'
+								className='mx-auto w-[200px] h-[100px] md:w-[340px] md:h-[237px]'
 							/>
 						</div>
 

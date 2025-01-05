@@ -85,17 +85,17 @@ const MarketplaceModal = ({ open, toggle, onAgreed }) => {
           />
         </div>
 
-        <div className="flex justify-around mt-3">
+        <div className="flex flex-col md:flex-row gap-2 justify-around mt-3">
           <Button
             variant="outline"
             onClick={handleCancel}
-            className="rounded-3xl px-6 py-2 w-52"
+            className="rounded-3xl px-6 py-2 md:w-52"
           >
             Cancel
           </Button>
           <Button
             onClick={handleProceed}
-            className="bg-black text-white w-52 hover:bg-black/90 rounded-3xl px-6 py-2"
+            className="bg-black text-white md:w-52 hover:bg-black/90 rounded-3xl px-6 py-2"
           >
             Proceed
           </Button>

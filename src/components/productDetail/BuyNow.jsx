@@ -43,10 +43,8 @@ const BuyNow = ({ isBidding }) => {
 		<>
 			{isBidding ? (
 				<div className='flex items-center justify-between'>
-					<p className='text-sm font-normal font-sans'>
-						Current Bid: ৳ 22,500
-					</p>
-					<p className='text-sm font-normal font-sans'>
+					<p className='text-sm font-normal'>Current Bid: ৳ 22,500</p>
+					<p className='text-sm font-normal '>
 						Closes in 3d 8h 32m 01s
 					</p>
 				</div>
@@ -55,7 +53,7 @@ const BuyNow = ({ isBidding }) => {
 			)}
 
 			<div className='border-y md:border border-[#D3D3D3] md:px-4 pb-4 rounded-[5px]'>
-				<div className='space-y-4'>
+				<div className='space-y-3'>
 					{/* Artist Info */}
 					<div className='flex items-center justify-between border-bottom border-b'>
 						<div className='flex space-x-2 items-center'>
@@ -115,7 +113,7 @@ const BuyNow = ({ isBidding }) => {
 							</div>
 						</div>
 						<div className='border-l border-[#D3D3D3] h-[75px]'>
-							<button className='px-6 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-300 ml-2'>
+							<button className='px-6 md:px-8 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-800 ml-2'>
 								<span className='text-[12px] font-medium'>
 									Follow
 								</span>
@@ -124,7 +122,7 @@ const BuyNow = ({ isBidding }) => {
 					</div>
 					{/* Title and Ratings */}
 					<div>
-						<div className='flex items-center justify-between mt-6'>
+						<div className='flex items-center justify-between mt-4'>
 							<div className='flex items-start'>
 								<h1 className='text-2xl font-bold'>
 									Nazrul Art
@@ -270,48 +268,61 @@ const BuyNow = ({ isBidding }) => {
 						</div>
 
 						{isBidding ? (
-							<div className='flex items-center'>
-								<svg
-									className='mr-1'
-									width='18'
-									height='19'
-									viewBox='0 0 18 19'
-									fill='none'
-									xmlns='http://www.w3.org/2000/svg'
+							<div>
+								<div className='flex items-center'>
+									<svg
+										className='mr-1'
+										width='18'
+										height='19'
+										viewBox='0 0 18 19'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<path
+											fill-rule='evenodd'
+											clip-rule='evenodd'
+											d='M9 14.3926C9.68944 14.3926 10.3721 14.2568 11.0091 13.9929C11.646 13.7291 12.2248 13.3424 12.7123 12.8549C13.1998 12.3674 13.5865 11.7886 13.8504 11.1517C14.1142 10.5147 14.25 9.83202 14.25 9.14258C14.25 8.45314 14.1142 7.77045 13.8504 7.13349C13.5865 6.49653 13.1998 5.91778 12.7123 5.43027C12.2248 4.94276 11.646 4.55605 11.0091 4.29221C10.3721 4.02837 9.68944 3.89258 9 3.89258C7.60761 3.89258 6.27226 4.4457 5.28769 5.43027C4.30312 6.41483 3.75 7.75019 3.75 9.14258C3.75 10.535 4.30312 11.8703 5.28769 12.8549C6.27226 13.8395 7.60761 14.3926 9 14.3926ZM9 11.3926C9.59674 11.3926 10.169 11.1555 10.591 10.7336C11.0129 10.3116 11.25 9.73932 11.25 9.14258C11.25 8.54584 11.0129 7.97354 10.591 7.55159C10.169 7.12963 9.59674 6.89258 9 6.89258C8.40326 6.89258 7.83097 7.12963 7.40901 7.55159C6.98705 7.97354 6.75 8.54584 6.75 9.14258C6.75 9.73932 6.98705 10.3116 7.40901 10.7336C7.83097 11.1555 8.40326 11.3926 9 11.3926Z'
+											fill='black'
+										/>
+										<path
+											d='M9 3.89258V2.39258M14.25 9.14258H15.75M9 15.8926V14.3926M2.25 9.14258H3.75'
+											stroke='black'
+											stroke-width='1.5'
+											stroke-linecap='round'
+										/>
+									</svg>
+									<p className='text-[12px]'>
+										Estimate ৳ 19,200 - ৳ 39,200
+									</p>
+								</div>
+								{/* Buy Button */}
+								<button
+									onClick={() => toggle()}
+									className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
 								>
-									<path
-										fill-rule='evenodd'
-										clip-rule='evenodd'
-										d='M9 14.3926C9.68944 14.3926 10.3721 14.2568 11.0091 13.9929C11.646 13.7291 12.2248 13.3424 12.7123 12.8549C13.1998 12.3674 13.5865 11.7886 13.8504 11.1517C14.1142 10.5147 14.25 9.83202 14.25 9.14258C14.25 8.45314 14.1142 7.77045 13.8504 7.13349C13.5865 6.49653 13.1998 5.91778 12.7123 5.43027C12.2248 4.94276 11.646 4.55605 11.0091 4.29221C10.3721 4.02837 9.68944 3.89258 9 3.89258C7.60761 3.89258 6.27226 4.4457 5.28769 5.43027C4.30312 6.41483 3.75 7.75019 3.75 9.14258C3.75 10.535 4.30312 11.8703 5.28769 12.8549C6.27226 13.8395 7.60761 14.3926 9 14.3926ZM9 11.3926C9.59674 11.3926 10.169 11.1555 10.591 10.7336C11.0129 10.3116 11.25 9.73932 11.25 9.14258C11.25 8.54584 11.0129 7.97354 10.591 7.55159C10.169 7.12963 9.59674 6.89258 9 6.89258C8.40326 6.89258 7.83097 7.12963 7.40901 7.55159C6.98705 7.97354 6.75 8.54584 6.75 9.14258C6.75 9.73932 6.98705 10.3116 7.40901 10.7336C7.83097 11.1555 8.40326 11.3926 9 11.3926Z'
-										fill='black'
-									/>
-									<path
-										d='M9 3.89258V2.39258M14.25 9.14258H15.75M9 15.8926V14.3926M2.25 9.14258H3.75'
-										stroke='black'
-										stroke-width='1.5'
-										stroke-linecap='round'
-									/>
-								</svg>
-								<p className='text-[12px]'>
-									Estimate ৳ 19,200 - ৳ 39,200
-								</p>
+									Place my bid
+								</button>
 							</div>
 						) : (
-							<p className='text-[12px]'>Creator Royalties: 2%</p>
+							<div>
+								<p className='text-[12px]'>
+									Creator Royalties: 2%
+								</p>
+								{/* Buy Button */}
+								<button
+									onClick={() => toggle()}
+									className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
+								>
+									Buy Now
+								</button>
+							</div>
 						)}
 					</div>
-					{/* Buy Button */}
-					<button
-						onClick={() => toggle()}
-						className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
-					>
-						{isBidding ? 'Place my bid' : 'Buy Now'}
-					</button>
 				</div>
 
 				{isBidding ? (
 					<>
-						<div className='flex items-center mt-1 text-sm font-sans font-normal'>
+						<div className='flex items-center mt-1 text-sm  font-normal'>
 							<svg
 								width='18'
 								height='19'

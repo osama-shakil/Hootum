@@ -24,6 +24,9 @@ module.exports = {
 			padding: '2rem',
 		},
 		extend: {
+			gridTemplateColumns: {
+				'7.6-4.4': '7.6fr 4.4fr', // Custom grid template
+			},
 			animation: {
 				marquee: 'marquee 25s linear infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
