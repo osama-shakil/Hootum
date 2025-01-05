@@ -1,8 +1,9 @@
-import React from 'react';
 import AllCategoriesComp from '@/components/allCategories/AllCategoriesComp';
+import React from 'react';
 
 const page = () => {
-	return <AllCategoriesComp />;
+	return   <AllCategoriesComp />
+	;
 };
 
 export default page;
