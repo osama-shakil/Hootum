@@ -18,12 +18,17 @@ const ProductDetailComp = () => {
 	// const isBidding = searchParams.get('isBidding');
 
 	const [isBidding, setIsBidding] = useState(false);
+	const [isAuth, setIsAuth] = useState('auth');
 
 	useEffect(() => {
 		const biddingStatus = localStorage.getItem('isBidding');
+		const authStatus = localStorage.getItem('type');
 
 		if (biddingStatus) {
 			setIsBidding(biddingStatus === 'true');
+		}
+		if (authStatus) {
+			setIsAuth(authStatus);
 		}
 	}, []);
 
@@ -152,7 +157,7 @@ const ProductDetailComp = () => {
 					)}
 
 					<div className='space-y-3'>
-						<AuthCard isBidding={isBidding} />
+						<AuthCard isBidding={isBidding} isAuth={isAuth} />
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-const AuthCard = ({ isBidding }) => {
-	const [isAuth, setIsAuth] = useState('auth');
+const AuthCard = ({ isBidding, isAuth }) => {
 	return (
 		<>
 			<div className='flex flex-col gap-3'>

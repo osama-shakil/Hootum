@@ -13,9 +13,17 @@ const ViewAllCategoriesComp = () => {
 	const handleGoBack = () => {
 		router.back(); // Navigate to the previous page
 	};
-	const handleClick = () => {
-		router.push('/productDetail'); // Redirect to /productDetails
+	const handleClick = piece => {
+		if (piece?.type) {
+			if (typeof window !== 'undefined') {
+				// Store the type value in localStorage
+				localStorage.setItem('type', piece.type);
+				// Navigate to the destination page
+				router.push('/productDetail');
+			}
+		}
 	};
+
 	const allCategorySlides = [
 		// {
 		// 	id: 1,
@@ -162,7 +170,7 @@ const ViewAllCategoriesComp = () => {
 						<ArtCard
 							key={piece.id}
 							piece={piece}
-							handleClick={handleClick}
+							handleClick={() => handleClick(piece)}
 						/>
 					))}
 				</div>

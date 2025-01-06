@@ -295,6 +295,7 @@ const artPiecesViewAll = [
     title: "Nazrul Art (Bid)",
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
+    type:"auth",
     creators: [
       {
         name: "Akash ahmed",
@@ -313,6 +314,7 @@ const artPiecesViewAll = [
     title: "Nazrul Art (Not Auth)",
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
+    type:"notAuthenticate",
     creators: [
       {
         name: "Akash ahmed",
@@ -331,6 +333,7 @@ const artPiecesViewAll = [
     title: "Nazrul Art (Auth Prog)",
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
+    type:"inProgress",
     creators: [
       {
         name: "Akash ahmed",
@@ -349,6 +352,7 @@ const artPiecesViewAll = [
     title: "Nazrul Art (Auth)",
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
+    type:"auth",
     creators: [
       {
         name: "Akash ahmed",
