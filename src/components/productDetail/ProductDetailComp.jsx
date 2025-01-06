@@ -50,12 +50,9 @@ const ProductDetailComp = () => {
 
 	return (
 		<div className='md:container mx-auto p-4 md:p-6'>
-			<div
-				className='flex items-center space-x-2 cursor-pointer '
-				onClick={handleGoBack}
-			>
+			<div className='flex items-center space-x-2'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						width='10'
 						height='18'

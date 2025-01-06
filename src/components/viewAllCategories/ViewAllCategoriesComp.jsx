@@ -96,12 +96,9 @@ const ViewAllCategoriesComp = () => {
 	return (
 		<div className='md:container mx-auto pb-20'>
 			<CategoriesSlider allCategorySlides={allCategorySlides} />
-			<div
-				className='flex items-center space-x-2 mt-8 cursor-pointer'
-				onClick={handleGoBack}
-			>
+			<div className='flex items-center space-x-2 mt-8'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
