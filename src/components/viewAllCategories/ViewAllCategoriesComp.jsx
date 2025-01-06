@@ -111,7 +111,7 @@ const ViewAllCategoriesComp = () => {
 			</div>
 			<div className='px-3 lg:p-0 flex flex-col lg:flex-row mt-4 lg:mt-10'>
 				{/* Tabs */}
-				<div className='grid grid-cols-3 gap-3 lg:gap-0 lg:flex lg:items-center lg:space-x-3'>
+				<div className='grid grid-cols-3 md:grid-cols-4 gap-3 lg:gap-0 lg:flex lg:items-center lg:space-x-3'>
 					{tabs.map(tab => (
 						<button
 							key={tab}
@@ -128,11 +128,11 @@ const ViewAllCategoriesComp = () => {
 				</div>
 
 				{/* Search Box */}
-				<div className='mt-10 lg:mt-0 lg:ml-auto flex items-center border border-black rounded-md px-3 py-4 lg:py-3 mx-6 md:mx-24 lg:mx-0'>
+				<div className='mt-10 lg:mt-0 lg:ml-auto flex items-center border border-black rounded-md px-3 py-4 lg:py-3 md:w-[300px] lg:w-[270px] mx-6 md:mx-auto lg:mx-0'>
 					<input
 						type='text'
 						placeholder='Search'
-						className='outline-none text-sm placeholder-gray-500 flex-grow md:w-[250px]'
+						className='outline-none text-sm placeholder-gray-500 flex-grow'
 					/>
 					{/* Search Icon */}
 					<svg
@@ -151,8 +151,9 @@ const ViewAllCategoriesComp = () => {
 				</div>
 			</div>
 
-			<div className='px-8 md:px-0 flex flex-col lg:flex-row gap-6 mt-10 md:mt-16'>
+			<div className='px-8 md:px-0 flex flex-col lg:flex-row gap-6 mt-10'>
 				{/* Filter Section */}
+
 				<FilterSection />
 
 				{/* Product Grid Section */}
