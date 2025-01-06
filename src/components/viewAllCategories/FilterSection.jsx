@@ -41,7 +41,7 @@ const FilterSection = () => {
 	const price = ['High to Low', 'Low to High'];
 	return (
 		<>
-			<div className='hidden md:block w-[280px] bg-white rounded-lg pr-4'>
+			<div className='hidden lg:block w-[280px] bg-white rounded-lg pr-4'>
 				{/* Header */}
 				<div className='flex justify-center items-center mb-4 border border-black px-3 py-3 rounded-[5px]'>
 					<button className='text-black text-[14px] flex items-center'>
@@ -673,7 +673,7 @@ const FilterSection = () => {
 
 			{/* For Mobile screen filter section */}
 
-			<div className='md:hidden flex justify-center items-center mb-4 border bg-black px-3 py-3 rounded-[5px]'>
+			<div className='lg:hidden flex justify-center items-center mb-4 border bg-black px-3 py-3 rounded-[5px] md:mx-24'>
 				<button className='text-white text-[14px] flex items-center'>
 					Sort and filter all
 					<svg

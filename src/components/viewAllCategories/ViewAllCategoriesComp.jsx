@@ -109,14 +109,14 @@ const ViewAllCategoriesComp = () => {
 				</div>
 				<h2 className='text-[24px] font-[500]'>All Items</h2>
 			</div>
-			<div className='px-3 md:p-0 flex flex-col md:flex-row mt-4 md:mt-10'>
+			<div className='px-3 lg:p-0 flex flex-col lg:flex-row mt-4 lg:mt-10'>
 				{/* Tabs */}
-				<div className='grid grid-cols-2 gap-2 md:gap-0 md:flex md:items-center md:space-x-3'>
+				<div className='grid grid-cols-3 gap-3 lg:gap-0 lg:flex lg:items-center lg:space-x-3'>
 					{tabs.map(tab => (
 						<button
 							key={tab}
 							onClick={() => setActiveTab(tab)}
-							className={`md:px-6 text-[16px] py-2 rounded-md text-center ${
+							className={`lg:px-6 text-[16px] py-2 rounded-md text-center ${
 								activeTab === tab
 									? 'bg-black text-white'
 									: 'bg-gray-100 text-black'
@@ -128,7 +128,7 @@ const ViewAllCategoriesComp = () => {
 				</div>
 
 				{/* Search Box */}
-				<div className='mt-10 md:mt-0 md:ml-auto flex items-center border border-black rounded-md px-3 py-4 md:py-3 mx-6 md:mx-0'>
+				<div className='mt-10 lg:mt-0 lg:ml-auto flex items-center border border-black rounded-md px-3 py-4 lg:py-3 mx-6 md:mx-24 lg:mx-0'>
 					<input
 						type='text'
 						placeholder='Search'
@@ -156,7 +156,7 @@ const ViewAllCategoriesComp = () => {
 				<FilterSection />
 
 				{/* Product Grid Section */}
-				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-14'>
+				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14'>
 					{artPiecesViewAll.map(piece => (
 						<ArtCard
 							key={piece.id}
