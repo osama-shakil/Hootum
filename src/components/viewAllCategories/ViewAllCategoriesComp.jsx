@@ -3,7 +3,7 @@ import CategoriesSlider from '@/components/allCategories/CategoriesSlider';
 import LoadMoreButton from '@/components/common/LoadMoreButton';
 import ArtCard from '@/components/landing/marketplace/ArtCard';
 import FilterSection from '@/components/viewAllCategories/FilterSection';
-import { artPieces } from '@/utils/SiteData';
+import { artPiecesViewAll } from '@/utils/SiteData';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -45,6 +45,13 @@ const ViewAllCategoriesComp = () => {
 		// 		'Vibrant digital artwork blending creativity and technology to deliver striking visuals. Each piece is meticulously designed, offering high-resolution detail and dynamic color. Perfect for enhancing any space, whether displayed on screens or printed for wall art. Ideal for art lovers, modern decor enthusiasts, or as a unique digital collectible.',
 		// 	image: '/allcategories/categories (2).svg',
 		// },
+		{
+			id: 5,
+			title: 'Antique Watch',
+			description:
+				'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
+			image: '/allcategories/categories (1).svg',
+		},
 		{
 			id: 5,
 			title: 'Antique Watch',
@@ -150,7 +157,7 @@ const ViewAllCategoriesComp = () => {
 
 				{/* Product Grid Section */}
 				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-14'>
-					{artPieces.map(piece => (
+					{artPiecesViewAll.map(piece => (
 						<ArtCard
 							key={piece.id}
 							piece={piece}

@@ -15,7 +15,7 @@ const AllCategoriesComp = () => {
 		router.push('/viewAllCategories'); // Redirect to /allcategories
 	};
 	const popularCategories = [
-		{ id: 1, title: 'Fine Art', image: '/popular/fine-art.svg' },
+		{ id: 1, title: 'Fine Art', image: '/backgrounds-images/Nazul-profile.svg' },
 		{ id: 2, title: 'Sculpture', image: '/popular/product-img.svg' },
 		{ id: 3, title: 'Watches', image: '/popular/item-card.svg' },
 		{ id: 4, title: 'Digital Art', image: '/popular/digit-product.svg' },
@@ -57,13 +57,13 @@ const AllCategoriesComp = () => {
 				'Vibrant digital artwork blending creativity and technology to deliver striking visuals. Each piece is meticulously designed, offering high-resolution detail and dynamic color. Perfect for enhancing any space, whether displayed on screens or printed for wall art. Ideal for art lovers, modern decor enthusiasts, or as a unique digital collectible.',
 			image: '/allcategories/categories (2).svg',
 		},
-		{
-			id: 5,
-			title: 'Antique Watch',
-			description:
-				'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
-			image: '/allcategories/categories (1).svg',
-		},
+		// {
+		// 	id: 5,
+		// 	title: 'Antique Watch',
+		// 	description:
+		// 		'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
+		// 	image: '/allcategories/categories (1).svg',
+		// },
 	];
 	const mediums = ['By default ', 'A-Z', 'New to old', 'Old to new'];
 
