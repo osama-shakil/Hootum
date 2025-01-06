@@ -27,7 +27,7 @@ const PopularCategories = () => {
 				btnText={'View all'}
 				handleClick={handleClick}
 			/>
-			<CarouselLayout>
+			<CarouselLayout className="my-16">
 				{popularCategories.map(product => (
 					<CarouselItem
 						key={product.id}

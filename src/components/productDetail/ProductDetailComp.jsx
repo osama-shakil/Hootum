@@ -157,7 +157,7 @@ const ProductDetailComp = () => {
 				</div>
 			</div>
 			<div className='mt-16'>
-				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:px-6'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
 						MORE BY THIS ARTIST
@@ -169,7 +169,7 @@ const ProductDetailComp = () => {
 						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
 					/>
 				</div>
-				<CarouselLayout>
+				<CarouselLayout className='my-16'>
 					{spotlightProducts.map(product => (
 						<CarouselItem
 							key={product.id}
@@ -188,7 +188,7 @@ const ProductDetailComp = () => {
 			</div>
 
 			<div className='mt-16'>
-				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:px-6'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
 						RELATED ITEMS
@@ -200,7 +200,7 @@ const ProductDetailComp = () => {
 						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
 					/>
 				</div>
-				<CarouselLayout>
+				<CarouselLayout className='my-16'>
 					{spotlightProducts.map(product => (
 						<CarouselItem
 							key={product.id}

@@ -9,7 +9,7 @@ const WorksBy = () => {
   return (
     <>
     <SectionHeader title="WORKS BY CURATED PICK’S" btnText={"View all"} />
-    <CarouselLayout>
+    <CarouselLayout className="my-16">
       {spotlightProducts.map((product) => (
         <CarouselItem
           key={product.id}
