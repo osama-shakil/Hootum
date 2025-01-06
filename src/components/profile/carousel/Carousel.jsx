@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import { spotlightProducts } from '@/utils/SiteData';
 
-const CarouselLayout = ({ children, className }) => {
+const CarouselLayout = ({ children, className,handleClick }) => {
 	return (
 		<Carousel
 			opts={{
@@ -24,8 +24,8 @@ const CarouselLayout = ({ children, className }) => {
 			<CarouselNext className='hidden lg:block' />
 			<CustomButton
 				text='View all'
-				// handleClick={handleClick}
-				className='flex md:hidden items-center justify-center whitespace-nowrap mt-5'
+				handleClick={handleClick}
+				className='flex md:hidden items-center justify-center whitespace-nowrap mt-5 w-[130px] ml-1'
 			/>
 		</Carousel>
 	);
