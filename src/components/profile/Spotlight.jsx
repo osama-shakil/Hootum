@@ -10,7 +10,7 @@ const Spotlight = () => {
   return (
     <>
       <SectionHeader title="SPOTLIGHT THIS WEEK" btnText={"View all"} />
-      <CarouselLayout>
+      <CarouselLayout className="my-16">
         {spotlightProducts.map((product) => (
           <CarouselItem
             key={product.id}

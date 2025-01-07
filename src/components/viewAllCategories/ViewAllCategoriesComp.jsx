@@ -3,7 +3,7 @@ import CategoriesSlider from '@/components/allCategories/CategoriesSlider';
 import LoadMoreButton from '@/components/common/LoadMoreButton';
 import ArtCard from '@/components/landing/marketplace/ArtCard';
 import FilterSection from '@/components/viewAllCategories/FilterSection';
-import { artPieces } from '@/utils/SiteData';
+import { artPiecesViewAll } from '@/utils/SiteData';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -13,9 +13,17 @@ const ViewAllCategoriesComp = () => {
 	const handleGoBack = () => {
 		router.back(); // Navigate to the previous page
 	};
-	const handleClick = () => {
-		router.push('/productDetail'); // Redirect to /productDetails
+	const handleClick = piece => {
+		if (piece?.type) {
+			if (typeof window !== 'undefined') {
+				// Store the type value in localStorage
+				localStorage.setItem('type', piece.type);
+				// Navigate to the destination page
+				router.push('/productDetail');
+			}
+		}
 	};
+
 	const allCategorySlides = [
 		// {
 		// 	id: 1,
@@ -66,6 +74,13 @@ const ViewAllCategoriesComp = () => {
 				'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
 			image: '/allcategories/categories (1).svg',
 		},
+		{
+			id: 5,
+			title: 'Antique Watch',
+			description:
+				'Discover the Perfect Timepiece to Elevate Your Style. Uncover History on Your Wrist – Each Watch Tells a Unique Story. Embrace Vintage Luxury with Our Curated Collection.',
+			image: '/allcategories/categories (1).svg',
+		},
 	];
 	const [activeTab, setActiveTab] = useState('View All');
 
@@ -81,12 +96,9 @@ const ViewAllCategoriesComp = () => {
 	return (
 		<div className='md:container mx-auto pb-20'>
 			<CategoriesSlider allCategorySlides={allCategorySlides} />
-			<div
-				className='flex items-center space-x-2 mt-8 cursor-pointer'
-				onClick={handleGoBack}
-			>
+			<div className='flex items-center space-x-2 mt-8'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
@@ -102,14 +114,14 @@ const ViewAllCategoriesComp = () => {
 				</div>
 				<h2 className='text-[24px] font-[500]'>All Items</h2>
 			</div>
-			<div className='px-3 md:p-0 flex flex-col md:flex-row mt-4 md:mt-10'>
+			<div className='px-5 md:px-20 lg:p-0 flex flex-col lg:flex-row mt-4 lg:mt-10'>
 				{/* Tabs */}
-				<div className='grid grid-cols-2 gap-2 md:gap-0 md:flex md:items-center md:space-x-3'>
+				<div className='grid grid-cols-3 md:grid-cols-4 gap-3 lg:gap-0 lg:flex lg:items-center lg:space-x-3'>
 					{tabs.map(tab => (
 						<button
 							key={tab}
 							onClick={() => setActiveTab(tab)}
-							className={`md:px-6 text-[16px] py-2 rounded-md text-center ${
+							className={`xl:px-6 lg:px-3 text-[16px] py-2 rounded-md text-center ${
 								activeTab === tab
 									? 'bg-black text-white'
 									: 'bg-gray-100 text-black'
@@ -121,11 +133,11 @@ const ViewAllCategoriesComp = () => {
 				</div>
 
 				{/* Search Box */}
-				<div className='mt-10 md:mt-0 md:ml-auto flex items-center border border-black rounded-md px-3 py-4 md:py-3 mx-6 md:mx-0'>
+				<div className='mt-10 lg:mt-0 lg:ml-auto flex items-center border border-black rounded-md px-3 py-4 lg:py-3 md:w-[300px] lg:w-[250px] xl:w-[270px] mx-6 md:mx-auto lg:mx-0'>
 					<input
 						type='text'
 						placeholder='Search'
-						className='outline-none text-sm placeholder-gray-500 flex-grow md:w-[250px]'
+						className='outline-none text-sm placeholder-gray-500 flex-grow'
 					/>
 					{/* Search Icon */}
 					<svg
@@ -144,17 +156,18 @@ const ViewAllCategoriesComp = () => {
 				</div>
 			</div>
 
-			<div className='px-8 md:px-0 flex flex-col lg:flex-row gap-6 mt-10 md:mt-16'>
+			<div className='px-8 md:px-0 flex flex-col lg:flex-row gap-6 mt-10'>
 				{/* Filter Section */}
+
 				<FilterSection />
 
 				{/* Product Grid Section */}
-				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-14'>
-					{artPieces.map(piece => (
+				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14'>
+					{artPiecesViewAll.map(piece => (
 						<ArtCard
 							key={piece.id}
 							piece={piece}
-							handleClick={handleClick}
+							handleClick={() => handleClick(piece)}
 						/>
 					))}
 				</div>

@@ -18,12 +18,17 @@ const ProductDetailComp = () => {
 	// const isBidding = searchParams.get('isBidding');
 
 	const [isBidding, setIsBidding] = useState(false);
+	const [isAuth, setIsAuth] = useState('auth');
 
 	useEffect(() => {
 		const biddingStatus = localStorage.getItem('isBidding');
+		const authStatus = localStorage.getItem('type');
 
 		if (biddingStatus) {
 			setIsBidding(biddingStatus === 'true');
+		}
+		if (authStatus) {
+			setIsAuth(authStatus);
 		}
 	}, []);
 
@@ -31,26 +36,23 @@ const ProductDetailComp = () => {
 		router.back(); // Navigate to the previous page
 	};
 	const images = [
-		'/popular/fine-art.svg', // Replace these with actual image paths in your public folder
-		'/popular/product-img.svg',
-		'/popular/bag.svg',
-		'/popular/interior.svg',
+		'/backgrounds-images/orginal.png', // Replace these with actual image paths in your public folder
+		'/backgrounds-images/Nazul Art 1.png',
+		'/backgrounds-images/Nazul Art 2.png',
+		'/backgrounds-images/Nazul Art 3.png',
 	];
-	const [selectedImage, setSelectedImage] = useState(images[0]);
+	const [selectedImage, setSelectedImage] = useState(0);
 
 	// Handle thumbnail click
-	const handleThumbnailClick = image => {
-		setSelectedImage(image);
+	const handleThumbnailClick = index => {
+		setSelectedImage(index);
 	};
 
 	return (
 		<div className='md:container mx-auto p-4 md:p-6'>
-			<div
-				className='flex items-center space-x-2 cursor-pointer '
-				onClick={handleGoBack}
-			>
+			<div className='flex items-center space-x-2'>
 				{/* Arrow Left Icon */}
-				<div className='cursor-pointer'>
+				<div className='cursor-pointer' onClick={handleGoBack}>
 					<svg
 						width='10'
 						height='18'
@@ -67,44 +69,44 @@ const ProductDetailComp = () => {
 				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
 			</div>
 			{/* Grid Layout */}
-			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6  items-start mt-8'>
+			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-4  items-start mt-8'>
 				{/* Left Section */}
-				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col gap-4'>
+				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col gap-6 md:gap-4'>
 					{/* Thumbnails and Main Image */}
-					<div className='flex flex-col md:flex-row gap-6'>
+					<div className='flex flex-col md:flex-row gap-4'>
 						{/* Thumbnails */}
-						<div className='flex flex-row md:flex-col justify-between gap-4 order-2 md:order-1'>
+						<div className='flex flex-row md:flex-col justify-around items-center md:px-4 gap-4 order-2 md:order-1 md:py-2'>
 							{images.map((image, index) => (
 								<div
 									key={index}
 									className={`${
-										selectedImage === image
+										selectedImage === index
 											? 'border border-[#0000004D] p-2 rounded-md'
-											: 'p-2'
+											: 'p-3'
 									}`} // Highlight active thumbnail
 								>
 									<img
 										src={image}
 										alt={`Thumbnail ${index + 1}`}
 										onClick={() =>
-											handleThumbnailClick(image)
+											handleThumbnailClick(index)
 										} // Set active image on click
-										className='h-[50px] w-[50px] md:h-[80px] md:w-[80px] rounded-md object-cover cursor-pointer'
+										className='h-[50px] w-[50px] md:h-[75px] md:w-[75px] object-cover cursor-pointer'
 									/>
 								</div>
 							))}
 						</div>
 
 						{/* Main Image */}
-						<div className='flex-grow flex justify-center items-center order-1 md:order-2'>
+						<div className='flex-grow flex items-center order-1 md:order-2'>
 							<div className='relative'>
 								<img
-									src={selectedImage}
+									src={images[selectedImage]}
 									alt='Main Art'
-									className={`border rounded-lg w-[395px] md:w-[550px] h-auto  object-cover ${
+									className={`border rounded-lg w-[395px] md:w-[550px] h-auto   ${
 										isBidding
-											? 'md:h-[510px]'
-											: 'md:h-[475px]'
+											? 'md:h-[525px]'
+											: 'md:h-[480px]'
 									}`}
 								/>
 							</div>
@@ -118,7 +120,11 @@ const ProductDetailComp = () => {
 				</div>
 			</div>
 
-			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-6 mt-6 items-start'>
+			<div
+				className={`grid grid-cols-1 md:grid-cols-7.6-4.4 gap-4 items-start  ${
+					isBidding ? 'mt-0 ' : 'mt-6 '
+				}`}
+			>
 				{/* Tabs */}
 				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col mt-5 order-2 lg:order-1'>
 					<ProductDetailTabs />
@@ -152,12 +158,12 @@ const ProductDetailComp = () => {
 					)}
 
 					<div className='space-y-3'>
-						<AuthCard isBidding={isBidding} />
+						<AuthCard isBidding={isBidding} isAuth={isAuth} />
 					</div>
 				</div>
 			</div>
 			<div className='mt-16'>
-				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:px-6'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
 						MORE BY THIS ARTIST
@@ -169,7 +175,7 @@ const ProductDetailComp = () => {
 						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
 					/>
 				</div>
-				<CarouselLayout>
+				<CarouselLayout className='my-16'>
 					{spotlightProducts.map(product => (
 						<CarouselItem
 							key={product.id}
@@ -188,7 +194,7 @@ const ProductDetailComp = () => {
 			</div>
 
 			<div className='mt-16'>
-				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-6'>
+				<div className='flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:px-6'>
 					<div className='w-2 sm:w-3 h-6 sm:h-8 bg-black'></div>
 					<h2 className='text-2xl sm:text-lg md:text-4xl lg:text-5xl font-medium text-center sm:text-left'>
 						RELATED ITEMS
@@ -200,7 +206,7 @@ const ProductDetailComp = () => {
 						className='hidden md:flex items-center justify-center w-[250px] h-[45px] whitespace-nowrap'
 					/>
 				</div>
-				<CarouselLayout>
+				<CarouselLayout className='my-16'>
 					{spotlightProducts.map(product => (
 						<CarouselItem
 							key={product.id}

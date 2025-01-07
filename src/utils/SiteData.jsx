@@ -145,6 +145,230 @@ const artPieces = [
   },
 ];
 
+const artPiecesViewAll = [
+  {
+    id: 1,
+    title: "Rabindra Oil Painting",
+    price: 39000,
+    image: "/marketplace/rabindra.png",
+    creators: [
+      {
+        name: "MD. Shahabuddin",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Tarek",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Amazing Satyajeet Art",
+    price: 40300,
+    image: "/marketplace/amazing.png",
+    creators: [
+      {
+        name: "Jamaluddin shah",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Jalal khan",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Digital Art",
+    price: 25000,
+    image: "/marketplace/digital.png",
+    creators: [
+      {
+        name: "Shafiqul ahmed",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Azir mia",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Rear Fossil Watch",
+    price: 64500,
+    image: "/marketplace/rear.png",
+    creators: [
+      {
+        name: "Subhash sen",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Amit saha",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Canvas Painting",
+    price: 35500,
+    image: "/marketplace/canvas.png",
+    creators: [
+      {
+        name: "Tapan kumar dey",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Saju",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Amazing Painting",
+    price: 93500,
+    image: "/marketplace/amazing-painting.png",
+    creators: [
+      {
+        name: "Rocchu khan",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Dipoti das",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Beautiful Portrait",
+    price: 39800,
+    image: "/marketplace/beautiful-portrait.png",
+    creators: [
+      {
+        name: "Sudipto datta",
+        role: "Artist",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Tapan talukder",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Rear Antiques",
+    price: 34500,
+    image: "/marketplace/rear-antiques.png",
+    creators: [
+      {
+        name: "Akash ahmed",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Bimol ghosh",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: "Nazrul Art (Bid)",
+    price: 34500,
+    image: "/backgrounds-images/Nazul-profile.svg",
+    type:"auth",
+    creators: [
+      {
+        name: "Akash ahmed",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Bimol ghosh",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Nazrul Art (Not Auth)",
+    price: 34500,
+    image: "/backgrounds-images/Nazul-profile.svg",
+    type:"notAuthenticate",
+    creators: [
+      {
+        name: "Akash ahmed",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Bimol ghosh",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 11,
+    title: "Nazrul Art (Auth Prog)",
+    price: 34500,
+    image: "/backgrounds-images/Nazul-profile.svg",
+    type:"inProgress",
+    creators: [
+      {
+        name: "Akash ahmed",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Bimol ghosh",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: "Nazrul Art (Auth)",
+    price: 34500,
+    image: "/backgrounds-images/Nazul-profile.svg",
+    type:"auth",
+    creators: [
+      {
+        name: "Akash ahmed",
+        role: "Collector",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+      {
+        name: "Bimol ghosh",
+        role: "Owner",
+        avatar: "/placeholder.svg?height=32&width=32",
+      },
+    ],
+  },
+];
+
+
 const heroSlides = [
   {
     id: 1,
@@ -432,6 +656,7 @@ const testimonials = [
 ];
 export {
   artPieces,
+  artPiecesViewAll,
   heroSlides,
   spotlightProducts,
   popularCategories,

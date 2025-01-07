@@ -66,7 +66,7 @@ const MarketplaceModal = ({ open, toggle, onAgreed }) => {
 
   return (
     <Dialog open={open} onOpenChange={toggle}>
-      <DialogContent className="sm:max-w-xl rounded-full p-8">
+      <DialogContent className="sm:max-w-xl rounded-full p-8 lg:left-[79%] lg:top-[73%]">
         <DialogHeader className="space-y-4 mt-8">
           <DialogTitle className="text-3xl font-semibold">
             Do you want to visit marketplace?

@@ -63,6 +63,7 @@ module.exports = {
 					gray: '#F5F5F5',
 					linkColor: '#1877F2',
 					textPrimary: '#23262F',
+					lightGray: '#D3D3D3',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

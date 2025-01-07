@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-const AuthCard = ({ isBidding }) => {
-	const [isAuth, setIsAuth] = useState('auth');
+const AuthCard = ({ isBidding, isAuth }) => {
 	return (
 		<>
 			<div className='flex flex-col gap-3'>
@@ -151,7 +150,7 @@ const AuthCard = ({ isBidding }) => {
 
 				{isBidding ? (
 					<div className='flex items-center justify-between px-4 border border-[#D3D3D3] order-1 md:order-2'>
-						<div className='flex space-x-2 items-center'>
+						<div className='flex space-x-2 items-center py-3'>
 							<svg
 								width='28'
 								height='28'
@@ -189,8 +188,8 @@ const AuthCard = ({ isBidding }) => {
 								</p>
 							</div>
 						</div>
-						<div className='border-l border-[#D3D3D3] h-[75px]'>
-							<button className='px-6 py-2 mt-4 bg-[#0000000D] text-black rounded-[25px] ml-2 flex'>
+						<div className='border-l border-[#D3D3D3] py-3 pl-5'>
+							<button className='px-8 py-2 bg-[#0000000D] text-black rounded-[25px] flex'>
 								<svg
 									width='19'
 									height='18'
@@ -250,7 +249,7 @@ const AuthCard = ({ isBidding }) => {
 					<h3 className='text-base font-medium'>
 						Share this object with your friends
 					</h3>
-					<div className='flex items-center gap-6 md:gap-2'>
+					<div className='flex items-center gap-6'>
 						<svg
 							width='18'
 							height='18'
