@@ -36,10 +36,10 @@ const ProductDetailComp = () => {
 		router.back(); // Navigate to the previous page
 	};
 	const images = [
-		'/backgrounds-images/Nazul-profile.svg', // Replace these with actual image paths in your public folder
-		'/backgrounds-images/Nazul-profile.svg',
-		'/backgrounds-images/Nazul-profile.svg',
-		'/backgrounds-images/Nazul-profile.svg',
+		'/backgrounds-images/orginal.png', // Replace these with actual image paths in your public folder
+		'/backgrounds-images/Nazul Art 1.png',
+		'/backgrounds-images/Nazul Art 2.png',
+		'/backgrounds-images/Nazul Art 3.png',
 	];
 	const [selectedImage, setSelectedImage] = useState(0);
 
@@ -82,7 +82,7 @@ const ProductDetailComp = () => {
 									className={`${
 										selectedImage === index
 											? 'border border-[#0000004D] p-2 rounded-md'
-											: 'p-2'
+											: 'p-3'
 									}`} // Highlight active thumbnail
 								>
 									<img
@@ -103,10 +103,10 @@ const ProductDetailComp = () => {
 								<img
 									src={images[selectedImage]}
 									alt='Main Art'
-									className={`border rounded-lg w-[395px] md:w-[550px] h-auto  object-cover ${
+									className={`border rounded-lg w-[395px] md:w-[550px] h-auto   ${
 										isBidding
 											? 'md:h-[510px]'
-											: 'md:h-[475px]'
+											: 'md:h-[480px]'
 									}`}
 								/>
 							</div>
