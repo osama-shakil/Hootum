@@ -105,7 +105,7 @@ const ProductDetailComp = () => {
 									alt='Main Art'
 									className={`border rounded-lg w-[395px] md:w-[550px] h-auto   ${
 										isBidding
-											? 'md:h-[510px]'
+											? 'md:h-[525px]'
 											: 'md:h-[480px]'
 									}`}
 								/>
@@ -120,7 +120,11 @@ const ProductDetailComp = () => {
 				</div>
 			</div>
 
-			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-4 mt-6 items-start'>
+			<div
+				className={`grid grid-cols-1 md:grid-cols-7.6-4.4 gap-4 items-start  ${
+					isBidding ? 'mt-0 ' : 'mt-6 '
+				}`}
+			>
 				{/* Tabs */}
 				<div className='col-span-12 md:col-span-12 lg:col-span-1 flex flex-col mt-5 order-2 lg:order-1'>
 					<ProductDetailTabs />

@@ -224,16 +224,16 @@ const BuyNow = ({ isBidding }) => {
 					</div>
 					{/* Painting Info */}
 					<div>
-						<p className='text-sm'>Painting Year</p>
-						<p className='font-medium text-[16px]'>2004</p>
+						<p className='text-[14px] font-normal'>Painting Year</p>
+						<p className='font-medium text-base'>2004</p>
 					</div>
 					<div>
-						<p className='text-sm'>Collector</p>
-						<p className='font-medium text-[16px]'>Amit Saha</p>
+						<p className='text-[14px] font-normal'>Collector</p>
+						<p className='font-medium text-base'>Amit Saha</p>
 					</div>
 					{/* Price Section */}
-					<div className='space-y-2'>
-						<p className='text-sm font-normal'>Price</p>
+					<div>
+						<span className='text-[14px] font-normal'>Price</span>
 						<div className='flex'>
 							<div className='relative w-full'>
 								<span className='absolute top-1/2 left-2 transform -translate-y-1/2 text-[18px] font-bold'>
@@ -246,30 +246,48 @@ const BuyNow = ({ isBidding }) => {
 											: '',
 									}}
 									type='text'
-									className='border rounded-[5px] pl-8 p-2 w-full text-[18px] font-bold outline-none placeholder:text-[#0000001A]'
+									className='border pl-8 py-[14px] rounded-[5px] w-full text-[18px] font-bold outline-none placeholder:text-[#0000001A]'
 									placeholder='25,200'
 									value={isBidding ? price : '19200'}
 									onChange={isBidding ? handleChange : ''}
 									readOnly={!isBidding}
 								/>
 							</div>
-							<select
-								style={{
-									backgroundColor: isBidding
-										? ''
-										: '#0000000D',
-								}}
-								className='border rounded-[5px] py-3 px-5 text-sm font-medium focus:outline-none'
-							>
-								<option>BDT</option>
-								<option>USD</option>
-								<option>EUR</option>
-							</select>
+
+							<div className='relative inline-block'>
+								<select
+									style={{
+										backgroundColor: isBidding
+											? ''
+											: '#0000000D',
+									}}
+									className='appearance-none border rounded-[5px] py-[17px] pl-9 pr-11 text-sm font-medium focus:outline-none'
+								>
+									<option>BDT</option>
+									<option>USD</option>
+									<option>EUR</option>
+								</select>
+								<div className='absolute inset-y-0 right-6 flex items-center pointer-events-none'>
+									{/* Dropdown Icon */}
+									<svg
+										width='18'
+										height='19'
+										viewBox='0 0 18 19'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<path
+											d='M2 5.50195L9 12.502L16 5.50195H2Z'
+											fill='black'
+										/>
+									</svg>
+								</div>
+							</div>
 						</div>
 
 						{isBidding ? (
 							<div>
-								<div className='flex items-center'>
+								<div className='flex mt-[8px]'>
 									<svg
 										className='mr-1'
 										width='18'
@@ -291,27 +309,27 @@ const BuyNow = ({ isBidding }) => {
 											stroke-linecap='round'
 										/>
 									</svg>
-									<p className='text-[12px]'>
+									<p className='text-[14px] font-normal text-[#00000080]'>
 										Estimate ৳ 19,200 - ৳ 39,200
 									</p>
 								</div>
 								{/* Buy Button */}
 								<button
 									onClick={() => toggle()}
-									className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
+									className='w-full mt-[4px] bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
 								>
 									Place my bid
 								</button>
 							</div>
 						) : (
 							<div>
-								<p className='text-[12px]'>
+								<p className='text-[12px] mt-[4px]'>
 									Creator Royalties: 2%
 								</p>
 								{/* Buy Button */}
 								<button
 									onClick={() => toggle()}
-									className='w-full bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
+									className='w-full mt-[3px] bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
 								>
 									Buy Now
 								</button>
