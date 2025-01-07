@@ -249,7 +249,7 @@ const AuthCard = ({ isBidding, isAuth }) => {
 					<h3 className='text-base font-medium'>
 						Share this object with your friends
 					</h3>
-					<div className='flex items-center gap-6 md:gap-2'>
+					<div className='flex items-center gap-6'>
 						<svg
 							width='18'
 							height='18'
