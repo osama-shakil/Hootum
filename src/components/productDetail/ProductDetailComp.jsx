@@ -36,7 +36,7 @@ const ProductDetailComp = () => {
 		router.back(); // Navigate to the previous page
 	};
 	const images = [
-		'/backgrounds-images/orginal.png', // Replace these with actual image paths in your public folder
+		'/backgrounds-images/Orginal.png', // Replace these with actual image paths in your public folder
 		'/backgrounds-images/Nazul Art 1.png',
 		'/backgrounds-images/Nazul Art 2.png',
 		'/backgrounds-images/Nazul Art 3.png',

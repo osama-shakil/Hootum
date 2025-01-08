@@ -296,6 +296,7 @@ const artPiecesViewAll = [
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
     type:"auth",
+    isBidding:"true",
     creators: [
       {
         name: "Akash ahmed",
@@ -315,6 +316,7 @@ const artPiecesViewAll = [
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
     type:"notAuthenticate",
+    isBidding:"false",
     creators: [
       {
         name: "Akash ahmed",
@@ -334,6 +336,7 @@ const artPiecesViewAll = [
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
     type:"inProgress",
+    isBidding:"false",
     creators: [
       {
         name: "Akash ahmed",
@@ -353,6 +356,7 @@ const artPiecesViewAll = [
     price: 34500,
     image: "/backgrounds-images/Nazul-profile.svg",
     type:"auth",
+    isBidding:"false",
     creators: [
       {
         name: "Akash ahmed",

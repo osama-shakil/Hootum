@@ -24,9 +24,9 @@ const AllCategoriesComp = () => {
 		{ id: 7, title: 'Jewelary', image: '/popular/jewelary.svg' },
 		{ id: 8, title: 'Sneakers', image: '/popular/sneakers.svg' },
 		{ id: 9, title: 'Books', image: '/popular/books.svg' },
-		{ id: 10, title: 'Interior', image: '/popular/interior.svg' },
+		{ id: 10, title: 'Interior', image: '/popular/Interior.svg' },
 		{ id: 11, title: 'Bag', image: '/popular/bag.svg' },
-		{ id: 12, title: 'Stickers', image: '/popular/Stickers.svg' },
+		{ id: 12, title: 'Stickers', image: '/popular/stickers.svg' },
 	];
 	const allCategorySlides = [
 		{

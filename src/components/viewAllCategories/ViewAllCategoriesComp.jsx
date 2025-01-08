@@ -18,6 +18,7 @@ const ViewAllCategoriesComp = () => {
 			if (typeof window !== 'undefined') {
 				// Store the type value in localStorage
 				localStorage.setItem('type', piece.type);
+				localStorage.setItem('isBidding', piece.isBidding);
 				// Navigate to the destination page
 				router.push('/productDetail');
 			}

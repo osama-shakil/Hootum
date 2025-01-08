@@ -2,9 +2,9 @@ import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
 import React from 'react'
 
-const PopularCategoryCard = ({ id, title, image}) => {
+const PopularCategoryCard = ({ id, title, image,handleCardClick}) => {
   return (
-    <Card className="overflow-hidden max-w-sm">
+    <Card className="overflow-hidden max-w-sm cursor-pointer" onClick={handleCardClick}>
     <CardContent className="p-0">
       <div className="p-4">
         <h3 className="font-medium text-lg">{title}</h3>

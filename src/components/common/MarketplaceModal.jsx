@@ -55,13 +55,13 @@ const MarketplaceModal = ({ open, toggle, onAgreed }) => {
   };
 
   const handleProceed = () => {
-	if (typeof window !== 'undefined') {
+	// if (typeof window !== 'undefined') {
 		// Store the isBidding value in localStorage
-		localStorage.setItem('isBidding', 'true');
+		// localStorage.setItem('isBidding', 'true');
 
 		// Navigate to the destination page
 		router.push('/allCategories');
-	}
+	// }
   };
 
   return (

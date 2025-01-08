@@ -11,14 +11,20 @@ const PopularCategories = () => {
 	const router = useRouter(); // Initialize the Next.js router
 	const handleClick = () => {
 		// router.push('/allCategories?isBidding=false');
-		if (typeof window !== 'undefined') {
+		// if (typeof window !== 'undefined') {
 			// Store the isBidding value in localStorage
-			localStorage.setItem('isBidding', 'false');
+			// localStorage.setItem('isBidding', 'false');
 
 			// Navigate to the destination page
 			router.push('/allCategories');
-		}
+		// }
 	};
+	const handleCardClick = () => {
+	
+			router.push('/viewAllCategories');
+		
+	};
+
 
 	return (
 		<>
@@ -33,7 +39,7 @@ const PopularCategories = () => {
 						key={product.id}
 						className='pl-2 md:pl-4 md:basis-1/2 lg:basis-1/4 text-center'
 					>
-						<PopularCategoryCard key={product.id} {...product} />
+						<PopularCategoryCard key={product.id} {...product} handleCardClick={handleCardClick} />
 					</CarouselItem>
 				))}
 			</CarouselLayout>
