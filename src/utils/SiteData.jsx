@@ -487,7 +487,7 @@ const popularCategories = [
     id: 3,
     title: "Watches",
 
-    image: "/popular/item-card.png",
+    image: "/popular/item-card.svg",
   },
   {
     id: 4,
