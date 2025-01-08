@@ -1,13 +1,10 @@
 'use client';
-import React from 'react';
 import {
 	Carousel,
 	CarouselContent,
 	CarouselItem,
 } from '@/components/ui/carousel';
 import { useEffect, useState } from 'react';
-import { heroSlides } from '@/utils/SiteData';
-import CarouselSlide from '../landing/herosection/CarouselSlide';
 import CategoriesCarouselSlide from './CategoriesCarouselSlide';
 
 const CategoriesSlider = ({ allCategorySlides }) => {

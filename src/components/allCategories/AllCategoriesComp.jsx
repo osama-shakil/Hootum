@@ -3,16 +3,16 @@ import CategoriesSlider from '@/components/allCategories/CategoriesSlider';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { use, useState } from 'react';
+import { useState } from 'react';
 
 const AllCategoriesComp = () => {
-	const router = useRouter(); // Initialize the Next.js router
+	const router = useRouter(); 
 
-	const [isOpenMedium, setIsOpenMedium] = useState(false); // To manage dropdown visibility
+	const [isOpenMedium, setIsOpenMedium] = useState(false); 
 	const [selectedMedium, setSelectedMedium] = useState('Sort');
 
 	const handleClick = () => {
-		router.push('/viewAllCategories'); // Redirect to /allcategories
+		router.push('/viewAllCategories'); 
 	};
 	const popularCategories = [
 		{ id: 1, title: 'Fine Art', image: '/backgrounds-images/Nazul-profile.svg' },
@@ -211,7 +211,7 @@ const AllCategoriesComp = () => {
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 gap-x-9 gap-y-12 px-12 md:px-0'>
 				{popularCategories.map(category => (
-					<Card
+					<Card key={category.id}
 						className='overflow-hidden max-w-sm cursor-pointer border-[#D3D3D3] text-center'
 						onClick={handleClick}
 					>

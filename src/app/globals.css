@@ -259,7 +259,6 @@ body {
 .fly-in-right {
   animation: flyInRight 1s ease-out forwards;
 }
-
 .fly-out-right {
   animation: flyOutRight 1s ease-in forwards;
 }
