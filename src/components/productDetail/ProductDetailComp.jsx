@@ -8,6 +8,7 @@ import ProductDetailTabs from '@/components/productDetail/ProductDetailTabs';
 import CarouselLayout from '@/components/profile/carousel/Carousel';
 import { CarouselItem } from '@/components/ui/carousel';
 import { spotlightProducts } from '@/utils/SiteData';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -37,9 +38,9 @@ const ProductDetailComp = () => {
 	};
 	const images = [
 		'/backgrounds-images/Orginal.png', // Replace these with actual image paths in your public folder
-		'/backgrounds-images/Nazul Art 1.png',
-		'/backgrounds-images/Nazul Art 2.png',
-		'/backgrounds-images/Nazul Art 3.png',
+		'/backgrounds-images/Nazul1.png',
+		'/backgrounds-images/Nazul2.png',
+		'/backgrounds-images/Nazul3.png',
 	];
 	const [selectedImage, setSelectedImage] = useState(0);
 
@@ -85,13 +86,15 @@ const ProductDetailComp = () => {
 											: 'p-3'
 									}`} // Highlight active thumbnail
 								>
-									<img
+									<Image
 										src={image}
 										alt={`Thumbnail ${index + 1}`}
 										onClick={() =>
 											handleThumbnailClick(index)
-										} // Set active image on click
-										className='h-[50px] w-[50px] md:h-[75px] md:w-[75px] object-cover cursor-pointer'
+										}
+										className='cursor-pointer object-cover w-[50px] h-[50px] md:w-[80px] md:h-[75px]'
+										width={80}
+										height={75}
 									/>
 								</div>
 							))}
@@ -100,14 +103,16 @@ const ProductDetailComp = () => {
 						{/* Main Image */}
 						<div className='flex-grow flex items-center order-1 md:order-2'>
 							<div className='relative'>
-								<img
+								<Image
 									src={images[selectedImage]}
 									alt='Main Art'
-									className={`border rounded-lg w-[395px] md:w-[550px] h-auto   ${
+									className={`border rounded-lg w-[395px] md:w-[550px] h-auto ${
 										isBidding
 											? 'md:h-[525px]'
 											: 'md:h-[480px]'
 									}`}
+									width={550}
+									height={isBidding ? 525 : 480}
 								/>
 							</div>
 						</div>
