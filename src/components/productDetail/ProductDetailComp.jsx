@@ -67,7 +67,12 @@ const ProductDetailComp = () => {
 						/>
 					</svg>
 				</div>
-				<h2 className='text-[24px] font-[500]'>Nazrul Art</h2>
+				<h2
+					className='text-[24px] font-[500] cursor-pointer'
+					onClick={handleGoBack}
+				>
+					Nazrul Art
+				</h2>
 			</div>
 			{/* Grid Layout */}
 			<div className='grid grid-cols-1 md:grid-cols-7.6-4.4 gap-4  items-start mt-8'>
@@ -121,7 +126,7 @@ const ProductDetailComp = () => {
 
 				{/* Right Section */}
 				<div className='col-span-12 md:col-span-12 lg:col-span-1'>
-					<BuyNow isBidding={isBidding} />
+					<BuyNow isBidding={isBidding} isAuth={isAuth} />
 				</div>
 			</div>
 

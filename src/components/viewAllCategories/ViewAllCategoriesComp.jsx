@@ -113,7 +113,12 @@ const ViewAllCategoriesComp = () => {
 						<path d='M15 18l-6-6 6-6' />
 					</svg>
 				</div>
-				<h2 className='text-[24px] font-[500]'>All Items</h2>
+				<h2
+					className='text-[24px] font-[500] cursor-pointer'
+					onClick={handleGoBack}
+				>
+					All Items
+				</h2>
 			</div>
 			<div className='px-5 md:px-20 lg:p-0 flex flex-col lg:flex-row mt-4 lg:mt-10'>
 				{/* Tabs */}
@@ -163,17 +168,19 @@ const ViewAllCategoriesComp = () => {
 				<FilterSection />
 
 				{/* Product Grid Section */}
-				<div className='w-[100%] md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14'>
-					{artPiecesViewAll.map(piece => (
-						<ArtCard
-							key={piece.id}
-							piece={piece}
-							handleClick={() => handleClick(piece)}
-						/>
-					))}
+				<div className='w-[100%] md:w-full lg:w-3/4'>
+					<div className=' grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14'>
+						{artPiecesViewAll.map(piece => (
+							<ArtCard
+								key={piece.id}
+								piece={piece}
+								handleClick={() => handleClick(piece)}
+							/>
+						))}
+					</div>
+					<LoadMoreButton />
 				</div>
 			</div>
-			<LoadMoreButton />
 		</div>
 	);
 };

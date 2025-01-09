@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import BuyConfirmationModal from './BuyConfirmationModal';
 import BidConfirmationModal from './BidConfirmationModal';
 
-const BuyNow = ({ isBidding }) => {
+const BuyNow = ({ isBidding, isAuth }) => {
 	const route = useRouter();
 	const [open, setOpen] = useState(false);
 	const [openBuyConfirmationModal, setOpenBuyConfirmationModal] =
@@ -329,6 +329,7 @@ const BuyNow = ({ isBidding }) => {
 								{/* Buy Button */}
 								<button
 									onClick={() => toggle()}
+									disabled={isAuth != 'auth'}
 									className='w-full mt-[3px] bg-black text-white py-2 text-[18px] font-medium rounded-[5px] hover:bg-gray-800'
 								>
 									Buy Now

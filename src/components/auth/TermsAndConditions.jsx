@@ -24,9 +24,9 @@ const TermsAndConditions = ({ open, toggle, onAgreed }) => {
         </DialogHeader>
 
         {/* Scrollable Content */}
-        <div className="relative h-[270px] md:h-[450px] -mt-3">
+        <div className="relative h-[270px] md:h-[320px] -mt-3">
           <div
-            className="h-[270px] md:h-[450px] overflow-y-auto pr-3 custom-scrollbar touch-pan-y"
+            className="h-[270px] md:h-[320px] overflow-y-auto pr-3 custom-scrollbar touch-pan-y"
             style={{
               WebkitOverflowScrolling: "touch", // Enables smooth touch scrolling on iOS
               overscrollBehavior: "contain", // Prevents scroll chaining
