@@ -93,7 +93,7 @@ const TermsAndConditions = ({ open, toggle, onAgreed }) => {
             >
               No, Thanks
             </Button>
-            <CustomButton text="I agree" handleClick={onAgreed} className='lg:w-[22vh] md::w-[22vh]' />
+            <CustomButton text="I agree" handleClick={onAgreed} className='md:w-[22vh] lg:w-[22vh] ' />
           </div>
         </DialogFooter>
       </DialogContent>
