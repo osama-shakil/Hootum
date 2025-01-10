@@ -12,7 +12,10 @@ const WriteReview = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		setSubmittedData({ rating, title, content });
+		setRating(0);
+		setTitle('');
+		setContent('');
+		// setSubmittedData({ rating, title, content });
 	};
 
 	return (
@@ -102,7 +105,7 @@ const WriteReview = () => {
 				)} */}
 			</div>
 			<button
-				type='submit'
+				onClick={handleSubmit}
 				className=' flex items-center bg-black text-white text-base font-sans font-medium font-sans mt-4 px-6 py-3 rounded-[100px] m-0'
 			>
 				Submit Review

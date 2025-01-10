@@ -8,6 +8,7 @@ import BidConfirmationModal from './BidConfirmationModal';
 const BuyNow = ({ isBidding, isAuth }) => {
 	const route = useRouter();
 	const [open, setOpen] = useState(false);
+	const [follow, setFollow] = useState(false);
 	const [openBuyConfirmationModal, setOpenBuyConfirmationModal] =
 		useState(false);
 	const [openBidConfirmationModal, setOpenBidConfirmationModal] =
@@ -22,6 +23,7 @@ const BuyNow = ({ isBidding, isAuth }) => {
 	};
 
 	const toggle = () => setOpen(!open);
+	const toggleFollow = () => setFollow(!follow);
 	const toggleBuyConfirmationModal = () =>
 		setOpenBuyConfirmationModal(!openBuyConfirmationModal);
 	const toggleBidConfirmationModal = () =>
@@ -113,9 +115,12 @@ const BuyNow = ({ isBidding, isAuth }) => {
 							</div>
 						</div>
 						<div className='border-l border-[#D3D3D3] h-[75px]'>
-							<button className='px-6 md:px-8 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-800 ml-2'>
+							<button
+								onClick={() => toggleFollow()}
+								className='px-6 md:px-8 py-2 mt-4 bg-black text-white rounded-[25px] hover:bg-gray-800 ml-2'
+							>
 								<span className='text-[12px] font-medium'>
-									Follow
+									{follow ? 'Following' : 'Follow'}
 								</span>
 							</button>
 						</div>
