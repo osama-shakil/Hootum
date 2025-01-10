@@ -127,9 +127,13 @@ import "swiper/css/effect-fade";
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(null);
+  const [hasTransitionStarted, setHasTransitionStarted] = useState(false); // Tracks if transitions should start
 
   const handleSlideChange = (swiper, index) => {
     setActiveSlide(index);
+    if (index > 0) {
+      setHasTransitionStarted(true); // Enable transitions after the first slide
+    }
   };
 
   return (
@@ -154,7 +158,8 @@ const HeroSection = () => {
             {({ isActive }) => (
               <div
                 className={`${
-                  isActive ? "active-slide fly-in-right" : "fly-out-right"
+                   index === 0 && !hasTransitionStarted
+                    ? "": isActive ? "active-slide fly-in-right" : "fly-out-right"
                 }`}
               >
                 <CarouselSlide
