@@ -7,10 +7,11 @@ import {
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
+	CarouselPrevious,
 } from '@/components/ui/carousel';
 import { spotlightProducts } from '@/utils/SiteData';
 
-const CarouselLayout = ({ children, className,handleClick }) => {
+const CarouselLayout = ({ children, className, handleClick }) => {
 	return (
 		<Carousel
 			opts={{
@@ -18,6 +19,7 @@ const CarouselLayout = ({ children, className,handleClick }) => {
 			}}
 			className={`w-full lg:max-w-6xl mx-auto ${className}`}
 		>
+			<CarouselPrevious className='hidden lg:block' />
 			<CarouselContent className='-ml-2 md:-ml-4'>
 				{children}
 			</CarouselContent>

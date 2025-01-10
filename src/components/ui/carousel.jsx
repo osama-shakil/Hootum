@@ -157,14 +157,32 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute  h-8 w-8 rounded-full", orientation === "horizontal"
-        ? "-left-12 top-1/2 -translate-y-1/2"
-        : "-top-12 left-1/2 -translate-x-1/2 rotate-90", className)}
+      className={cn(
+        'absolute  h-12 w-12 rounded-full',
+        orientation === 'horizontal'
+          ? '-left-16 top-1/2 -translate-y-1/2'
+          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+        className
+      )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}>
-      <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      {...props}
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        className='h-[60px] w-[60px] m-auto text-[50px]'
+      >
+        <path
+          d='M15 5l-7 7 7 7'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth={2}
+        />
+      </svg>
+      <span className='sr-only'>Previous slide</span>
     </Button>)
   );
 })
